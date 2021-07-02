@@ -1,0 +1,12 @@
+C:\Users\zakal\source\repos\MyServise\ConfigLibrary\bin\Debug\netcoreapp3.1\ConfigLibrary.deps.json
+C:\Users\zakal\source\repos\MyServise\ConfigLibrary\bin\Debug\netcoreapp3.1\ConfigLibrary.dll
+C:\Users\zakal\source\repos\MyServise\ConfigLibrary\bin\Debug\netcoreapp3.1\ConfigLibrary.pdb
+C:\Users\zakal\source\repos\MyServise\ConfigLibrary\bin\Debug\netcoreapp3.1\LibraryModels.dll
+C:\Users\zakal\source\repos\MyServise\ConfigLibrary\bin\Debug\netcoreapp3.1\LibraryModels.pdb
+C:\Users\zakal\source\repos\MyServise\ConfigLibrary\obj\Debug\netcoreapp3.1\ConfigLibrary.csproj.AssemblyReference.cache
+C:\Users\zakal\source\repos\MyServise\ConfigLibrary\obj\Debug\netcoreapp3.1\ConfigLibrary.AssemblyInfoInputs.cache
+C:\Users\zakal\source\repos\MyServise\ConfigLibrary\obj\Debug\netcoreapp3.1\ConfigLibrary.AssemblyInfo.cs
+C:\Users\zakal\source\repos\MyServise\ConfigLibrary\obj\Debug\netcoreapp3.1\ConfigLibrary.csproj.CoreCompileInputs.cache
+C:\Users\zakal\source\repos\MyServise\ConfigLibrary\obj\Debug\netcoreapp3.1\ConfigLibrary.csproj.CopyComplete
+C:\Users\zakal\source\repos\MyServise\ConfigLibrary\obj\Debug\netcoreapp3.1\ConfigLibrary.dll
+C:\Users\zakal\source\repos\MyServise\ConfigLibrary\obj\Debug\netcoreapp3.1\ConfigLibrary.pdb

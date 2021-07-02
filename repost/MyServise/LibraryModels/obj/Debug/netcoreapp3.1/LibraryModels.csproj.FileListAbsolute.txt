@@ -10,3 +10,15 @@ C:\Users\zakal\source\repos\MyServise\LibraryModels\bin\Debug\netcoreapp3.1\Libr
 C:\Users\zakal\source\repos\MyServise\LibraryModels\bin\Debug\netcoreapp3.1\LibraryModels.runtimeconfig.dev.json
 C:\Users\zakal\source\repos\MyServise\LibraryModels\obj\Debug\netcoreapp3.1\LibraryModels.genruntimeconfig.cache
 C:\Users\zakal\source\repos\MyServise\LibraryModels\obj\Debug\netcoreapp3.1\LibraryModels.csproj.AssemblyReference.cache
+C:\Service\repost\MyServise\LibraryModels\bin\Debug\netcoreapp3.1\LibraryModels.deps.json
+C:\Service\repost\MyServise\LibraryModels\bin\Debug\netcoreapp3.1\LibraryModels.runtimeconfig.json
+C:\Service\repost\MyServise\LibraryModels\bin\Debug\netcoreapp3.1\LibraryModels.runtimeconfig.dev.json
+C:\Service\repost\MyServise\LibraryModels\bin\Debug\netcoreapp3.1\LibraryModels.dll
+C:\Service\repost\MyServise\LibraryModels\bin\Debug\netcoreapp3.1\LibraryModels.pdb
+C:\Service\repost\MyServise\LibraryModels\obj\Debug\netcoreapp3.1\LibraryModels.csproj.AssemblyReference.cache
+C:\Service\repost\MyServise\LibraryModels\obj\Debug\netcoreapp3.1\LibraryModels.AssemblyInfoInputs.cache
+C:\Service\repost\MyServise\LibraryModels\obj\Debug\netcoreapp3.1\LibraryModels.AssemblyInfo.cs
+C:\Service\repost\MyServise\LibraryModels\obj\Debug\netcoreapp3.1\LibraryModels.csproj.CoreCompileInputs.cache
+C:\Service\repost\MyServise\LibraryModels\obj\Debug\netcoreapp3.1\LibraryModels.dll
+C:\Service\repost\MyServise\LibraryModels\obj\Debug\netcoreapp3.1\LibraryModels.pdb
+C:\Service\repost\MyServise\LibraryModels\obj\Debug\netcoreapp3.1\LibraryModels.genruntimeconfig.cache

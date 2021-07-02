@@ -13,6 +13,11 @@ namespace LibraryModels
         public string NewPath { get; set; }
         public string NewFileName { get; set; }
         public int Priority { get; set; }
-        public int TaskIndicator { get; set; }
+        public int TaskIndicator1 { get; set; }
+        public int TaskIndicator2 { get; set; }
+        public int TaskIndicator3 { get; set; }
+        public int TaskIndicator4 { get; set; }
+        public int TaskIndicator5 { get; set; }
+
     }
 }

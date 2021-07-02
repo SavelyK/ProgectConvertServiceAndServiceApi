@@ -6187,11 +6187,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Service + Web Api\\repost\\MyServise\\ConvertService\\ConvertService.csproj",
+      "projectUniqueName": "C:\\Service\\repost\\MyServise\\ConvertService\\ConvertService.csproj",
       "projectName": "ConvertService",
-      "projectPath": "C:\\Service + Web Api\\repost\\MyServise\\ConvertService\\ConvertService.csproj",
+      "projectPath": "C:\\Service\\repost\\MyServise\\ConvertService\\ConvertService.csproj",
       "packagesPath": "C:\\Users\\zakal\\.nuget\\packages\\",
-      "outputPath": "C:\\Service + Web Api\\repost\\MyServise\\ConvertService\\obj\\",
+      "outputPath": "C:\\Service\\repost\\MyServise\\ConvertService\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -6214,11 +6214,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Service + Web Api\\repost\\MyServise\\ConfigLibrary\\ConfigLibrary.csproj": {
-              "projectPath": "C:\\Service + Web Api\\repost\\MyServise\\ConfigLibrary\\ConfigLibrary.csproj"
+            "C:\\Service\\repost\\MyServise\\ConfigLibrary\\ConfigLibrary.csproj": {
+              "projectPath": "C:\\Service\\repost\\MyServise\\ConfigLibrary\\ConfigLibrary.csproj"
             },
-            "C:\\Service + Web Api\\repost\\MyServise\\LibraryModels\\LibraryModels.csproj": {
-              "projectPath": "C:\\Service + Web Api\\repost\\MyServise\\LibraryModels\\LibraryModels.csproj"
+            "C:\\Service\\repost\\MyServise\\LibraryModels\\LibraryModels.csproj": {
+              "projectPath": "C:\\Service\\repost\\MyServise\\LibraryModels\\LibraryModels.csproj"
             }
           }
         }

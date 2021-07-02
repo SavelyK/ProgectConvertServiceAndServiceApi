@@ -19,18 +19,19 @@ namespace ConvertService
                 .Build();
 
 
+            Task t = new Task(() => Methods.MakePdfFileAsync(5, 2));
+            t.Start();
+            //Task[] tasks = new Task[5]
+            //{
+            //    new Task(() => Methods.MakePdfFileAsync(1, 1)),
+            //    new Task(() => Methods.MakePdfFileAsync(2,2)),
+            //    new Task(() => Methods.MakePdfFileAsync(3,3)),
+            //    new Task(() => Methods.MakePdfFileAsync(4,4)),
+            //    new Task(() => Methods.MakePdfFileAsync(5,5))
+            //};
 
-            Task[] tasks = new Task[5]
-            {
-                new Task(() => Methods.MakePdfFileAsync(1,1)),
-                new Task(() => Methods.MakePdfFileAsync(2,2)),
-                new Task(() => Methods.MakePdfFileAsync(3,3)),
-                new Task(() => Methods.MakePdfFileAsync(4,4)),
-                new Task(() => Methods.MakePdfFileAsync(5,5))
-            };
-
-            foreach (var t in tasks)
-                t.Start();
+            //foreach (var s in tasks)
+            //    s.Start();
             Console.ReadKey();
 
 
@@ -53,6 +54,7 @@ namespace ConvertService
                 Console.WriteLine($"Имя файла: {DbModel.FileName}");
                 Console.WriteLine($"Время загрузки: {DbModel.LoadTime}");
                 Console.WriteLine($"Индикация: {DbModel.Indicator}");
+                Console.WriteLine($"приоритет: {DbModel.Priority}");
             }
 
         }

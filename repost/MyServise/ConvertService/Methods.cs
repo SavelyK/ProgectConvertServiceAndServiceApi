@@ -30,23 +30,26 @@ namespace ConvertService
                     for (int i = 0; i < x; i++)
                     tasks[i] = new Task(() => 
                     { 
-                        var file = db.DbModels.FirstOrDefault(t => t.TaskIndicator == i+1);
-                        if (file != null)
-                        {
-                            string path = file.Path;
-                            DocumentCore docPdf = DocumentCore.Load(path);
-                            path = path.Replace(".docx", ".pdf");
-                            docPdf.Save(path);
-                            file.Priority = 6;
-                            db.SaveChanges();
-                            Console.WriteLine($"выполняется задача {p}");
-                        } 
+                        DbModel file = db.DbModels.FirstOrDefault(t => t.TaskIndicator == i+1);
+                        Converter(file, db);
                     }
                     );
                     foreach (var t in tasks)
                         t.Start();
                 }
           }
+        }
+        public static void Converter(DbModel file, MyDbContext db)
+        {
+            if (file != null)
+            {
+                string path = file.Path;
+                DocumentCore docPdf = DocumentCore.Load(path);
+                path = path.Replace(".docx", ".pdf");
+                docPdf.Save(path);
+                file.Priority = 6;
+                db.SaveChanges();
+            }
         }
             //public static void ConvertQueue()
             //{

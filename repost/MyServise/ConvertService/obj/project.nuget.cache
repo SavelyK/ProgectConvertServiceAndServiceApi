@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1PMHxld9DhHx72XZXiNJJmA8DbGDphjVV5TyKZtFAD0DCgK8rvpnfzhUzjS2xwvTPC2kigL0hBEGb74jdpd4Mg==",
+  "dgSpecHash": "CR4CHif7287UubN/lwe+qNknQe0cWDXeffPwltD49XJzjdYYKcSePIpFa9io76TL4qHyb1qbuwYTpknJhLPpeQ==",
   "success": true,
-  "projectFilePath": "C:\\Service + Web Api\\repost\\MyServise\\ConvertService\\ConvertService.csproj",
+  "projectFilePath": "C:\\Service\\repost\\MyServise\\ConvertService\\ConvertService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\zakal\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",

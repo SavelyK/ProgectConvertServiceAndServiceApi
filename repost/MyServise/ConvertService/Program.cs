@@ -42,8 +42,16 @@ namespace ConvertService
 
             Task t = new Task(() => Methods.EnqueueQueueAsync(q));
             t.Start();
-            Task n = new Task(() => Methods.DequeueQueueAsync(q, 1));
+            Task n = new Task(() => Methods.DequeueQueueAsync(q, 0));
+            Task n2 = new Task(() => Methods.DequeueQueueAsync(q, 1));
+            Task n3 = new Task(() => Methods.DequeueQueueAsync(q, 2));
+            Task n4 = new Task(() => Methods.DequeueQueueAsync(q, 3));
+            Task n5 = new Task(() => Methods.DequeueQueueAsync(q, 4));
             n.Start();
+            n2.Start();
+            n3.Start();
+            n4.Start();
+            n5.Start();
             Console.ReadKey();
 
 

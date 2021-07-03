@@ -27,8 +27,8 @@ namespace ConvertService
                         {
                             file.Indicator = 2;
                             Reserv t = new Reserv(file.Id, file.Path);
-                            q[file.Priority - 1].Enqueue(t);
                             db.SaveChanges();
+                            q[file.Priority - 1].Enqueue(t);
                         }
                     }
                 }
@@ -42,8 +42,7 @@ namespace ConvertService
                 Console.WriteLine("hello");
                 while (true)
                 {
-                    //lock (locker)
-                    //{
+                    lock (locker) { 
                         if (q[i].Count() != 0)
                         {
                             Reserv res = q[i].Dequeue();
@@ -52,7 +51,7 @@ namespace ConvertService
                             docPdf.Save(path.Replace(".docx", ".pdf"));
                             
                         }
-                    //}
+                    }
                 }
             });
         }

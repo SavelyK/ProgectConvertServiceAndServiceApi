@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ConvertService.ServiceModels
+namespace LibraryModels
 {
-    class ConcurrentT5Queue
+    class Reservation
     {
     }
 }

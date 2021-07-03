@@ -13,6 +13,7 @@ namespace ConvertService
 {
     class Program
     {
+        static object locker = new object();
         static void Main(string[] args)
         {
             IConfiguration config = new ConfigurationBuilder()
@@ -20,20 +21,14 @@ namespace ConvertService
                 .Build();
 
 
-            //Task t = new Task(() => Methods.MakePdfFileAsync(5,5,5,5,5));
-            //t.Start();
-            //Task v = new Task(() => Methods.MakeTaskAsync(2));
-            //v.Start();
-            //Task r = new Task(() => Methods.DbSortPrioriti1Async(5, 5, 5, 5, 5));
-            //r.Start();
-            //Console.ReadKey();
-            ConcurrentQueue<Reserv>[] q =new ConcurrentQueue<Reserv>[5];
-            Task t = new Task(() => Methods.CreativeQueueAsync(q));
+
+            Queue<Reserv>[] q =new Queue<Reserv>[5];
+            Task t = new Task(() => Methods.EnqueueQueueAsync(q));
             t.Start();
-          
-            
 
 
+
+            //test code block
             using (var db = new MyDbContext())
             {
                 var DbModels = db.Set<DbModel>();

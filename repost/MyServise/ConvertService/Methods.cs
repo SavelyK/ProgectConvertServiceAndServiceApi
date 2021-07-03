@@ -12,7 +12,7 @@ namespace ConvertService
     static class Methods
     {
 
-        public async static void CreativeQueueAsync(ConcurrentQueue<Reserv> []q)
+        public async static void EnqueueQueueAsync(ConcurrentQueue<Reserv> []q)
         {
             await  using (var db = new MyDbContext())
             {
@@ -28,6 +28,11 @@ namespace ConvertService
                     }
                 }
             }
+        }
+
+        public async static void DequeueQueueAsync(ConcurrentQueue<Reserv>[] q, int i)
+        {
+            q[i].Dequeue
         }
 
         //public async static void MakeTaskAsync(int x)
@@ -152,7 +157,7 @@ namespace ConvertService
         //{
         //    await using (var db = new MyDbContext())
         //    {
-              
+
         //            for (int i = 1; i < x + 1; i++)
         //            {
         //                var file = db.DbModels.FirstOrDefault(t => t.Priority == 1);
@@ -203,7 +208,7 @@ namespace ConvertService
         //                     db.SaveChanges();
         //                 }
         //            }
-                
+
         //    }
         //}
 

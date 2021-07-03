@@ -3,6 +3,7 @@ using LibraryModels;
 using Microsoft.Extensions.Configuration;
 using SautinSoft.Document;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -19,14 +20,18 @@ namespace ConvertService
                 .Build();
 
 
-            Task t = new Task(() => Methods.MakePdfFileAsync(5,5,5,5,5));
-            t.Start();
+            //Task t = new Task(() => Methods.MakePdfFileAsync(5,5,5,5,5));
+            //t.Start();
             //Task v = new Task(() => Methods.MakeTaskAsync(2));
             //v.Start();
-            Task r = new Task(() => Methods.DbSortPrioriti1Async(5, 5, 5, 5, 5));
-            r.Start();
-            Console.ReadKey();
-
+            //Task r = new Task(() => Methods.DbSortPrioriti1Async(5, 5, 5, 5, 5));
+            //r.Start();
+            //Console.ReadKey();
+            ConcurrentQueue<Reserv>[] q =new ConcurrentQueue<Reserv>[5];
+            Task t = new Task(() => Methods.CreativeQueueAsync(q));
+            t.Start();
+          
+            
 
 
             using (var db = new MyDbContext())

@@ -123,3 +123,4 @@ C:\Service\repost\Api1\ConversionService\obj\Debug\netcoreapp3.1\ConversionServi
 C:\Service\repost\Api1\ConversionService\obj\Debug\netcoreapp3.1\ConversionService.dll
 C:\Service\repost\Api1\ConversionService\obj\Debug\netcoreapp3.1\ConversionService.pdb
 C:\Service\repost\Api1\ConversionService\obj\Debug\netcoreapp3.1\ConversionService.genruntimeconfig.cache
+C:\Service\repost\Api1\ConversionService\obj\Debug\netcoreapp3.1\ConversionService.csproj.AssemblyReference.cache

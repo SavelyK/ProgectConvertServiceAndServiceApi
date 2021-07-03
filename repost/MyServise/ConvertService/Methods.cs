@@ -3,6 +3,7 @@ using LibraryModels;
 using SautinSoft.Document;
 using System;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -11,28 +12,49 @@ namespace ConvertService
 {
     static class Methods
     {
-
-        public async static void EnqueueQueueAsync(ConcurrentQueue<Reserv> []q)
+        static object locker = new object();
+        public async static void EnqueueQueueAsync(Queue<Reserv> []q)
         {
-            await  using (var db = new MyDbContext())
+            Console.WriteLine("hello");
+            await Task.Run(() =>
             {
-                while (true)
+                using (var db = new MyDbContext())
                 {
-                    var file = db.DbModels.FirstOrDefault(t => t.Indicator == 1);
-                    if (file != null)
+                    while (true)
                     {
-                        int id = file.Id;
-                        string path = file.Path;
-                        file.Indicator = 2;
-                        q[file.Priority].Enqueue(new Reserv(file.Id, file.Path));
+                        var file = db.DbModels.FirstOrDefault(t => t.Indicator == 1);
+                        if (file != null)
+                        {
+                            file.Indicator = 2;
+                            Reserv t = new Reserv(file.Id, file.Path);
+                            q[file.Priority - 1].Enqueue(t);
+                            db.SaveChanges();
+                        }
                     }
                 }
-            }
+            });
         }
 
-        public async static void DequeueQueueAsync(ConcurrentQueue<Reserv>[] q, int i)
+        public async static void DequeueQueueAsync(Queue<Reserv>[] q, int i)
         {
-            q[i].Dequeue
+            await Task.Run(() =>
+            {
+                Console.WriteLine("hello");
+                while (true)
+                {
+                    //lock (locker)
+                    //{
+                        if (q[i].Count() != 0)
+                        {
+                            Reserv res = q[i].Dequeue();
+                            string path = res.FilePath;
+                            DocumentCore docPdf = DocumentCore.Load(path);
+                            docPdf.Save(path.Replace(".docx", ".pdf"));
+                            
+                        }
+                    //}
+                }
+            });
         }
 
         //public async static void MakeTaskAsync(int x)

@@ -21,9 +21,10 @@ namespace ConvertService
 
             Task t = new Task(() => Methods.MakePdfFileAsync(2,2,2,2,2));
             t.Start();
-            Task v = new Task(() => Methods.DbSortPrioriti1Async(2,2,2,2,2));
+            Task v = new Task(() => Methods.MakeTaskAsync(2));
             v.Start();
-
+            Task r = new Task(() => Methods.DbSortPrioriti1Async(2, 2, 2, 2, 2));
+            r.Start();
             Console.ReadKey();
 
 

@@ -111,7 +111,6 @@ C:\Service\repost\Api1\ConversionService\bin\Debug\netcoreapp3.1\runtimes\win-x8
 C:\Service\repost\Api1\ConversionService\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 C:\Service\repost\Api1\ConversionService\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Service\repost\Api1\ConversionService\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Service\repost\Api1\ConversionService\obj\Debug\netcoreapp3.1\ConversionService.csproj.AssemblyReference.cache
 C:\Service\repost\Api1\ConversionService\obj\Debug\netcoreapp3.1\ConversionService.AssemblyInfoInputs.cache
 C:\Service\repost\Api1\ConversionService\obj\Debug\netcoreapp3.1\ConversionService.AssemblyInfo.cs
 C:\Service\repost\Api1\ConversionService\obj\Debug\netcoreapp3.1\ConversionService.csproj.CoreCompileInputs.cache

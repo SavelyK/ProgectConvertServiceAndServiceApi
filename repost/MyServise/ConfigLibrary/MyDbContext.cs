@@ -11,7 +11,7 @@ namespace ConfigLibrary
         private readonly string connectionString;
         public DbSet<DbModel> DbModels { get; set; }
         public MyDbContext()
-             : this("Server=localhost;Database=Data12;Trusted_Connection=True;")
+             : this("Server=localhost;Database=Data13;Trusted_Connection=True;")
         {
             Database.EnsureCreated();
         }

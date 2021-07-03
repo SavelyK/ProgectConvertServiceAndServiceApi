@@ -19,11 +19,11 @@ namespace ConvertService
                 .Build();
 
 
-            Task t = new Task(() => Methods.MakePdfFileAsync(2,2,2,2,2));
+            Task t = new Task(() => Methods.MakePdfFileAsync(5,5,5,5,5));
             t.Start();
-            Task v = new Task(() => Methods.MakeTaskAsync(2));
-            v.Start();
-            Task r = new Task(() => Methods.DbSortPrioriti1Async(2, 2, 2, 2, 2));
+            //Task v = new Task(() => Methods.MakeTaskAsync(2));
+            //v.Start();
+            Task r = new Task(() => Methods.DbSortPrioriti1Async(5, 5, 5, 5, 5));
             r.Start();
             Console.ReadKey();
 

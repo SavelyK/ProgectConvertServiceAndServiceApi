@@ -13,7 +13,7 @@ namespace ConvertService
         static object locker = new object();
         static object locker2 = new object();
 
-        public async static void EnqueueQueueAsync(Queue<Reserv>[] q)
+        public async static void EnqueueQueueAsync(Queue<Reserv>[] nameArrayQueues)
         {
             Console.WriteLine("hello");
             await Task.Run(() =>
@@ -28,7 +28,7 @@ namespace ConvertService
                             file.Status = 2;
                             Reserv res = new Reserv(file.Id, file.Path);
                             db.SaveChanges();
-                            q[file.Priority].Enqueue(res);
+                            nameArrayQueues[file.Priority].Enqueue(res);
                         }
                     }
                 }
@@ -44,8 +44,8 @@ namespace ConvertService
                     {
                         if (Program.queueTaskId.Count() != 0)
                         {
-                            int x = Program.queueTaskId.Dequeue();
-                            var file = db.DbModels.FirstOrDefault(t => t.Id == x);
+                            int taskId = Program.queueTaskId.Dequeue();
+                            var file = db.DbModels.FirstOrDefault(t => t.Id == taskId);
                             file.Status = 3;
                             db.SaveChanges();
                         }
@@ -54,7 +54,7 @@ namespace ConvertService
             });
         }
 
-        public async static void DequeueQueueAsync(Queue<Reserv>[] q, int i)
+        public async static void DequeueQueueAsync(Queue<Reserv>[] nameArrayQueues, int numberPriorityQueue)
         {
             await Task.Run(() =>
             {
@@ -64,9 +64,9 @@ namespace ConvertService
                     Reserv res = new Reserv(0, null);
                     lock (locker)
                     {
-                        if (q[i].Count() != 0)
+                        if (nameArrayQueues[numberPriorityQueue].Count() != 0)
                         {
-                            res = q[i].Dequeue();
+                            res = nameArrayQueues[numberPriorityQueue].Dequeue();
                         }
                     }
                     if (res.FilePath != null)

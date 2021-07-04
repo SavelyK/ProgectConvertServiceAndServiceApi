@@ -26,42 +26,20 @@ namespace ConvertService
             {
                 q[i] = new Queue<Reserv>();
             }
-            //Queue<Reserv> q1 = new Queue<Reserv>();
-            //Queue<Reserv> q2 = new Queue<Reserv>();
-            //Queue<Reserv> q3 = new Queue<Reserv>();
-            //Queue<Reserv> q4 = new Queue<Reserv>();
-            //Queue<Reserv> q5 = new Queue<Reserv>();
-
-            //q[0] = q1;
-            //q[1] = q2;
-            //q[2] = q3;
-            //q[3] = q4;
-            //q[4] = q5;
 
 
-         
-
-            Task t = new Task(() => Methods.EnqueueQueueAsync(q));
-            t.Start();
             Task n = new Task(() =>
             {
+                Methods.EnqueueQueueAsync(q);
                 Methods.DequeueQueueAsync(q, 0);
                 Methods.DequeueQueueAsync(q, 1);
                 Methods.DequeueQueueAsync(q, 2);
                 Methods.DequeueQueueAsync(q, 3);
                 Methods.DequeueQueueAsync(q, 4);
-                //Methods.QueueLiquidatorAsync();
+                Methods.QueueLiquidatorAsync();
             });
             n.Start();
-            //Task n2 = new Task(() => Methods.DequeueQueueAsync(q, 1));
-            //Task n3 = new Task(() => Methods.DequeueQueueAsync(q, 2));
-            //Task n4 = new Task(() => Methods.DequeueQueueAsync(q, 3));
-            //Task n5 = new Task(() => Methods.DequeueQueueAsync(q, 4));
-            //n.Start();
-            //n2.Start();
-            //n3.Start();
-            //n4.Start();
-            //n5.Start();
+           
 
             Console.ReadKey();
 

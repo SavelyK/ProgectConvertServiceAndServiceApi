@@ -37,7 +37,7 @@ namespace ConversionService.Controllers
                     string name = objectFile.files.FileName;
                     int Id;
                     Random rnd = new Random();
-                    int value = rnd.Next(1, 5);
+                    int value = rnd.Next(0, 4);
                     var ext = Path.GetExtension(name).ToLowerInvariant();
                     if (string.IsNullOrEmpty(ext) || !permittedExtensions.Contains(ext))
                     {

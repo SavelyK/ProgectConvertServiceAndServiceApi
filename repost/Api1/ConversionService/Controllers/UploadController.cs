@@ -49,13 +49,13 @@ namespace ConversionService.Controllers
                         {
                             using (var db = new MyDbContext()) 
                             { var DbModels = db.Set<DbModel>();
-                                DbModels.Add(new DbModel { Path = path + name,FileName = name, LoadTime = DateTime.Now, Indicator=0, Priority = value});
+                                DbModels.Add(new DbModel { Path = path + name,FileName = name, LoadTime = DateTime.Now, Status=0, Priority = value});
                                 db.SaveChanges();
                             }
                             using (var db = new MyDbContext())
                             {
-                                var file = db.DbModels.FirstOrDefault(p => p.Indicator == 0);
-                                file.Indicator = 1;
+                                var file = db.DbModels.FirstOrDefault(p => p.Status == 0);
+                                file.Status = 1;
                                 Id = file.Id;
                                 db.SaveChanges();
                             }

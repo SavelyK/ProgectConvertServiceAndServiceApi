@@ -17,7 +17,7 @@ namespace ConversionService
             builder.Property(s => s.Id).ValueGeneratedOnAdd();
             builder.Property(s => s.FileName).HasMaxLength(100);
             builder.Property(s => s.Path).HasMaxLength(200);
-            builder.Property(s => s.Indicator).HasMaxLength(10);
+            builder.Property(s => s.Status).HasMaxLength(10);
         }
     }
 }

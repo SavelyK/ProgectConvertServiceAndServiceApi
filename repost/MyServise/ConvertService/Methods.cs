@@ -22,10 +22,10 @@ namespace ConvertService
                 {
                     while (true)
                     {
-                        var file = db.DbModels.FirstOrDefault(t => t.Indicator == 1);
+                        var file = db.DbModels.FirstOrDefault(t => t.Status == 1);
                         if (file != null)
                         {
-                            file.Indicator = 2;
+                            file.Status = 2;
                             Reserv t = new Reserv(file.Id, file.Path);
                             db.SaveChanges();
                             q[file.Priority].Enqueue(t);
@@ -46,7 +46,7 @@ namespace ConvertService
                         {
                             int x = Program.queueTaskId.Dequeue();
                             var file = db.DbModels.FirstOrDefault(t => t.Id == x);
-                            file.Indicator = 3;
+                            file.Status = 3;
                             db.SaveChanges();
                         }
                     }

@@ -60,16 +60,20 @@ namespace ConvertService
                 Console.WriteLine("hello");
                 while (true)
                 {
-                    if (q[i].Count() != 0)
+                    Reserv res = new Reserv(0, null);
+                    lock (locker)
                     {
-                        lock (locker)
+                        if (q[i].Count() != 0)
                         {
-                            Reserv res = q[i].Dequeue();
-                            string path = res.FilePath;
-                            DocumentCore docPdf = DocumentCore.Load(path);
-                            docPdf.Save(path.Replace(".docx", ".pdf"));
-                            Program.queueTaskId.Enqueue(res.TaskId);
+                            res = q[i].Dequeue();
                         }
+                    }
+                    if (res.FilePath != null)
+                    {
+                        string path = res.FilePath;
+                        DocumentCore docPdf = DocumentCore.Load(path);
+                        docPdf.Save(path.Replace(".docx", ".pdf"));
+                        Program.queueTaskId.Enqueue(res.TaskId);
                     }
                 }
             });

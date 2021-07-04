@@ -1,12 +1,8 @@
 ﻿using ConfigLibrary;
 using LibraryModels;
 using Microsoft.Extensions.Configuration;
-using SautinSoft.Document;
 using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace ConvertService
@@ -24,19 +20,23 @@ namespace ConvertService
                 db.Database.EnsureCreated();
                 db.SaveChanges();
             }
-
+            queueTaskId = new Queue<int>();
             Queue<Reserv>[] q =new Queue<Reserv>[5];
-            Queue<Reserv> q1 = new Queue<Reserv>();
-            Queue<Reserv> q2 = new Queue<Reserv>();
-            Queue<Reserv> q3 = new Queue<Reserv>();
-            Queue<Reserv> q4 = new Queue<Reserv>();
-            Queue<Reserv> q5 = new Queue<Reserv>();
+            for (int i = 0; i < 5; i++)
+            {
+                q[i] = new Queue<Reserv>();
+            }
+            //Queue<Reserv> q1 = new Queue<Reserv>();
+            //Queue<Reserv> q2 = new Queue<Reserv>();
+            //Queue<Reserv> q3 = new Queue<Reserv>();
+            //Queue<Reserv> q4 = new Queue<Reserv>();
+            //Queue<Reserv> q5 = new Queue<Reserv>();
 
-            q[0] = q1;
-            q[1] = q2;
-            q[2] = q3;
-            q[3] = q4;
-            q[4] = q5;
+            //q[0] = q1;
+            //q[1] = q2;
+            //q[2] = q3;
+            //q[3] = q4;
+            //q[4] = q5;
 
 
          

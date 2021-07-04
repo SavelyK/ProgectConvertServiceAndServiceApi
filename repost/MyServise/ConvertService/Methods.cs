@@ -11,6 +11,7 @@ namespace ConvertService
     static class Methods
     {
         static object locker = new object();
+        static object locker2 = new object();
 
         public async static void EnqueueQueueAsync(Queue<Reserv>[] q)
         {
@@ -27,7 +28,7 @@ namespace ConvertService
                             file.Indicator = 2;
                             Reserv t = new Reserv(file.Id, file.Path);
                             db.SaveChanges();
-                            q[file.Priority - 1].Enqueue(t);
+                            q[file.Priority].Enqueue(t);
                         }
                     }
                 }

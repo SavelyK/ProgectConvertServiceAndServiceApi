@@ -1,8 +1,7 @@
 {
   "ExpandedNodes": [
     "",
-    "\\ConversionService",
-    "\\ConversionService\\wwwroot"
+    "\\ConversionService"
   ],
   "SelectedNode": "\\ConversionService\\MyDbContext.cs",
   "PreviewInSolutionExplorer": false

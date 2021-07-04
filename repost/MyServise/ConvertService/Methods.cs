@@ -26,9 +26,9 @@ namespace ConvertService
                         if (file != null)
                         {
                             file.Status = 2;
-                            Reserv t = new Reserv(file.Id, file.Path);
+                            Reserv res = new Reserv(file.Id, file.Path);
                             db.SaveChanges();
-                            q[file.Priority].Enqueue(t);
+                            q[file.Priority].Enqueue(res);
                         }
                     }
                 }

@@ -21,24 +21,24 @@ namespace ConvertService
                 db.SaveChanges();
             }
             queueTaskId = new Queue<int>();
-            Queue<Reserv>[] q =new Queue<Reserv>[5];
+            Queue<Reserv>[] priorityQueue =new Queue<Reserv>[5];
             for (int i = 0; i < 5; i++)
             {
-                q[i] = new Queue<Reserv>();
+                priorityQueue[i] = new Queue<Reserv>();
             }
 
 
-            Task n = new Task(() =>
+            Task mainTask = new Task(() =>
             {
-                Methods.EnqueueQueueAsync(q);
-                Methods.DequeueQueueAsync(q, 0);
-                Methods.DequeueQueueAsync(q, 1);
-                Methods.DequeueQueueAsync(q, 2);
-                Methods.DequeueQueueAsync(q, 3);
-                Methods.DequeueQueueAsync(q, 4);
+                Methods.EnqueueQueueAsync(priorityQueue);
+                Methods.DequeueQueueAsync(priorityQueue, 0);
+                Methods.DequeueQueueAsync(priorityQueue, 1);
+                Methods.DequeueQueueAsync(priorityQueue, 2);
+                Methods.DequeueQueueAsync(priorityQueue, 3);
+                Methods.DequeueQueueAsync(priorityQueue, 4);
                 Methods.QueueLiquidatorAsync();
             });
-            n.Start();
+            mainTask.Start();
            
 
             Console.ReadKey();

@@ -88,34 +88,39 @@ namespace ConvertService
                 Reserv res;
                 while (true)
                 {
-                    for (int i = 0; i < 5; i++)
+                    if (Program.countTask < Program.maxCountTask + 1)
                     {
-                        if (nameArrayQueues[i].Count() != 0)
+                        for (int i = 0; i < 5; i++)
                         {
-                            differenceInTime[i] = DateTime.Now.Subtract(nameArrayQueues[i].Peek().TimeRegistrInDb).TotalMilliseconds;
-
+                            if (nameArrayQueues[i].Count() != 0)
+                            {
+                                differenceInTime[i] = DateTime.Now.Subtract(nameArrayQueues[i].Peek().TimeRegistrInDb).TotalMilliseconds * (i + 1);
+                            }
+                            else
+                            { differenceInTime[i] = 0; }
                         }
-                        else
-                        { }
-                        
-                    }
+                        if (differenceInTime.Max() != 0)
+                        {
+                            res = nameArrayQueues[Array.IndexOf(differenceInTime, differenceInTime.Max())].Dequeue();
 
+                            Task.Run(() =>
+                            {
+                                Program.countTask++;
+                                ConvertDocxToPdf(res);
+                                Program.countTask--;
+                            });
+                        }
 
-                    res = nameArrayQueues[i].Dequeue();
-
-                    if (nameArrayQueues[i].Count() != 0)
-                    {
-                    }
-
-                    if (res.FilePath != null)
-                    {
-                        string path = res.FilePath;
-                        DocumentCore docPdf = DocumentCore.Load(path);
-                        docPdf.Save(path.Replace(".docx", ".pdf"));
-                        Program.queueTaskId.Enqueue(res.TaskId);
                     }
                 }
             });
+        }
+        public static void ConvertDocxToPdf(Reserv res)
+        {
+            string path = res.FilePath;
+            DocumentCore docPdf = DocumentCore.Load(path);
+            docPdf.Save(path.Replace(".docx", ".pdf"));
+            Program.queueTaskId.Enqueue(res.TaskId);
         }
     }
 }

@@ -9,6 +9,7 @@ namespace ConvertService
 {
     class Program
     {
+        public static int countTask = 0;
         public static Queue<int> queueTaskId;
         static void Main(string[] args)
         {
@@ -30,6 +31,7 @@ namespace ConvertService
 
             Task mainTask = new Task(() =>
             {
+                Methods.TaskManagerAsync(priorityQueue);
                 Methods.EnqueueQueueAsync(priorityQueue);
                 Methods.DequeueQueueAsync(priorityQueue, 0);
                 Methods.DequeueQueueAsync(priorityQueue, 1);

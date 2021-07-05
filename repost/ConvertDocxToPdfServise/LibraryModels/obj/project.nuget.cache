@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "V9cAEXl4FRDpzqVDWs+2TFTMwJGQqPdaw+TeDlSJaLxnMei4crVCuE4xX/EMm12+t+rwEDi+jVCyBZQL9+9FLw==",
+  "dgSpecHash": "61bgUtpDw06ojXLBuHynQCSXLezUwsthfPcafJC3r4aaaeuKh9j4jVGrTCva/qrgTRMUTFwQOOYqtrSxof02dg==",
   "success": true,
-  "projectFilePath": "C:\\Service\\repost\\MyServise\\LibraryModels\\LibraryModels.csproj",
+  "projectFilePath": "C:\\Service\\repost\\ConvertDocxToPdfServise\\LibraryModels\\LibraryModels.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\zakal\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

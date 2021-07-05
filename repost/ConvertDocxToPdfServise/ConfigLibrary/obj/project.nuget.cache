@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ymWu3N9x4ntcoifWTDFv9j2uy167xV6ClsBtLejKMixECgiFsSliF87KrErgDviUaofCAg/A5ACz7/Qq2nY7JA==",
+  "dgSpecHash": "6X7DBxzX5U7T84S9QpO54I5lDZmw9TEc5SEmEQ1wAZECFHwIClGP/pp8XCCEYUb3fGNa1qXDrDRH1wDd5g06kw==",
   "success": true,
-  "projectFilePath": "C:\\Service\\repost\\MyServise\\ConfigLibrary\\ConfigLibrary.csproj",
+  "projectFilePath": "C:\\Service\\repost\\ConvertDocxToPdfServise\\ConfigLibrary\\ConfigLibrary.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\zakal\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",

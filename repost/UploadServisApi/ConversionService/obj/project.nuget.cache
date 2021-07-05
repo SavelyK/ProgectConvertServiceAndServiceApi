@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CJ/wEkiYv7S9WKvoNzv7PyO7kGRK1aX5qMU4Rd7trEL8VdeSoZD0yqMMIWJP51n4fxQYWEGgX6ZLxLnPgIW2mQ==",
+  "dgSpecHash": "8WNADITGneMfE4JuarYyyzhdTEKBrIU6fVsa2onq2KzBE51QaFMogL1tXHU3ulDhl0u7iq9bbPO2iZAsnQ9KnQ==",
   "success": true,
-  "projectFilePath": "C:\\Service\\repost\\Api1\\ConversionService\\ConversionService.csproj",
+  "projectFilePath": "C:\\Service\\repost\\UploadServisApi\\ConversionService\\ConversionService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\zakal\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

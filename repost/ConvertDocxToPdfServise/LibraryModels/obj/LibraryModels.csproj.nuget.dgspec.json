@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Service\\repost\\MyServise\\LibraryModels\\LibraryModels.csproj": {}
+    "C:\\Service\\repost\\ConvertDocxToPdfServise\\LibraryModels\\LibraryModels.csproj": {}
   },
   "projects": {
-    "C:\\Service\\repost\\MyServise\\LibraryModels\\LibraryModels.csproj": {
+    "C:\\Service\\repost\\ConvertDocxToPdfServise\\LibraryModels\\LibraryModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Service\\repost\\MyServise\\LibraryModels\\LibraryModels.csproj",
+        "projectUniqueName": "C:\\Service\\repost\\ConvertDocxToPdfServise\\LibraryModels\\LibraryModels.csproj",
         "projectName": "LibraryModels",
-        "projectPath": "C:\\Service\\repost\\MyServise\\LibraryModels\\LibraryModels.csproj",
+        "projectPath": "C:\\Service\\repost\\ConvertDocxToPdfServise\\LibraryModels\\LibraryModels.csproj",
         "packagesPath": "C:\\Users\\zakal\\.nuget\\packages\\",
-        "outputPath": "C:\\Service\\repost\\MyServise\\LibraryModels\\obj\\",
+        "outputPath": "C:\\Service\\repost\\ConvertDocxToPdfServise\\LibraryModels\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

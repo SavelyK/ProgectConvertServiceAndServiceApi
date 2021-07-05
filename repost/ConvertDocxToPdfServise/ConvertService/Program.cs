@@ -10,6 +10,7 @@ namespace ConvertService
     class Program
     {
         public static int countTask = 0;
+        public static int maxCountTask = 10;
         public static Queue<int> queueTaskId;
         static void Main(string[] args)
         {
@@ -31,14 +32,9 @@ namespace ConvertService
 
             Task mainTask = new Task(() =>
             {
-                Methods.TaskManagerAsync(priorityQueue);
                 Methods.EnqueueQueueAsync(priorityQueue);
-                Methods.DequeueQueueAsync(priorityQueue, 0);
-                Methods.DequeueQueueAsync(priorityQueue, 1);
-                Methods.DequeueQueueAsync(priorityQueue, 2);
-                Methods.DequeueQueueAsync(priorityQueue, 3);
-                Methods.DequeueQueueAsync(priorityQueue, 4);
-                Methods.QueueLiquidatorAsync();
+                Methods.TaskManagerAsync(priorityQueue);
+                //Methods.QueueLiquidatorAsync();
             });
             mainTask.Start();
            

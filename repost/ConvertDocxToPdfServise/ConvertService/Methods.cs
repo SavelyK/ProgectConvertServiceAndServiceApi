@@ -103,12 +103,14 @@ namespace ConvertService
                         {
                             res = nameArrayQueues[Array.IndexOf(differenceInTime, differenceInTime.Max())].Dequeue();
 
-                            Task.Run(() =>
+                          Task task= new Task(() =>
                             {
                                 Program.countTask++;
+                                Console.WriteLine(Program.countTask);
                                 ConvertDocxToPdf(res);
                                 Program.countTask--;
                             });
+                            task.Start();
                         }
 
                     }

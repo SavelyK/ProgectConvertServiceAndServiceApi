@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\ConversionService"
+    "\\ConversionService",
+    "\\ConversionService\\Controllers"
   ],
-  "SelectedNode": "\\ConversionService\\MyDbContext.cs",
+  "SelectedNode": "\\ConversionService\\Controllers\\UploadController.cs",
   "PreviewInSolutionExplorer": false
 }

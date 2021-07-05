@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ConvertService"
   ],
-  "SelectedNode": "\\MyServise.sln",
+  "SelectedNode": "\\ConvertService\\Program.cs",
   "PreviewInSolutionExplorer": false
 }

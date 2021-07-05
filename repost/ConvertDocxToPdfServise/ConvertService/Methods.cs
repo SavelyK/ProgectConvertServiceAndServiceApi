@@ -84,27 +84,29 @@ namespace ConvertService
         {
             await Task.Run(() =>
             {
-                DateTime[] loadTime = new DateTime[5];
+                double[] differenceInTime = new double[5];
                 Reserv res;
                 while (true)
                 {
                     for (int i = 0; i < 5; i++)
                     {
-                        if (nameArrayQueues[i].Count() != 0) 
-                        { 
-                            loadTime[i] = nameArrayQueues[i].Peek().TimeRegistrInDb;
-                            
-                        }
-                        if ()
-                    }
-                       
-                    
-                        res = nameArrayQueues[i].Dequeue();
-                    
-                    if (nameArrayQueues[i].Count() != 0)
+                        if (nameArrayQueues[i].Count() != 0)
                         {
+                            differenceInTime[i] = DateTime.Now.Subtract(nameArrayQueues[i].Peek().TimeRegistrInDb).TotalMilliseconds;
+
                         }
-                
+                        else
+                        { }
+                        
+                    }
+
+
+                    res = nameArrayQueues[i].Dequeue();
+
+                    if (nameArrayQueues[i].Count() != 0)
+                    {
+                    }
+
                     if (res.FilePath != null)
                     {
                         string path = res.FilePath;

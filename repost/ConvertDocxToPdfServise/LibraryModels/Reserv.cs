@@ -8,10 +8,12 @@ namespace LibraryModels
     {
         public int TaskId { get; set; }
         public string FilePath { get; set; }
-    public Reserv(int taskId, string filePath)
+        public DateTime TimeRegistrInDb { get; set; }
+    public Reserv(int taskId, string filePath, DateTime timeRegistrInDb)
     {
         TaskId = taskId;
         FilePath = filePath;
+        TimeRegistrInDb = timeRegistrInDb;
     }
     }
 }

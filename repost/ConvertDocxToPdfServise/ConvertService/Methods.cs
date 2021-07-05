@@ -3,6 +3,7 @@ using LibraryModels;
 using SautinSoft.Document;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -26,7 +27,7 @@ namespace ConvertService
                         if (file != null)
                         {
                             file.Status = 2;
-                            Reserv res = new Reserv(file.Id, file.Path);
+                            Reserv res = new Reserv(file.Id, file.Path, file.LoadTime);
                             db.SaveChanges();
                             nameArrayQueues[file.Priority].Enqueue(res);
                         }
@@ -61,7 +62,7 @@ namespace ConvertService
                 Console.WriteLine("hello");
                 while (true)
                 {
-                    Reserv res = new Reserv(0, null);
+                    Reserv res = new Reserv(0, null, DateTime.Now);
                     lock (locker)
                     {
                         if (nameArrayQueues[numberPriorityQueue].Count() != 0)
@@ -69,6 +70,41 @@ namespace ConvertService
                             res = nameArrayQueues[numberPriorityQueue].Dequeue();
                         }
                     }
+                    if (res.FilePath != null)
+                    {
+                        string path = res.FilePath;
+                        DocumentCore docPdf = DocumentCore.Load(path);
+                        docPdf.Save(path.Replace(".docx", ".pdf"));
+                        Program.queueTaskId.Enqueue(res.TaskId);
+                    }
+                }
+            });
+        }
+        public async static void TaskManagerAsync(Queue<Reserv>[] nameArrayQueues)
+        {
+            await Task.Run(() =>
+            {
+                DateTime[] loadTime = new DateTime[5];
+                Reserv res;
+                while (true)
+                {
+                    for (int i = 0; i < 5; i++)
+                    {
+                        if (nameArrayQueues[i].Count() != 0) 
+                        { 
+                            loadTime[i] = nameArrayQueues[i].Peek().TimeRegistrInDb;
+                            
+                        }
+                        if ()
+                    }
+                       
+                    
+                        res = nameArrayQueues[i].Dequeue();
+                    
+                    if (nameArrayQueues[i].Count() != 0)
+                        {
+                        }
+                
                     if (res.FilePath != null)
                     {
                         string path = res.FilePath;

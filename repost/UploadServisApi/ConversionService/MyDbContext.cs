@@ -13,7 +13,7 @@ namespace ConversionService
         
         public DbSet<DbModel> DbModels { get; set; }
         public MyDbContext()
-             : this("Server=localhost;Database=Data22;Trusted_Connection=True;")
+             : this("Server=localhost;Database=Data24;Trusted_Connection=True;")
         {
         }
         public MyDbContext(string connectionString)

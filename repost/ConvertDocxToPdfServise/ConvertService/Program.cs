@@ -1,6 +1,7 @@
 ﻿using ConfigLibrary;
 using LibraryModels;
 using Microsoft.Extensions.Configuration;
+using SautinSoft.Document;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -28,13 +29,18 @@ namespace ConvertService
             {
                 priorityQueue[i] = new Queue<Reserv>();
             }
-
+            DocumentCore[] convert = new DocumentCore[maxCountTask - 1];
+            for (int i = 0; i < maxCountTask - 1; i++)
+            {
+                convert[i] = new DocumentCore();
+            }
+            
 
             Task mainTask = new Task(() =>
             {
                 Methods.EnqueueQueueAsync(priorityQueue);
-                Methods.TaskManagerAsync(priorityQueue);
-                //Methods.QueueLiquidatorAsync();
+                Methods.TaskManagerAsync(priorityQueue, convert);
+                Methods.QueueLiquidatorAsync();
             });
             mainTask.Start();
            

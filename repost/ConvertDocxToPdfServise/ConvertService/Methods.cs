@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ConvertService
@@ -15,28 +16,8 @@ namespace ConvertService
         static object locker2 = new object();
 
 
-        public async static void EnqueueQueueAsync(Queue<Reserv>[] nameArrayQueues)
-        {
-            Console.WriteLine("hello");
-            await Task.Run(() =>
-            {
-                using (var db = new MyDbContext())
-                {
-                    while (true)
-                    {
-                        var file = db.DbModels.FirstOrDefault(t => t.Status == 1);
-                        if (file != null)
-                        {
-                            file.Status = 2;
-                            Reserv res = new Reserv(file.Id, file.Path, file.LoadTime);
-                            db.SaveChanges();
-                            nameArrayQueues[file.Priority].Enqueue(res);
-                        }
-                    }
-                }
-            });
-        }
-        public async static void QueueLiquidatorAsync()
+       
+        public async static void QueueLiquidatorAsync() //a method that records completed tasks in the database
         {
             await Task.Run(() =>
             {
@@ -56,33 +37,8 @@ namespace ConvertService
             });
         }
 
-        public async static void DequeueQueueAsync(Queue<Reserv>[] nameArrayQueues, int numberPriorityQueue)
-        {
-            await Task.Run(() =>
-            {
-                Console.WriteLine("hello");
-                while (true)
-                {
-                    Reserv res = new Reserv(0, null, DateTime.Now);
-                    lock (locker)
-                    {
-                        if (nameArrayQueues[numberPriorityQueue].Count() != 0)
-                        {
-                            res = nameArrayQueues[numberPriorityQueue].Dequeue();
-                        }
-                    }
-                    if (res.FilePath != null)
-                    {
-                        string path = res.FilePath;
-                       
-                        DocumentCore docPdf = DocumentCore.Load(path);
-                        docPdf.Save(path.Replace(".docx", ".pdf"));
-                        Program.queueTaskId.Enqueue(res.TaskId);
-                    }
-                }
-            });
-        }
-        public async static void TaskManagerAsync(Queue<Reserv>[] nameArrayQueues, DocumentCore[] convert) //a method that creates a fixed number of file conversion tasks
+        
+        public async static void TaskManagerAsync(Queue<Reserv>[] nameArrayQueues, DocumentCore[] convert) //this method selects and creates tasks
         {
             await Task.Run(() =>
             {
@@ -91,7 +47,8 @@ namespace ConvertService
                                                       // "Queue weight" parameter by which an element is selected from an array of queues with different priorities
                 Reserv res;
                 while (true)
-                { 
+                {
+                    Thread.Sleep(1000);
                     if (Program.countTask < Program.maxCountTask + 1)
                     {
                         for (int i = 0; i < 5; i++)
@@ -111,19 +68,67 @@ namespace ConvertService
 
                             Task.Run(() =>       //block for creating a task for converting a file
                            {
-                                Program.countTask++;
                                 string path = res.FilePath;
+                               
+                                Program.countTask++;
                                 convert[Program.countTask-1] = DocumentCore.Load(path);
                                 convert[Program.countTask-1].Save(path.Replace(".docx", ".pdf"));
+                               
                                 Program.countTask--;
+                               Console.WriteLine(Program.countTask);
                                 Program.queueTaskId.Enqueue(res.TaskId);
                             });
-                            
                         }
                     }
                 }
             });
         }
-       
+        public async static void EnqueueQueueAsync(Queue<Reserv>[] nameArrayQueues) //method for creating a queue of data for processing by the task manager
+        {
+            Console.WriteLine("hello");
+            await Task.Run(() =>
+            {
+                using (var db = new MyDbContext())
+                {
+                    while (true)
+                    {
+                        var file = db.DbModels.FirstOrDefault(t => t.Status == 1);
+                        if (file != null)
+                        {
+                            file.Status = 2;
+                            Reserv res = new Reserv(file.Id, file.Path, file.LoadTime);
+                            db.SaveChanges();
+                            nameArrayQueues[file.Priority].Enqueue(res);
+                        }
+                    }
+                }
+            });
+        } 
+        //public async static void DequeueQueueAsync(Queue<Reserv>[] nameArrayQueues, int numberPriorityQueue)
+        //{
+        //    await Task.Run(() =>
+        //    {
+        //        Console.WriteLine("hello");
+        //        while (true)
+        //        {
+        //            Reserv res = new Reserv(0, null, DateTime.Now);
+        //            lock (locker)
+        //            {
+        //                if (nameArrayQueues[numberPriorityQueue].Count() != 0)
+        //                {
+        //                    res = nameArrayQueues[numberPriorityQueue].Dequeue();
+        //                }
+        //            }
+        //            if (res.FilePath != null)
+        //            {
+        //                string path = res.FilePath;
+                       
+        //                DocumentCore docPdf = DocumentCore.Load(path);
+        //                docPdf.Save(path.Replace(".docx", ".pdf"));
+        //                Program.queueTaskId.Enqueue(res.TaskId);
+        //            }
+        //        }
+        //    });
+        //} 
     }
 }

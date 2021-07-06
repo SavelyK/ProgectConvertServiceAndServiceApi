@@ -186,3 +186,4 @@ C:\Service\repost\UploadServisApi\ConversionService\obj\Debug\netcoreapp3.1\Conv
 C:\Service\repost\UploadServisApi\ConversionService\obj\Debug\netcoreapp3.1\ConversionService.dll
 C:\Service\repost\UploadServisApi\ConversionService\obj\Debug\netcoreapp3.1\ConversionService.pdb
 C:\Service\repost\UploadServisApi\ConversionService\obj\Debug\netcoreapp3.1\ConversionService.genruntimeconfig.cache
+C:\Service\repost\UploadServisApi\ConversionService\obj\Debug\netcoreapp3.1\ConversionService.csproj.AssemblyReference.cache

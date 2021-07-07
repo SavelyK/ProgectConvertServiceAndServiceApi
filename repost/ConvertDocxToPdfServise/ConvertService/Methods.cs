@@ -19,8 +19,9 @@ namespace ConvertService
        
         public async static Task QueueLiquidatorAsync() //a method that records completed tasks in the database
         {
-            await Task.Run(() =>
+            await Task.Run(async() =>
             {
+                await Task.Delay(100);
                 using (var db = new MyDbContext())
                 {
                     while (true)
@@ -29,8 +30,11 @@ namespace ConvertService
                         {
                             int taskId = Program.queueTaskId.Dequeue();
                             var file = db.DbModels.FirstOrDefault(t => t.Id == taskId);
+                            if (file != null)
+                            { 
                             file.Status = 3;
                             db.SaveChanges();
+                            }
                         }
                     }
                 }
@@ -40,7 +44,7 @@ namespace ConvertService
 
         public async static Task TaskManagerAsync(Queue<Reserv>[] nameArrayQueues) //this method selects and creates tasks
         {
-             await Task.Run(() =>
+              Task.Run(async() =>
             {
             // the algorithm for selecting an item from queues with different priorities for creating a task consists of three stages
             double[] queueWeight = new double[5]; // Stage 1: allocating space to store the "queue weight".
@@ -48,6 +52,7 @@ namespace ConvertService
             Reserv res;
             while (true)
             {
+                  await Task.Delay(50);
                 if (Program.countTask < Program.maxCountTask + 1)
                 {
                     for (int i = 0; i < 5; i++)
@@ -64,16 +69,15 @@ namespace ConvertService
                     if (queueWeight.Max() != 0)
                     {
                         res = nameArrayQueues[Array.IndexOf(queueWeight, queueWeight.Max())].Dequeue(); // Stage 3: Selecting an item to create a task
-                        Task.Run( () =>       //block for creating a task for converting a file
+                        Task.Run(() =>       //block for creating a task for converting a file
                             {
-                                char[] strPathFromArrayChar = res.FilePath.ToCharArray();
-                                Program.queueTaskId.Enqueue(res.TaskId); 
-                                string path = new string(strPathFromArrayChar);
+                                string path = res.FilePath;
                                 Program.countTask++;
                                 DocumentCore docPdf = DocumentCore.Load(path);
                                 docPdf.Save(path.Replace(".docx", ".pdf"));
                                 Program.countTask--;
                                 Console.WriteLine(Program.countTask);
+                                Program.queueTaskId.Enqueue(res.TaskId);
                             }); 
                         }
                     }

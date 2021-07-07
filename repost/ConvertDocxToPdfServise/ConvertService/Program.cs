@@ -11,7 +11,7 @@ namespace ConvertService
     class Program
     {
         public static int countTask = 0;
-        public static int maxCountTask = 10;
+        public static int maxCountTask = 4;
         public static Queue<int> queueTaskId;
         static void Main(string[] args)
         {
@@ -29,17 +29,13 @@ namespace ConvertService
             {
                 priorityQueue[i] = new Queue<Reserv>();
             }
-            DocumentCore[] convert = new DocumentCore[maxCountTask - 1];
-            for (int i = 0; i < maxCountTask - 1; i++)
-            {
-                convert[i] = new DocumentCore();
-            }
+          
             
 
             Task mainTask = new Task(() =>
             {
                 Methods.EnqueueQueueAsync(priorityQueue);
-                Methods.TaskManagerAsync(priorityQueue, convert);
+                Methods.TaskManagerAsync(priorityQueue);
                 Methods.QueueLiquidatorAsync();
             });
             mainTask.Start();

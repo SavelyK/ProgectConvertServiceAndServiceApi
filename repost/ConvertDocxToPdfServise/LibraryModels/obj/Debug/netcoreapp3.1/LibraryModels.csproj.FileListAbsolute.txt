@@ -32,3 +32,4 @@ C:\Service\repost\ConvertDocxToPdfServise\LibraryModels\obj\Debug\netcoreapp3.1\
 C:\Service\repost\ConvertDocxToPdfServise\LibraryModels\obj\Debug\netcoreapp3.1\LibraryModels.dll
 C:\Service\repost\ConvertDocxToPdfServise\LibraryModels\obj\Debug\netcoreapp3.1\LibraryModels.pdb
 C:\Service\repost\ConvertDocxToPdfServise\LibraryModels\obj\Debug\netcoreapp3.1\LibraryModels.genruntimeconfig.cache
+C:\Service\repost\ConvertDocxToPdfServise\LibraryModels\obj\Debug\netcoreapp3.1\LibraryModels.csproj.AssemblyReference.cache

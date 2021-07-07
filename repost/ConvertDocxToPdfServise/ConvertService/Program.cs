@@ -34,9 +34,9 @@ namespace ConvertService
 
             Task mainTask = new Task(() =>
             {
-                Methods.EnqueueQueueAsync(priorityQueue);
-                Methods.TaskManagerAsync(priorityQueue);
-                Methods.QueueLiquidatorAsync();
+               Task enqueueQueue = Methods.EnqueueQueueAsync(priorityQueue);
+               Task taskManager = Methods.TaskManagerAsync(priorityQueue);
+               Task liquidatorQueue = Methods.QueueLiquidatorAsync();
             });
             mainTask.Start();
            

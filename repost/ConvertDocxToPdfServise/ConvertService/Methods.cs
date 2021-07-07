@@ -44,7 +44,7 @@ namespace ConvertService
 
         public async static Task TaskManagerAsync(Queue<Reserv>[] nameArrayQueues) //this method selects and creates tasks
         {
-              Task.Run(async() =>
+             Task.Run(async() =>
             {
             // the algorithm for selecting an item from queues with different priorities for creating a task consists of three stages
             double[] queueWeight = new double[5]; // Stage 1: allocating space to store the "queue weight".
@@ -52,8 +52,8 @@ namespace ConvertService
             Reserv res;
             while (true)
             {
-                  await Task.Delay(50);
-                if (Program.countTask < Program.maxCountTask + 1)
+                  await Task.Delay(100);
+                if (Program.countTask < Program.maxCountTask)
                 {
                     for (int i = 0; i < 5; i++)
                     {
@@ -69,31 +69,23 @@ namespace ConvertService
                     if (queueWeight.Max() != 0)
                     {
                         res = nameArrayQueues[Array.IndexOf(queueWeight, queueWeight.Max())].Dequeue(); // Stage 3: Selecting an item to create a task
-                        Task.Run(() =>       //block for creating a task for converting a file
+                         Task.Run(() =>       //block for creating a task for converting a file
                             {
-                                string path = res.FilePath;
+                               
                                 Program.countTask++;
+                                Console.WriteLine($"{Task.CurrentId} сработал в потоке: {Thread.CurrentThread.ManagedThreadId}.");
+                                string path = res.FilePath;
                                 DocumentCore docPdf = DocumentCore.Load(path);
                                 docPdf.Save(path.Replace(".docx", ".pdf"));
-                                Program.countTask--;
-                                Console.WriteLine(Program.countTask);
                                 Program.queueTaskId.Enqueue(res.TaskId);
+                                Program.countTask--;
                             }); 
                         }
                     }
                 }
             });    
         }
-        public static void Convert(Reserv res)
-        {
-            string path = res.FilePath;
-            Program.countTask++;
-            DocumentCore docPdf = DocumentCore.Load(path);
-            docPdf.Save(path.Replace(".docx", ".pdf"));
-            Program.countTask--;
-            Console.WriteLine(Program.countTask);
-            Program.queueTaskId.Enqueue(res.TaskId);
-        }
+     
         public async static Task EnqueueQueueAsync(Queue<Reserv>[] nameArrayQueues) //method for creating a queue of data for processing by the task manager
         {
             Console.WriteLine("hello");

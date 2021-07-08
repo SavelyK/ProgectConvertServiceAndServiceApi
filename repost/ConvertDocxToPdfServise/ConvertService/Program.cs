@@ -11,6 +11,9 @@ namespace ConvertService
 {
     class Program
     {
+        internal static double[] priorityRatio = new double[5] { 1.0, 1.9, 4.2, 7.3 , 9.0 }; //priority factor for selecting an item from queues with
+                                                                                             //different priorities using a selection algorithm based on
+                                                                                             //the waiting time and the given factor
 
         private static readonly int limitedTasks = 5;
         public static int countTasks = 0;

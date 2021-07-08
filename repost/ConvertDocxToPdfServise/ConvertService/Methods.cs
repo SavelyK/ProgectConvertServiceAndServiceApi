@@ -38,19 +38,23 @@ namespace ConvertService
             });
         }
 
-        public  static Reserv SelectClient(Queue<Reserv>[] nameArrayQueues) 
+        public  static Reserv SelectClient(Queue<Reserv>[] nameArrayQueues) //selection algorithm from queues with different priorities.
         {
             double[] queueWeight = new double[5];
             do
             {
+            for (int i = 0; i < 5; i++)
+            {
+                queueWeight[i] = 0.0;
+            }
                 for (int i = 0; i < 5; i++)
                 {
                     if (nameArrayQueues[i].Count() != 0)
                     {
-                        queueWeight[i] = DateTime.Now.Subtract(nameArrayQueues[i].Peek().TimeRegistrInDb).TotalMilliseconds * (i + 1);
+                        queueWeight[i] = DateTime.Now.Subtract(nameArrayQueues[i].Peek().TimeRegistrInDb).TotalMilliseconds * (Program.priorityRatio[i]);
                     }
                     else
-                    { queueWeight[i] = 0; }
+                    { queueWeight[i] = 0.0; }
                 }
             }
             while (queueWeight.Max() == 0);
@@ -60,7 +64,7 @@ namespace ConvertService
 
          
 
-        public static void Convert(Reserv res)
+        public static void Convert(Reserv res) //convert doc to pdf. Using package sautinsoft.socument.
         {
            Console.WriteLine($"задача на конвертацию файла номер: {Task.CurrentId} сработала в потоке: {Thread.CurrentThread.ManagedThreadId}.");
            string path = res.FilePath;

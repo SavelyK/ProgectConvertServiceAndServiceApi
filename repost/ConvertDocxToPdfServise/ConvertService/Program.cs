@@ -11,7 +11,7 @@ namespace ConvertService
     class Program
     {
         public static int countTask = 0;
-        public static int maxCountTask = 10;
+        public static int maxCountTask = 6;
         public static Queue<int> queueTaskId;
         static void Main(string[] args)
         {

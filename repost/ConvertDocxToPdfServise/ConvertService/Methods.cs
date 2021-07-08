@@ -42,18 +42,17 @@ namespace ConvertService
         }
 
 
-        public async static Task TaskManagerAsync(Queue<Reserv>[] nameArrayQueues) //this method selects and creates tasks
+        public async static Task TaskManagerAsync( Queue<Reserv>[] nameArrayQueues) //this method selects and creates tasks
         {
-             Task.Run(async() =>
-            {
+           
             // the algorithm for selecting an item from queues with different priorities for creating a task consists of three stages
             double[] queueWeight = new double[5]; // Stage 1: allocating space to store the "queue weight".
                                                   // "Queue weight" parameter by which an element is selected from an array of queues with different priorities
             Reserv res;
             while (true)
             {
-                  await Task.Delay(100);
-                if (Program.countTask < Program.maxCountTask)
+                await Task.Delay(100);
+                if (Program.countTask < Program.maxCountTask+1)
                 {
                     for (int i = 0; i < 5; i++)
                     {
@@ -69,21 +68,21 @@ namespace ConvertService
                     if (queueWeight.Max() != 0)
                     {
                         res = nameArrayQueues[Array.IndexOf(queueWeight, queueWeight.Max())].Dequeue(); // Stage 3: Selecting an item to create a task
-                         Task.Run(() =>       //block for creating a task for converting a file
-                            {
-                               
-                                Program.countTask++;
-                                Console.WriteLine($"{Task.CurrentId} сработал в потоке: {Thread.CurrentThread.ManagedThreadId}.");
-                                string path = res.FilePath;
-                                DocumentCore docPdf = DocumentCore.Load(path);
-                                docPdf.Save(path.Replace(".docx", ".pdf"));
-                                Program.queueTaskId.Enqueue(res.TaskId);
-                                Program.countTask--;
-                            }); 
+                        Task.Run(() => Convert(res)    //block for creating a task for converting a file
+                            ); 
                         }
                     }
-                }
-            });    
+                }        
+        }
+        public static void Convert(Reserv res)
+        {
+           Program.countTask++;
+           Console.WriteLine($"задача на конвертацию файла номер: {Task.CurrentId} сработала в потоке: {Thread.CurrentThread.ManagedThreadId}.");
+           string path = res.FilePath;
+           DocumentCore docPdf = DocumentCore.Load(path);
+           docPdf.Save(path.Replace(".docx", ".pdf"));
+           Program.queueTaskId.Enqueue(res.TaskId);
+           Program.countTask--;
         }
      
         public async static Task EnqueueQueueAsync(Queue<Reserv>[] nameArrayQueues) //method for creating a queue of data for processing by the task manager
@@ -107,31 +106,5 @@ namespace ConvertService
                 }
             });
         } 
-        //public async static void DequeueQueueAsync(Queue<Reserv>[] nameArrayQueues, int numberPriorityQueue)
-        //{
-        //    await Task.Run(() =>
-        //    {
-        //        Console.WriteLine("hello");
-        //        while (true)
-        //        {
-        //            Reserv res = new Reserv(0, null, DateTime.Now);
-        //            lock (locker)
-        //            {
-        //                if (nameArrayQueues[numberPriorityQueue].Count() != 0)
-        //                {
-        //                    res = nameArrayQueues[numberPriorityQueue].Dequeue();
-        //                }
-        //            }
-        //            if (res.FilePath != null)
-        //            {
-        //                string path = res.FilePath;
-                       
-        //                DocumentCore docPdf = DocumentCore.Load(path);
-        //                docPdf.Save(path.Replace(".docx", ".pdf"));
-        //                Program.queueTaskId.Enqueue(res.TaskId);
-        //            }
-        //        }
-        //    });
-        //} 
     }
 }

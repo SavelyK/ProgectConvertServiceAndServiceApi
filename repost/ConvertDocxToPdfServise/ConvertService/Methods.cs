@@ -4,6 +4,7 @@ using SautinSoft.Document;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -72,7 +73,7 @@ namespace ConvertService
                             );
                         taskConvert.Start(scheduler);
                         }
-                    }
+                }
                 }        
         }
         public static void Convert(Reserv res)
@@ -80,8 +81,13 @@ namespace ConvertService
            ++Program.countTasks;
            Console.WriteLine($"задача на конвертацию файла номер: {Task.CurrentId} сработала в потоке: {Thread.CurrentThread.ManagedThreadId}.");
            string path = res.FilePath;
-           DocumentCore docPdf = DocumentCore.Load(path);
-           docPdf.Save(path.Replace(".docx", ".pdf"));
+            byte[] fileBytes = File.ReadAllBytes(path);
+            DocumentCore dc = null;
+            using (MemoryStream docxStream = new MemoryStream(fileBytes)) 
+            {
+              dc = DocumentCore.Load(docxStream, new DocxLoadOptions());
+              dc.Save(path.Replace(".docx", ".pdf"));
+            }
            Program.queueTaskId.Enqueue(res.TaskId);
            --Program.countTasks;
         }

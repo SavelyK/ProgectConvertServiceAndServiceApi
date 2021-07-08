@@ -1,9 +1,10 @@
 {
   "ExpandedNodes": [
     "",
+    "\\ConfigLibrary",
     "\\ConvertService",
     "\\LibraryModels"
   ],
-  "SelectedNode": "\\MyServise.sln",
+  "SelectedNode": "\\ConfigLibrary\\MyDbContext.cs",
   "PreviewInSolutionExplorer": false
 }

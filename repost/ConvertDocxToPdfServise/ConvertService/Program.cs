@@ -17,6 +17,7 @@ namespace ConvertService
         public static Queue<int> queueTaskId;
         static void Main(string[] args)
         {
+            TaskScheduler scheduler = new LimitedConcurrencyTaskScheduler(limitedTasks);
             IConfiguration config = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json", true, true)
                 .Build();
@@ -32,16 +33,27 @@ namespace ConvertService
                 priorityQueue[i] = new Queue<Reserv>();
             }
 
-            
+
+          
+
 
             Task mainTask = new Task(() =>
             {
                Task enqueueQueue = Methods.EnqueueQueueAsync(priorityQueue);
-               Task taskManager = Methods.TaskManagerAsync(priorityQueue, limitedTasks);
+               //Task taskManager = Methods.TaskManager(priorityQueue);
                Task liquidatorQueue = Methods.QueueLiquidatorAsync();
             });
             mainTask.Start();
            
+            Task taskConveer =  Task.Run(()  =>
+            {
+                while (true) 
+                {
+                   Reserv res =  Methods.SelectClient(priorityQueue);
+                   Task taskConvert = new Task(() => Methods.Convert(res));
+                   taskConvert.Start(scheduler);
+                }
+            });
 
             Console.ReadKey();
 

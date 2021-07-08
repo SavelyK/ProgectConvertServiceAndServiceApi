@@ -11,6 +11,8 @@ namespace ConvertService
 {
     class Program
     {
+
+        private static readonly int limitedTasks = 5;
         public static int countTasks = 0;
         public static Queue<int> queueTaskId;
         static void Main(string[] args)
@@ -35,7 +37,7 @@ namespace ConvertService
             Task mainTask = new Task(() =>
             {
                Task enqueueQueue = Methods.EnqueueQueueAsync(priorityQueue);
-               Task taskManager = Methods.TaskManagerAsync(priorityQueue, 10);
+               Task taskManager = Methods.TaskManagerAsync(priorityQueue, limitedTasks);
                Task liquidatorQueue = Methods.QueueLiquidatorAsync();
             });
             mainTask.Start();

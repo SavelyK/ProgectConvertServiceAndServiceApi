@@ -13,11 +13,7 @@ namespace ConvertService
 {
     static class Methods
     {
-        static object locker = new object();
-        static object locker2 = new object();
 
-
-       
         public async static Task QueueLiquidatorAsync() //a method that records completed tasks in the database
         {
             await Task.Run(async() =>
@@ -82,10 +78,9 @@ namespace ConvertService
            Console.WriteLine($"задача на конвертацию файла номер: {Task.CurrentId} сработала в потоке: {Thread.CurrentThread.ManagedThreadId}.");
            string path = res.FilePath;
             byte[] fileBytes = File.ReadAllBytes(path);
-            DocumentCore dc = null;
             using (MemoryStream docxStream = new MemoryStream(fileBytes)) 
             {
-              dc = DocumentCore.Load(docxStream, new DocxLoadOptions());
+              DocumentCore  dc = DocumentCore.Load(docxStream, new DocxLoadOptions());
               dc.Save(path.Replace(".docx", ".pdf"));
             }
            Program.queueTaskId.Enqueue(res.TaskId);

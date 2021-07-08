@@ -42,9 +42,9 @@ namespace ConvertService
         }
 
 
-        public async static Task TaskManagerAsync( Queue<Reserv>[] nameArrayQueues) //this method selects and creates tasks
+        public async static Task TaskManagerAsync( Queue<Reserv>[] nameArrayQueues, int limitedTasks) //this method selects and creates tasks
         {
-           
+            TaskScheduler scheduler = new LimitedConcurrencyTaskScheduler(limitedTasks);
             // the algorithm for selecting an item from queues with different priorities for creating a task consists of three stages
             double[] queueWeight = new double[5]; // Stage 1: allocating space to store the "queue weight".
                                                   // "Queue weight" parameter by which an element is selected from an array of queues with different priorities
@@ -52,7 +52,7 @@ namespace ConvertService
             while (true)
             {
                 await Task.Delay(100);
-                if (Program.countTask < Program.maxCountTask+1)
+                if (Program.countTasks < limitedTasks+1)
                 {
                     for (int i = 0; i < 5; i++)
                     {
@@ -68,21 +68,22 @@ namespace ConvertService
                     if (queueWeight.Max() != 0)
                     {
                         res = nameArrayQueues[Array.IndexOf(queueWeight, queueWeight.Max())].Dequeue(); // Stage 3: Selecting an item to create a task
-                        Task.Run(() => Convert(res)    //block for creating a task for converting a file
-                            ); 
+                       Task taskConvert = new Task(() => Convert(res)    //block for creating a task for converting a file
+                            );
+                        taskConvert.Start(scheduler);
                         }
                     }
                 }        
         }
         public static void Convert(Reserv res)
         {
-           Program.countTask++;
+           ++Program.countTasks;
            Console.WriteLine($"задача на конвертацию файла номер: {Task.CurrentId} сработала в потоке: {Thread.CurrentThread.ManagedThreadId}.");
            string path = res.FilePath;
            DocumentCore docPdf = DocumentCore.Load(path);
            docPdf.Save(path.Replace(".docx", ".pdf"));
            Program.queueTaskId.Enqueue(res.TaskId);
-           Program.countTask--;
+           --Program.countTasks;
         }
      
         public async static Task EnqueueQueueAsync(Queue<Reserv>[] nameArrayQueues) //method for creating a queue of data for processing by the task manager

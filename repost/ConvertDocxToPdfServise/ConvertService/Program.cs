@@ -5,13 +5,13 @@ using SautinSoft.Document;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using ConvertService.Test;
 
 namespace ConvertService
 {
     class Program
     {
-        public static int countTask = 0;
-        public static int maxCountTask = 6;
+        public static int countTasks = 0;
         public static Queue<int> queueTaskId;
         static void Main(string[] args)
         {
@@ -29,13 +29,13 @@ namespace ConvertService
             {
                 priorityQueue[i] = new Queue<Reserv>();
             }
-          
+
             
 
             Task mainTask = new Task(() =>
             {
                Task enqueueQueue = Methods.EnqueueQueueAsync(priorityQueue);
-               Task taskManager = Methods.TaskManagerAsync(priorityQueue);
+               Task taskManager = Methods.TaskManagerAsync(priorityQueue, 10);
                Task liquidatorQueue = Methods.QueueLiquidatorAsync();
             });
             mainTask.Start();

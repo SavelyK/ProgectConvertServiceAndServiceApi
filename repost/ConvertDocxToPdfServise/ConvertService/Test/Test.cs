@@ -1,11 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 
 namespace ConvertService.Test
 {
-    class Test
+    public static class Test
     {
+        public static void ShowTheadPoolInfo(object _)
+        {
+            ThreadPool.GetAvailableThreads(out int threads, out int completionPorts);
+            ThreadPool.GetMaxThreads(out int maxThreads, out int maxCompletionPorts);
+            Console.WriteLine($"                    Worker Threads - [{threads}:{maxThreads}]");
+            Console.WriteLine($"                    Completion Ports -[{completionPorts}:{maxCompletionPorts}]");
+
+        }
         //test code block
         //using (var db = new MyDbContext())
         //{

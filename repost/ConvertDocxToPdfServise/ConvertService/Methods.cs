@@ -18,11 +18,11 @@ namespace ConvertService
         {
             await Task.Run(async() =>
             {
-                await Task.Delay(100);
                 using (var db = new MyDbContext())
                 {
                     while (true)
                     {
+                            await Task.Delay(100);
                         if (Program.queueTaskId.Count() != 0)
                         {
                             int taskId = Program.queueTaskId.Dequeue();
@@ -43,7 +43,8 @@ namespace ConvertService
             double[] queueWeight = new double[5];
             do
             {
-            for (int i = 0; i < 5; i++)
+                new ManualResetEvent(false).WaitOne(100); //alternative Task.Delay() for synchronous method
+                for (int i = 0; i < 5; i++)
             {
                 queueWeight[i] = 0.0;
             }
@@ -80,12 +81,13 @@ namespace ConvertService
         public async static Task EnqueueQueueAsync(Queue<Reserv>[] nameArrayQueues) //method for creating a queue of data for processing by the task manager
         {
             Console.WriteLine("hello");
-            await Task.Run(() =>
+             await Task.Run(async() =>
             {
                 using (var db = new MyDbContext())
                 {
                     while (true)
                     {
+                        await Task.Delay(50);
                         var file = db.DbModels.FirstOrDefault(t => t.Status == 1);
                         if (file != null)
                         {

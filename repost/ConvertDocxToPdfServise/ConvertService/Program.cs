@@ -5,7 +5,7 @@ using SautinSoft.Document;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using ConvertService.Test;
+
 
 namespace ConvertService
 {
@@ -44,7 +44,6 @@ namespace ConvertService
             Task mainTask = new Task(() =>
             {
                Task enqueueQueue = Methods.EnqueueQueueAsync(priorityQueue);
-               //Task taskManager = Methods.TaskManager(priorityQueue);
                Task liquidatorQueue = Methods.QueueLiquidatorAsync();
             });
             mainTask.Start();

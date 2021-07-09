@@ -14,7 +14,7 @@ namespace ConvertService
     static class Methods
     {
 
-        public async static Task QueueLiquidatorAsync() //a method that records completed tasks in the database
+        internal async static Task QueueLiquidatorAsync() //a method that records completed tasks in the database
         {
             await Task.Run(async() =>
             {
@@ -22,7 +22,7 @@ namespace ConvertService
                 {
                     while (true)
                     {
-                            await Task.Delay(100);
+                            await Task.Delay(10);
                         if (Program.queueTaskId.Count() != 0)
                         {
                             int taskId = Program.queueTaskId.Dequeue();
@@ -38,12 +38,30 @@ namespace ConvertService
             });
         }
 
-        public  static Reserv SelectClient(Queue<Reserv>[] nameArrayQueues) //selection algorithm from queues with different priorities.
+        internal static void ServiceRestart() //a method that saves tasks in the event of a service restart
+        {
+           using (var db = new MyDbContext())
+           {
+               while (true)
+               { 
+                   var file = db.DbModels.FirstOrDefault(t => t.Status == 2);
+                    if (file != null)
+                    {
+                        file.Status = 1;
+                        db.SaveChanges();
+                    }
+                    else break;
+               }
+           }
+        }
+
+
+        internal  static Reserv SelectClient(Queue<Reserv>[] nameArrayQueues) //selection algorithm from queues with different priorities.
         {
             double[] queueWeight = new double[5];
             do
             {
-                new ManualResetEvent(false).WaitOne(100); //alternative Task.Delay() for synchronous method
+                new ManualResetEvent(false).WaitOne(50); //alternative Task.Delay() for synchronous method
                 for (int i = 0; i < 5; i++)
             {
                 queueWeight[i] = 0.0;
@@ -65,7 +83,7 @@ namespace ConvertService
 
          
 
-        public static void Convert(Reserv res) //convert doc to pdf. Using package sautinsoft.socument.
+        internal static void Convert(Reserv res) //convert doc to pdf. Using package sautinsoft.socument.
         {
            Console.WriteLine($"задача на конвертацию файла номер: {Task.CurrentId} сработала в потоке: {Thread.CurrentThread.ManagedThreadId}.");
            string path = res.FilePath;
@@ -78,7 +96,7 @@ namespace ConvertService
            Program.queueTaskId.Enqueue(res.TaskId);
         }
      
-        public async static Task EnqueueQueueAsync(Queue<Reserv>[] nameArrayQueues) //method for creating a queue of data for processing by the task manager
+        internal async static Task EnqueueQueueAsync(Queue<Reserv>[] nameArrayQueues) //method for creating a queue of data for processing by the task manager
         {
             Console.WriteLine("hello");
              await Task.Run(async() =>

@@ -21,7 +21,7 @@ namespace ConvertService
         public static Queue<int> queueTaskId;
         static void Main(string[] args)
         {
-            TaskScheduler scheduler = new LimitedConcurrencyTaskScheduler(limitedTasks);
+            TaskScheduler scheduler = new LimitedConcurrencyTaskScheduler(limitedTasks);    
             IConfiguration config = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json", true, true)
                 .Build();
@@ -30,6 +30,7 @@ namespace ConvertService
                 db.Database.EnsureCreated();
                 db.SaveChanges();
             }
+            Methods.ServiceRestart();
             queueTaskId = new Queue<int>();
             Queue<Reserv>[] priorityQueue =new Queue<Reserv>[5];
             for (int i = 0; i < 5; i++)
@@ -38,7 +39,6 @@ namespace ConvertService
             }
 
 
-          
 
 
             Task mainTask = new Task(() =>
@@ -59,10 +59,6 @@ namespace ConvertService
             });
 
             Console.ReadKey();
-
-
-          
-
         }
     }
 }

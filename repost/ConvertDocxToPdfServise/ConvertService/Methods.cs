@@ -4,6 +4,7 @@ using SautinSoft.Document;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading;
@@ -86,6 +87,8 @@ namespace ConvertService
         internal static void Convert(Reserv res) //convert doc to pdf. Using package sautinsoft.socument.
         {
            Console.WriteLine($"задача на конвертацию файла номер: {Task.CurrentId} сработала в потоке: {Thread.CurrentThread.ManagedThreadId}.");
+            var sw = new Stopwatch();
+            sw.Start();
            string path = res.FilePath;
             byte[] fileBytes = File.ReadAllBytes(path);
           using (MemoryStream docxStream = new MemoryStream(fileBytes)) 
@@ -93,7 +96,10 @@ namespace ConvertService
               DocumentCore  dc = DocumentCore.Load(docxStream, new DocxLoadOptions());
               dc.Save(path.Replace(".docx", ".pdf"));
             }
+            sw.Stop();
+            Console.WriteLine($"задача на конвертацию файла номер: {Task.CurrentId} закончила работу у потоке: {Thread.CurrentThread.ManagedThreadId} за время {sw.ElapsedMilliseconds} длина файла {res.FileLength}");
            Program.queueTaskId.Enqueue(res.TaskId);
+            
         }
      
         internal async static Task EnqueueQueueAsync(Queue<Reserv>[] nameArrayQueues) //method for creating a queue of data for processing by the task manager
@@ -110,7 +116,7 @@ namespace ConvertService
                         if (file != null)
                         {
                             file.Status = 2;
-                            Reserv res = new Reserv(file.Id, file.Path, file.LoadTime);
+                            Reserv res = new Reserv(file.Id, file.Path, file.LoadTime, file.FileLength);
                             db.SaveChanges();
                             nameArrayQueues[file.Priority].Enqueue(res);
                         }

@@ -49,7 +49,7 @@ namespace ConversionService.Controllers
                         {
                             using (var db = new MyDbContext()) 
                             { var DbModels = db.Set<DbModel>();
-                                DbModels.Add(new DbModel { Path = path + name,FileName = name, LoadTime = DateTime.Now, Status=0, Priority = value});
+                                DbModels.Add(new DbModel { Path = path + name,FileName = name, LoadTime = DateTime.Now, Status=0, Priority = value, FileLength = objectFile.files.Length});
                                 db.SaveChanges();
                             }
                             using (var db = new MyDbContext())

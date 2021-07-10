@@ -11,5 +11,6 @@ namespace LibraryModels
         public DateTime TaskTime { get; set; }
         public int Status { get; set; }
         public int Priority { get; set; }
+        public long FileLength { get; set; }
     }
 }

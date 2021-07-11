@@ -8,8 +8,8 @@ namespace ConversionService.Models
         public enum StatusProces
         {
             FileUpload,
-            ReturnedTaskId,
-            TaskInProgress,
+            Wait,
+            InProgress,
             Completed
         }
 

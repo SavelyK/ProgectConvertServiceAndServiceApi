@@ -45,10 +45,10 @@ namespace ConvertService
            {
                while (true)
                { 
-                   var file = db.DbModels.FirstOrDefault(t => t.Status == DbModel.StatusProces.TaskInProgress);
+                   var file = db.DbModels.FirstOrDefault(t => t.Status == DbModel.StatusProces.InProgress);
                     if (file != null)
                     {
-                        file.Status = DbModel.StatusProces.ReturnedTaskId;
+                        file.Status = DbModel.StatusProces.Wait;
                         db.SaveChanges();
                     }
                     else break;
@@ -112,10 +112,10 @@ namespace ConvertService
                     while (true)
                     {
                         await Task.Delay(50);
-                        var file = db.DbModels.FirstOrDefault(t => t.Status == DbModel.StatusProces.ReturnedTaskId);
+                        var file = db.DbModels.FirstOrDefault(t => t.Status == DbModel.StatusProces.Wait);
                         if (file != null)
                         {
-                            file.Status = DbModel.StatusProces.TaskInProgress;
+                            file.Status = DbModel.StatusProces.InProgress;
                             Reserv res = new Reserv(file.Id, file.Path, file.LoadTime, file.FileLength);
                             db.SaveChanges();
                             nameArrayQueues[file.Priority].Enqueue(res);

@@ -54,7 +54,7 @@ namespace ConversionService.Controllers
                             using (var db = new MyDbContext())
                             {
                                 var file = db.DbModels.FirstOrDefault(p => p.Status == DbModel.StatusProces.FileUpload);
-                                file.Status = DbModel.StatusProces.ReturnedTaskId;
+                                file.Status = DbModel.StatusProces.Wait;
                                 Id = file.Id;
                                 db.SaveChanges();
                             }

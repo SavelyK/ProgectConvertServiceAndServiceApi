@@ -24,7 +24,7 @@ namespace ServiceApi.Controllers
              public async Task<ActionResult<MyDbContext>> Get(int id)
             {
                 DbModel status = await db.DbModels.FirstOrDefaultAsync(x => x.Id == id);
-            if (status.Status == DbModel.StatusProces.TaskInProgress)
+            if (status.Status == DbModel.StatusProces.InProgress)
             {
 
                 return new ObjectResult("status is being processed");

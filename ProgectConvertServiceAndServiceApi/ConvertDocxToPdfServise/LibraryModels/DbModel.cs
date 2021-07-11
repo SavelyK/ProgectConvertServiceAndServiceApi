@@ -7,8 +7,8 @@ namespace LibraryModels
         public enum StatusProces
         {
             FileUpload,
-            ReturnedTaskId,
-            TaskInProgress,
+            Wait,
+            InProgress,
             Completed
         }
 

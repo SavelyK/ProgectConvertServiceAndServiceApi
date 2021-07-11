@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Threading;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using ConversionService.Models;
 using System.IO;
@@ -47,9 +45,10 @@ namespace ConversionService.Controllers
 
                         using (FileStream fileStream = System.IO.File.Create(path + objectFile.files.FileName))
                         {
-                            using (var db = new MyDbContext()) 
-                            { var DbModels = db.Set<DbModel>();
-                                DbModels.Add(new DbModel { Path = path + name,FileName = name, LoadTime = DateTime.Now, Status=0, Priority = value, FileLength = objectFile.files.Length});
+                            using (var db = new MyDbContext())
+                            {
+                                var DbModels = db.Set<DbModel>();
+                                DbModels.Add(new DbModel { Path = path + name, FileName = name, LoadTime = DateTime.Now, Status = 0, Priority = value, FileLength = objectFile.files.Length });
                                 db.SaveChanges();
                             }
                             using (var db = new MyDbContext())

@@ -5,6 +5,6 @@
     "\\ConversionService\\Controllers",
     "\\ConversionService\\Models"
   ],
-  "SelectedNode": "\\ConversionService\\Controllers\\TaskStatusController.cs",
+  "SelectedNode": "\\ConversionService\\Models\\DbModel.cs",
   "PreviewInSolutionExplorer": false
 }

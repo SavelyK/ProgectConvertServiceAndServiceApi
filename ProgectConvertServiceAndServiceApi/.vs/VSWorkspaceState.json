@@ -1,0 +1,10 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\UploadServisApi",
+    "\\UploadServisApi\\ConversionService",
+    "\\UploadServisApi\\ConversionService\\Controllers"
+  ],
+  "SelectedNode": "\\UploadServisApi\\ConversionService\\Controllers\\UploadController.cs",
+  "PreviewInSolutionExplorer": false
+}

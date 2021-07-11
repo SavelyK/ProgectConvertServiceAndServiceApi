@@ -5,6 +5,6 @@
     "\\ConversionService\\Controllers",
     "\\ConversionService\\Models"
   ],
-  "SelectedNode": "\\ConversionService\\appsettings.json",
+  "SelectedNode": "\\ConversionService\\Controllers\\TaskStatusController.cs",
   "PreviewInSolutionExplorer": false
 }

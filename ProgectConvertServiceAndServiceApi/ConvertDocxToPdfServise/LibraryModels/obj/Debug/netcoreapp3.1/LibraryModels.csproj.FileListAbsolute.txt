@@ -45,3 +45,15 @@ C:\Service\repost\ProgectConvertServiceAndServiceApi\ConvertDocxToPdfServise\Lib
 C:\Service\repost\ProgectConvertServiceAndServiceApi\ConvertDocxToPdfServise\LibraryModels\obj\Debug\netcoreapp3.1\LibraryModels.dll
 C:\Service\repost\ProgectConvertServiceAndServiceApi\ConvertDocxToPdfServise\LibraryModels\obj\Debug\netcoreapp3.1\LibraryModels.pdb
 C:\Service\repost\ProgectConvertServiceAndServiceApi\ConvertDocxToPdfServise\LibraryModels\obj\Debug\netcoreapp3.1\LibraryModels.genruntimeconfig.cache
+C:\Service\ProgectConvertServiceAndServiceApi\ConvertDocxToPdfServise\LibraryModels\bin\Debug\netcoreapp3.1\LibraryModels.deps.json
+C:\Service\ProgectConvertServiceAndServiceApi\ConvertDocxToPdfServise\LibraryModels\bin\Debug\netcoreapp3.1\LibraryModels.runtimeconfig.json
+C:\Service\ProgectConvertServiceAndServiceApi\ConvertDocxToPdfServise\LibraryModels\bin\Debug\netcoreapp3.1\LibraryModels.runtimeconfig.dev.json
+C:\Service\ProgectConvertServiceAndServiceApi\ConvertDocxToPdfServise\LibraryModels\bin\Debug\netcoreapp3.1\LibraryModels.dll
+C:\Service\ProgectConvertServiceAndServiceApi\ConvertDocxToPdfServise\LibraryModels\bin\Debug\netcoreapp3.1\LibraryModels.pdb
+C:\Service\ProgectConvertServiceAndServiceApi\ConvertDocxToPdfServise\LibraryModels\obj\Debug\netcoreapp3.1\LibraryModels.csproj.AssemblyReference.cache
+C:\Service\ProgectConvertServiceAndServiceApi\ConvertDocxToPdfServise\LibraryModels\obj\Debug\netcoreapp3.1\LibraryModels.AssemblyInfoInputs.cache
+C:\Service\ProgectConvertServiceAndServiceApi\ConvertDocxToPdfServise\LibraryModels\obj\Debug\netcoreapp3.1\LibraryModels.AssemblyInfo.cs
+C:\Service\ProgectConvertServiceAndServiceApi\ConvertDocxToPdfServise\LibraryModels\obj\Debug\netcoreapp3.1\LibraryModels.csproj.CoreCompileInputs.cache
+C:\Service\ProgectConvertServiceAndServiceApi\ConvertDocxToPdfServise\LibraryModels\obj\Debug\netcoreapp3.1\LibraryModels.dll
+C:\Service\ProgectConvertServiceAndServiceApi\ConvertDocxToPdfServise\LibraryModels\obj\Debug\netcoreapp3.1\LibraryModels.pdb
+C:\Service\ProgectConvertServiceAndServiceApi\ConvertDocxToPdfServise\LibraryModels\obj\Debug\netcoreapp3.1\LibraryModels.genruntimeconfig.cache

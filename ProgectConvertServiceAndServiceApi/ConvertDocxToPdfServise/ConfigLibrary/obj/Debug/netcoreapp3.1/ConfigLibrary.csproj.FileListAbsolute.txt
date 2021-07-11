@@ -46,3 +46,15 @@ C:\Service\repost\ProgectConvertServiceAndServiceApi\ConvertDocxToPdfServise\Con
 C:\Service\repost\ProgectConvertServiceAndServiceApi\ConvertDocxToPdfServise\ConfigLibrary\obj\Debug\netcoreapp3.1\ConfigLibrary.csproj.CopyComplete
 C:\Service\repost\ProgectConvertServiceAndServiceApi\ConvertDocxToPdfServise\ConfigLibrary\obj\Debug\netcoreapp3.1\ConfigLibrary.dll
 C:\Service\repost\ProgectConvertServiceAndServiceApi\ConvertDocxToPdfServise\ConfigLibrary\obj\Debug\netcoreapp3.1\ConfigLibrary.pdb
+C:\Service\ProgectConvertServiceAndServiceApi\ConvertDocxToPdfServise\ConfigLibrary\bin\Debug\netcoreapp3.1\ConfigLibrary.deps.json
+C:\Service\ProgectConvertServiceAndServiceApi\ConvertDocxToPdfServise\ConfigLibrary\bin\Debug\netcoreapp3.1\ConfigLibrary.dll
+C:\Service\ProgectConvertServiceAndServiceApi\ConvertDocxToPdfServise\ConfigLibrary\bin\Debug\netcoreapp3.1\ConfigLibrary.pdb
+C:\Service\ProgectConvertServiceAndServiceApi\ConvertDocxToPdfServise\ConfigLibrary\bin\Debug\netcoreapp3.1\LibraryModels.dll
+C:\Service\ProgectConvertServiceAndServiceApi\ConvertDocxToPdfServise\ConfigLibrary\bin\Debug\netcoreapp3.1\LibraryModels.pdb
+C:\Service\ProgectConvertServiceAndServiceApi\ConvertDocxToPdfServise\ConfigLibrary\obj\Debug\netcoreapp3.1\ConfigLibrary.csproj.AssemblyReference.cache
+C:\Service\ProgectConvertServiceAndServiceApi\ConvertDocxToPdfServise\ConfigLibrary\obj\Debug\netcoreapp3.1\ConfigLibrary.AssemblyInfoInputs.cache
+C:\Service\ProgectConvertServiceAndServiceApi\ConvertDocxToPdfServise\ConfigLibrary\obj\Debug\netcoreapp3.1\ConfigLibrary.AssemblyInfo.cs
+C:\Service\ProgectConvertServiceAndServiceApi\ConvertDocxToPdfServise\ConfigLibrary\obj\Debug\netcoreapp3.1\ConfigLibrary.csproj.CoreCompileInputs.cache
+C:\Service\ProgectConvertServiceAndServiceApi\ConvertDocxToPdfServise\ConfigLibrary\obj\Debug\netcoreapp3.1\ConfigLibrary.csproj.CopyComplete
+C:\Service\ProgectConvertServiceAndServiceApi\ConvertDocxToPdfServise\ConfigLibrary\obj\Debug\netcoreapp3.1\ConfigLibrary.dll
+C:\Service\ProgectConvertServiceAndServiceApi\ConvertDocxToPdfServise\ConfigLibrary\obj\Debug\netcoreapp3.1\ConfigLibrary.pdb

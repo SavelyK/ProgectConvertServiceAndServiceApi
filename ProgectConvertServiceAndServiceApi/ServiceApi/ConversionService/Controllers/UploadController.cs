@@ -48,13 +48,13 @@ namespace ConversionService.Controllers
                             using (var db = new MyDbContext())
                             {
                                 var DbModels = db.Set<DbModel>();
-                                DbModels.Add(new DbModel { Path = path + name, FileName = name, LoadTime = DateTime.Now, Status = 0, Priority = value, FileLength = objectFile.files.Length });
+                                DbModels.Add(new DbModel { Path = path + name, FileName = name, LoadTime = DateTime.Now, Status = DbModel.StatusProces.FileUpload, Priority = value, FileLength = objectFile.files.Length });
                                 db.SaveChanges();
                             }
                             using (var db = new MyDbContext())
                             {
-                                var file = db.DbModels.FirstOrDefault(p => p.Status == 0);
-                                file.Status = 1;
+                                var file = db.DbModels.FirstOrDefault(p => p.Status == DbModel.StatusProces.FileUpload);
+                                file.Status = DbModel.StatusProces.ReturnedTaskId;
                                 Id = file.Id;
                                 db.SaveChanges();
                             }

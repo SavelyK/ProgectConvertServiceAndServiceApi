@@ -3,12 +3,12 @@ using LibraryModels;
 using SautinSoft.Document;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+
 
 namespace ConvertService
 {
@@ -28,7 +28,7 @@ namespace ConvertService
                         {
                             int taskId = Program.queueTaskId.Dequeue();
                             var file = db.DbModels.FirstOrDefault(t => t.Id == taskId);
-                            file.Status = 3;
+                            file.Status = DbModel.StatusProces.Completed;
                             file.Path = file.Path.Replace(".docx", ".pdf");
                             file.FileName = file.FileName.Replace(".docx", ".pdf");
                             db.SaveChanges();
@@ -37,6 +37,7 @@ namespace ConvertService
                 }
             });
         }
+        
 
         internal static void ServiceRestart() //a method that saves tasks in the event of a service restart
         {
@@ -44,10 +45,10 @@ namespace ConvertService
            {
                while (true)
                { 
-                   var file = db.DbModels.FirstOrDefault(t => t.Status == 2);
+                   var file = db.DbModels.FirstOrDefault(t => t.Status == DbModel.StatusProces.TaskInProgress);
                     if (file != null)
                     {
-                        file.Status = 1;
+                        file.Status = DbModel.StatusProces.ReturnedTaskId;
                         db.SaveChanges();
                     }
                     else break;
@@ -111,10 +112,10 @@ namespace ConvertService
                     while (true)
                     {
                         await Task.Delay(50);
-                        var file = db.DbModels.FirstOrDefault(t => t.Status == 1);
+                        var file = db.DbModels.FirstOrDefault(t => t.Status == DbModel.StatusProces.ReturnedTaskId);
                         if (file != null)
                         {
-                            file.Status = 2;
+                            file.Status = DbModel.StatusProces.TaskInProgress;
                             Reserv res = new Reserv(file.Id, file.Path, file.LoadTime, file.FileLength);
                             db.SaveChanges();
                             nameArrayQueues[file.Priority].Enqueue(res);

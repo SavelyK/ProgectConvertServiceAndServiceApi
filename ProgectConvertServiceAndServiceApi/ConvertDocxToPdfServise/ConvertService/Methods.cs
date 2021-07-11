@@ -28,11 +28,9 @@ namespace ConvertService
                         {
                             int taskId = Program.queueTaskId.Dequeue();
                             var file = db.DbModels.FirstOrDefault(t => t.Id == taskId);
-                            if (file != null)
-                            { 
                             file.Status = 3;
+                            file.Path = file.Path.Replace(".docx", ".pdf");
                             db.SaveChanges();
-                            }
                         }
                     }
                 }

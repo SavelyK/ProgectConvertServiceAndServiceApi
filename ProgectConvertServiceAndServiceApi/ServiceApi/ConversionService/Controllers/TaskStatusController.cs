@@ -20,27 +20,6 @@ namespace ServiceApi.Controllers
             this.db = db;
         }
 
-        //string iscomplited;
-        //[HttpGet]
-        //public string Get(int id)
-        //{
-        //    int status;
-        //    using (var db = new MyDbContext())
-        //    {
-        //        DbModel file;
-        //        file = db.DbModels.FirstOrDefault(p => p.Id == id);
-        //         status = file.Status; 
-        //    }
-        //    if (status == 3)
-        //    {
-        //        iscomplited = "status completed";
-        //        return iscomplited;
-        //    }
-        //    else
-        //    {
-        //        iscomplited ="status is being processed";
-        //        return iscomplited;
-        //    }
             [HttpGet("{id}")]
              public async Task<ActionResult<MyDbContext>> Get(int id)
             {
@@ -50,9 +29,12 @@ namespace ServiceApi.Controllers
 
                 return new ObjectResult("status is being processed");
             }
+            if(status == null)
+            {
+                return NotFound();
+            }
             else
-                return new ObjectResult("status completed");
-
+                return new ObjectResult($"status completed. Path the file: {status.Path}");
 
             }
 

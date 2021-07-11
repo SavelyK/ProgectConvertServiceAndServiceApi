@@ -30,6 +30,7 @@ namespace ConvertService
                             var file = db.DbModels.FirstOrDefault(t => t.Id == taskId);
                             file.Status = 3;
                             file.Path = file.Path.Replace(".docx", ".pdf");
+                            file.FileName = file.FileName.Replace(".docx", ".pdf");
                             db.SaveChanges();
                         }
                     }

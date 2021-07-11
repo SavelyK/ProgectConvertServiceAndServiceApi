@@ -34,7 +34,7 @@ namespace ServiceApi.Controllers
                 return NotFound();
             }
             else
-                return new ObjectResult($"status completed. Path the file: {status.Path}");
+                return new ObjectResult($"status completed. Path the file: {status.FileName}");
 
             }
 

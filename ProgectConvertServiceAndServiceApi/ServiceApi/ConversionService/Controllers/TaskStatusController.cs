@@ -28,7 +28,7 @@ namespace ServiceApi.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
 
-        [HttpGet]
+            [HttpGet]
             [Route("{id}")]
              public async Task<ActionResult<MyDbContext>> Get(int id)
             {

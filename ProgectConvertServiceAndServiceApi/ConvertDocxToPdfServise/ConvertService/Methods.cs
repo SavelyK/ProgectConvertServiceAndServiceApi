@@ -23,7 +23,7 @@ namespace ConvertService
                 {
                     while (true)
                     {
-                            await Task.Delay(10);
+                            await Task.Delay(50);
                         if (Program.queueTaskId.Count() != 0)
                         {
                             int taskId = Program.queueTaskId.Dequeue();

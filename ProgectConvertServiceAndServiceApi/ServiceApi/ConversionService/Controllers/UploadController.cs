@@ -28,63 +28,68 @@ namespace ConversionService.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-       
+
         public IActionResult PostUploadFile([FromForm] FileUpload objectFile)
         {
             try
             {
-
-                if (objectFile.files.Length > 0)
+                if (objectFile != null)
                 {
-                    string path = _webHostEnvironment.WebRootPath + "\\uploads\\";
-                    if (!Directory.Exists(path))
+
+                    if (objectFile.files.Length > 0)
                     {
-                        Directory.CreateDirectory(path);
-                    }
-                    string permittedExtensions = ".docx";
-                    string name = objectFile.files.FileName;
-                    int Id;
-                    Random rnd = new Random();
-                    int value = rnd.Next(0, 4);
-                    var ext = Path.GetExtension(name).ToLowerInvariant();
-                    if (string.IsNullOrEmpty(ext) || !permittedExtensions.Contains(ext))
-                    {
-                        return BadRequest("The extension is invalid ... discontinue processing the file");
+                        string path = _webHostEnvironment.WebRootPath + "\\uploads\\";
+                        if (!Directory.Exists(path))
+                        {
+                            Directory.CreateDirectory(path);
+                        }
+                        string permittedExtensions = ".docx";
+                        string name = objectFile.files.FileName;
+                        int Id;
+                        Random rnd = new Random();
+                        int value = rnd.Next(0, 4);
+                        var ext = Path.GetExtension(name).ToLowerInvariant();
+                        if (string.IsNullOrEmpty(ext) || !permittedExtensions.Contains(ext))
+                        {
+                            return BadRequest("The extension is invalid ... discontinue processing the file");
+                        }
+                        else
+
+                            using (FileStream fileStream = System.IO.File.Create(path + objectFile.files.FileName))
+                            {
+                                using (var db = new MyDbContext())
+                                {
+                                    var DbModels = db.Set<DbModel>();
+                                    DbModels.Add(new DbModel { Path = path + name, FileName = name, LoadTime = DateTime.Now, Status = DbModel.StatusProces.FileUpload, Priority = value, FileLength = objectFile.files.Length });
+                                    db.SaveChanges();
+                                    var file = db.DbModels.FirstOrDefault(p => p.Status == DbModel.StatusProces.FileUpload);
+                                    file.Status = DbModel.StatusProces.Wait;
+                                    Id = file.Id;
+                                    db.SaveChanges();
+                                }
+
+                                string TaskId = Id.ToString();
+                                objectFile.files.CopyTo(fileStream);
+                                fileStream.Flush();
+
+                                return Ok("Upload " + name + ";  Id задачи: " + TaskId);
+                            }
                     }
                     else
-
-                        using (FileStream fileStream = System.IO.File.Create(path + objectFile.files.FileName))
-                        {
-                            using (var db = new MyDbContext())
-                            {
-                                var DbModels = db.Set<DbModel>();
-                                DbModels.Add(new DbModel { Path = path + name, FileName = name, LoadTime = DateTime.Now, Status = DbModel.StatusProces.FileUpload, Priority = value, FileLength = objectFile.files.Length });
-                                db.SaveChanges();
-                            }
-                            using (var db = new MyDbContext())
-                            {
-                                var file = db.DbModels.FirstOrDefault(p => p.Status == DbModel.StatusProces.FileUpload);
-                                file.Status = DbModel.StatusProces.Wait;
-                                Id = file.Id;
-                                db.SaveChanges();
-                            }
-                            string TaskId = Id.ToString();
-                            objectFile.files.CopyTo(fileStream);
-                            fileStream.Flush();
-
-                            return Ok("Upload " + name + ";  Id задачи: " + TaskId);
-                        }
+                    {
+                        return BadRequest("the file must not be empty");
+                    }
                 }
                 else
                 {
-                    return Ok();
+                    return BadRequest("the request must not be empty");
                 }
             }
             catch (Exception ex)
             {
 
                 string log = ex.Message;
-                return Ok("ServiceError");
+                return NotFound();
             }
         }
     }

@@ -64,8 +64,12 @@ namespace ConvertService
             bool exit = false;
             while (!exit)
             {
+
                 words.Clear();
-                input = Console.ReadLine();
+                do
+                {
+                    input = Console.ReadLine();
+                } while (input == "");
                 string[] splitStr = input.Split(" ");
                 foreach (string str in splitStr)
                 {

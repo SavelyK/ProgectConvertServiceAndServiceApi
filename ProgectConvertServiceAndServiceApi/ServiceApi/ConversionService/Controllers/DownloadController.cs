@@ -34,11 +34,11 @@ namespace ServiceApi.Controllers
         /// <param name="fileName"></param>
         /// <returns>Returns pdf file</returns>
         /// <response code="200">Success</response>
-        /// <response code="400">if the request contains an incorrect file name</response>
+        /// <response code="404">if the request contains an incorrect file name</response>
         [HttpGet]
         [Route("{fileName}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult GetFile(string fileName)
         {
             fileName = $"wwwroot/uploads/{fileName}";

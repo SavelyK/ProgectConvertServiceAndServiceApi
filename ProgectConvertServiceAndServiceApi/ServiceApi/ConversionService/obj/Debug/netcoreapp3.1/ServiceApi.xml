@@ -9,7 +9,8 @@
             Downloads a file from the server
             </summary>
             <param name="fileName"></param>
-            <returns></returns>
+            <returns>Returns pdf file</returns>
+            <response code="200">Success</response>
         </member>
         <member name="M:ServiceApi.Controllers.TaskStatusController.Get(System.Int32)">
             <summary>

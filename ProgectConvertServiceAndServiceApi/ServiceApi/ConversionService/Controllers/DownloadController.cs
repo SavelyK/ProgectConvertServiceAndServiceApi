@@ -12,6 +12,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Net.Mime;
 using System.Web;
+using Microsoft.AspNetCore.Http;
 
 namespace ServiceApi.Controllers
 {
@@ -33,10 +34,12 @@ namespace ServiceApi.Controllers
         /// Downloads a file from the server
         /// </summary>
         /// <param name="fileName"></param>
-        /// <returns></returns>
+        /// <returns>Returns pdf file</returns>
+        /// <response code="200">Success</response>
 
         [HttpGet]
         [Route("{fileName}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public IActionResult GetFile(string fileName)
         {
             fileName = $"wwwroot/uploads/{fileName}";
@@ -44,7 +47,7 @@ namespace ServiceApi.Controllers
 
             string file_type = "application/pdf";
          
-            return PhysicalFile(file_path, file_type);
+            return Ok(PhysicalFile(file_path, file_type));
         }
     }
 }

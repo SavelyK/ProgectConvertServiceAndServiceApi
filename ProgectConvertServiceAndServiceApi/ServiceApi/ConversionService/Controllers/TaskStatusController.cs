@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace ServiceApi.Controllers
 {
+    [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
     public class TaskStatusController : ControllerBase
@@ -20,7 +21,8 @@ namespace ServiceApi.Controllers
             this.db = db;
         }
 
-            [HttpGet("{id}")]
+            [HttpGet]
+            [Route("{id}")]
              public async Task<ActionResult<MyDbContext>> Get(int id)
             {
                 DbModel status = await db.DbModels.FirstOrDefaultAsync(x => x.Id == id);

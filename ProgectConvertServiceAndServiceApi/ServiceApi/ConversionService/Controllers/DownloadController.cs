@@ -15,6 +15,7 @@ using System.Web;
 
 namespace ServiceApi.Controllers
 {
+    [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
 
@@ -28,8 +29,8 @@ namespace ServiceApi.Controllers
             _appEnvironment = appEnvironment;
         }
         
-        [HttpGet("{name}")]
-        [Route("api/[controller]/name")]
+        [HttpGet]
+        [Route("{name}")]
         public IActionResult GetFile(string name)
         {
             name = $"wwwroot/uploads/{name}";

@@ -124,3 +124,10 @@ C:\Service\ProgectConvertServiceAndServiceApi\ServiceApi\ConversionService\obj\D
 C:\Service\ProgectConvertServiceAndServiceApi\ServiceApi\ConversionService\obj\Debug\netcoreapp3.1\ServiceApi.pdb
 C:\Service\ProgectConvertServiceAndServiceApi\ServiceApi\ConversionService\obj\Debug\netcoreapp3.1\ServiceApi.genruntimeconfig.cache
 C:\Service\ProgectConvertServiceAndServiceApi\ServiceApi\ConversionService\obj\Debug\netcoreapp3.1\ServiceApi.csproj.AssemblyReference.cache
+C:\Service\ProgectConvertServiceAndServiceApi\ServiceApi\ConversionService\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Service\ProgectConvertServiceAndServiceApi\ServiceApi\ConversionService\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Service\ProgectConvertServiceAndServiceApi\ServiceApi\ConversionService\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Service\ProgectConvertServiceAndServiceApi\ServiceApi\ConversionService\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Service\ProgectConvertServiceAndServiceApi\ServiceApi\ConversionService\obj\Debug\netcoreapp3.1\ServiceApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Service\ProgectConvertServiceAndServiceApi\ServiceApi\ConversionService\bin\Debug\netcoreapp3.1\ServiceApi.xml
+C:\Service\ProgectConvertServiceAndServiceApi\ServiceApi\ConversionService\obj\Debug\netcoreapp3.1\ServiceApi.xml

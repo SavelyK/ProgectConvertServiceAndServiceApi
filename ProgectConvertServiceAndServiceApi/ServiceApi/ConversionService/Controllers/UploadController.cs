@@ -9,6 +9,7 @@ using System.Linq;
 
 namespace ConversionService.Controllers
 {
+    [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
     public class UploadController : ControllerBase
@@ -19,7 +20,7 @@ namespace ConversionService.Controllers
             _webHostEnvironment = webHostEnvironment;
         }
         [HttpPost]
-        public string Post([FromForm] FileUpload objectFile)
+        public string PostUploadFile([FromForm] FileUpload objectFile)
         {
             try
             {

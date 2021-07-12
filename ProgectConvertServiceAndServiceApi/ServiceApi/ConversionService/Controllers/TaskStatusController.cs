@@ -3,6 +3,7 @@ using ConversionService.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Threading.Tasks;
 
 namespace ServiceApi.Controllers
@@ -26,25 +27,34 @@ namespace ServiceApi.Controllers
         /// <returns>Task status</returns>
         /// <response code="200">Success</response>
         /// <response code="404">if the request contains an incorrect id</response>
+        /// <response code="500">Internal Server Error</response>
 
         [HttpGet]
         [Route("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<MyDbContext>> GetStatus(int id)
         {
-            DbModel status = await db.DbModels.FirstOrDefaultAsync(x => x.Id == id);
-            if (status.Status == DbModel.StatusProces.InProgress)
+            try
             {
+                DbModel status = await db.DbModels.FirstOrDefaultAsync(x => x.Id == id);
+                if (status.Status == DbModel.StatusProces.InProgress)
+                {
 
-                return Ok(new ObjectResult("status is being processed"));
+                    return Ok(new ObjectResult("status is being processed"));
+                }
+                if (status == null)
+                {
+                    return NotFound();
+                }
+                else
+                    return Ok(new ObjectResult($"status completed. Path the file: {status.FileName}"));
             }
-            if (status == null)
+            catch (Exception)
             {
-                return NotFound();
+                return StatusCode(500);
             }
-            else
-                return Ok(new ObjectResult($"status completed. Path the file: {status.FileName}"));
 
         }
 

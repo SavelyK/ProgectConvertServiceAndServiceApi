@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
 using Microsoft.AspNetCore.Http;
+using System;
 
 namespace ServiceApi.Controllers
 {
@@ -29,14 +30,22 @@ namespace ServiceApi.Controllers
         [Route("{fileName}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public IActionResult GetFile(string fileName)
         {
+            try
+            {
             fileName = $"wwwroot/uploads/{fileName}";
             string file_path = Path.Combine(_appEnvironment.ContentRootPath, fileName);
 
             string file_type = "application/pdf";
 
             return Ok(PhysicalFile(file_path, file_type));
+            }
+            catch (Exception)
+            {
+                return StatusCode(500);
+            }
 
         }
     }

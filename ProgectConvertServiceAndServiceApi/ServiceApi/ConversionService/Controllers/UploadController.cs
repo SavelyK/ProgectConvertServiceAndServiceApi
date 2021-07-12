@@ -28,14 +28,14 @@ namespace ConversionService.Controllers
         /// <response code="200">Success. The file is uploaded to the server</response>
         /// <response code="400">if the request is empty or the file sent in the request
         /// is empty or has an extension other than doc</response>
-        /// /// <response code="500"> Non-completion. Internal Server Error</response>
+        /// /// <response code="500">Internal Server Error</response>
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
 
-        public  IActionResult PostUploadFile([FromForm] FileUpload objectFile)
+        public IActionResult PostUploadFile([FromForm] FileUpload objectFile)
         {
             try
             {
@@ -91,10 +91,8 @@ namespace ConversionService.Controllers
                     return BadRequest("the request must not be empty");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
-                string log = ex.Message;
                 return StatusCode(500);
             }
         }

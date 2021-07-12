@@ -22,6 +22,7 @@
             <returns>Task status</returns>
             <response code="200">Success</response>
             <response code="404">if the request contains an incorrect id</response>
+            <response code="500">Internal Server Error</response>
         </member>
         <member name="M:ConversionService.Controllers.UploadController.PostUploadFile(ConversionService.Models.FileUpload)">
             <summary>
@@ -32,7 +33,7 @@
             <response code="200">Success. The file is uploaded to the server</response>
             <response code="400">if the request is empty or the file sent in the request
             is empty or has an extension other than doc</response>
-            /// <response code="500"> Non-completion. Internal Server Error</response>
+            /// <response code="500">Internal Server Error</response>
         </member>
     </members>
 </doc>

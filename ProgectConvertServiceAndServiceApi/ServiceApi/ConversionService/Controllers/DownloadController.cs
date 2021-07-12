@@ -28,13 +28,19 @@ namespace ServiceApi.Controllers
         {
             _appEnvironment = appEnvironment;
         }
-        
+
+        /// <summary>
+        /// Downloads a file from the server
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <returns></returns>
+
         [HttpGet]
-        [Route("{name}")]
-        public IActionResult GetFile(string name)
+        [Route("{fileName}")]
+        public IActionResult GetFile(string fileName)
         {
-            name = $"wwwroot/uploads/{name}";
-            string file_path = Path.Combine(_appEnvironment.ContentRootPath, name);
+            fileName = $"wwwroot/uploads/{fileName}";
+            string file_path = Path.Combine(_appEnvironment.ContentRootPath, fileName);
 
             string file_type = "application/pdf";
          

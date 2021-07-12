@@ -19,6 +19,13 @@ namespace ConversionService.Controllers
         {
             _webHostEnvironment = webHostEnvironment;
         }
+
+        /// <summary>
+        /// Uploads the docx file to the server
+        /// </summary>
+        /// <param name="objectFile"></param>
+        /// <returns></returns>
+
         [HttpPost]
         public string PostUploadFile([FromForm] FileUpload objectFile)
         {

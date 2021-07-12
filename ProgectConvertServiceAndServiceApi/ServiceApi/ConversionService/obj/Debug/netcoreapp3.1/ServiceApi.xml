@@ -4,5 +4,27 @@
         <name>ServiceApi</name>
     </assembly>
     <members>
+        <member name="M:ServiceApi.Controllers.DownloadController.GetFile(System.String)">
+            <summary>
+            Downloads a file from the server
+            </summary>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ServiceApi.Controllers.TaskStatusController.Get(System.Int32)">
+            <summary>
+            Returns the status of the task. 
+            If the status is complete - returns the file name
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ConversionService.Controllers.UploadController.PostUploadFile(ConversionService.Models.FileUpload)">
+            <summary>
+            Uploads the docx file to the server
+            </summary>
+            <param name="objectFile"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

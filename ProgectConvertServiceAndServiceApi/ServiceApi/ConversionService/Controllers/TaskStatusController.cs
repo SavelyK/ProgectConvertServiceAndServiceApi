@@ -21,7 +21,14 @@ namespace ServiceApi.Controllers
             this.db = db;
         }
 
-            [HttpGet]
+        /// <summary>
+        /// Returns the status of the task. 
+        /// If the status is complete - returns the file name
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+
+        [HttpGet]
             [Route("{id}")]
              public async Task<ActionResult<MyDbContext>> Get(int id)
             {

@@ -1,6 +1,7 @@
 ﻿using ConversionService;
 using ConversionService.Models;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -26,28 +27,32 @@ namespace ServiceApi.Controllers
         /// If the status is complete - returns the file name
         /// </summary>
         /// <param name="id"></param>
-        /// <returns></returns>
+        /// <returns>Task status</returns>
+        /// <response code="200">Success</response>
+        /// <response code="404">if the request contains an incorrect id</response>
 
-            [HttpGet]
-            [Route("{id}")]
-             public async Task<ActionResult<MyDbContext>> Get(int id)
-            {
-                DbModel status = await db.DbModels.FirstOrDefaultAsync(x => x.Id == id);
+        [HttpGet]
+        [Route("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<MyDbContext>> GetStatus(int id)
+        {
+            DbModel status = await db.DbModels.FirstOrDefaultAsync(x => x.Id == id);
             if (status.Status == DbModel.StatusProces.InProgress)
             {
 
-                return new ObjectResult("status is being processed");
+                return Ok(new ObjectResult("status is being processed"));
             }
-            if(status == null)
+            if (status == null)
             {
                 return NotFound();
             }
             else
-                return new ObjectResult($"status completed. Path the file: {status.FileName}");
-
-            }
+                return Ok(new ObjectResult($"status completed. Path the file: {status.FileName}"));
 
         }
-        
+
     }
+
+}
 

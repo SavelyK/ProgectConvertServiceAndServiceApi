@@ -4,8 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using ConversionService.Models;
 using System.IO;
 using System.Linq;
-
-
+using Microsoft.AspNetCore.Http;
 
 namespace ConversionService.Controllers
 {
@@ -24,10 +23,13 @@ namespace ConversionService.Controllers
         /// Uploads the docx file to the server
         /// </summary>
         /// <param name="objectFile"></param>
-        /// <returns></returns>
+        /// <returns>Task Id</returns>
 
         [HttpPost]
-        public string PostUploadFile([FromForm] FileUpload objectFile)
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+       
+        public IActionResult PostUploadFile([FromForm] FileUpload objectFile)
         {
             try
             {
@@ -47,7 +49,7 @@ namespace ConversionService.Controllers
                     var ext = Path.GetExtension(name).ToLowerInvariant();
                     if (string.IsNullOrEmpty(ext) || !permittedExtensions.Contains(ext))
                     {
-                        return "The extension is invalid ... discontinue processing the file";
+                        return BadRequest("The extension is invalid ... discontinue processing the file");
                     }
                     else
 
@@ -70,18 +72,19 @@ namespace ConversionService.Controllers
                             objectFile.files.CopyTo(fileStream);
                             fileStream.Flush();
 
-                            return "Upload " + name + ";  Id задачи: " + TaskId;
+                            return Ok("Upload " + name + ";  Id задачи: " + TaskId);
                         }
                 }
                 else
                 {
-                    return "Not Uploaded";
+                    return Ok();
                 }
             }
             catch (Exception ex)
             {
 
-                return ex.Message;
+                string log = ex.Message;
+                return Ok("ServiceError");
             }
         }
     }

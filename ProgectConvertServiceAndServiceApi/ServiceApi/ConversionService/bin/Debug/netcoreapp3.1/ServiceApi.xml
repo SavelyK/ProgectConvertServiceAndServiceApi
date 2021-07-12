@@ -13,20 +13,22 @@
             <response code="200">Success</response>
             <response code="404">if the request contains an incorrect file name</response>
         </member>
-        <member name="M:ServiceApi.Controllers.TaskStatusController.Get(System.Int32)">
+        <member name="M:ServiceApi.Controllers.TaskStatusController.GetStatus(System.Int32)">
             <summary>
             Returns the status of the task. 
             If the status is complete - returns the file name
             </summary>
             <param name="id"></param>
-            <returns></returns>
+            <returns>Task status</returns>
+            <response code="200">Success</response>
+            <response code="404">if the request contains an incorrect id</response>
         </member>
         <member name="M:ConversionService.Controllers.UploadController.PostUploadFile(ConversionService.Models.FileUpload)">
             <summary>
             Uploads the docx file to the server
             </summary>
             <param name="objectFile"></param>
-            <returns></returns>
+            <returns>Task Id</returns>
         </member>
     </members>
 </doc>

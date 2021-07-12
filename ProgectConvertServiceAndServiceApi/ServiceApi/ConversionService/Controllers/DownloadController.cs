@@ -35,6 +35,7 @@ namespace ServiceApi.Controllers
         /// <returns>Returns pdf file</returns>
         /// <response code="200">Success</response>
         /// <response code="404">if the request contains an incorrect file name</response>
+
         [HttpGet]
         [Route("{fileName}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -45,9 +46,9 @@ namespace ServiceApi.Controllers
             string file_path = Path.Combine(_appEnvironment.ContentRootPath, fileName);
 
             string file_type = "application/pdf";
-         
+
             return Ok(PhysicalFile(file_path, file_type));
-            
+
         }
     }
 }

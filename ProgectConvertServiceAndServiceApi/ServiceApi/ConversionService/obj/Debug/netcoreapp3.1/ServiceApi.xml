@@ -29,6 +29,10 @@
             </summary>
             <param name="objectFile"></param>
             <returns>Task Id</returns>
+            <response code="200">Success. The file is uploaded to the server</response>
+            <response code="400">if the request is empty or the file sent in the request
+            is empty or has an extension other than doc</response>
+            /// <response code="500"> Non-completion. Internal Server Error</response>
         </member>
     </members>
 </doc>

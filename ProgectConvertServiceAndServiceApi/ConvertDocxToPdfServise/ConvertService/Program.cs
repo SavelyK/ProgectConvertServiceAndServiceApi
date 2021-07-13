@@ -12,7 +12,7 @@ namespace ConvertService
     class Program
     {
 
-        internal static double[] priorityRatio = new double[5] { 1.0, 1.9, 4.2, 7.3, 9.0 }; //priority factor for selecting an item from queues with
+        internal static double[] priorityRatio = new double[5] { 1.0, 2.0, 3.0, 4.0, 5.0 }; //priority factor for selecting an item from queues with
                                                                                             //different priorities using a selection algorithm based on
                                                                                             //the waiting time and the given factor
 
@@ -21,6 +21,7 @@ namespace ConvertService
         public static Queue<int> queueTaskId;
         static void Main(string[] args)
         {
+
             TaskScheduler scheduler = new LimitedConcurrencyTaskScheduler(limitedTasks);
             IConfiguration config = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json", true, true)
@@ -57,70 +58,9 @@ namespace ConvertService
                    taskConvert.Start(scheduler);
                }
            });
+            Methods.CommandString();
 
-            string input;
-            List<string> words = new List<string>();
-            string[] keywords = { "clear", "exit" };
-            bool exit = false;
-            while (!exit)
-            {
-
-                words.Clear();
-                do
-                {
-                    input = Console.ReadLine();
-                } while (input == "");
-                string[] splitStr = input.Split(" ");
-                foreach (string str in splitStr)
-                {
-                    if (str != "")
-                    {
-                        words.Add(str);
-                    };
-                }
-
-                bool found = false;
-                foreach (string key in keywords)
-                {
-                    if (words[0] == key)
-                    {
-                        found = true;
-                    }
-                }
-                if (found)
-                {
-                    switch (words[0])
-                    {
-
-                        case "clear":
-                            try
-                            {
-                                if (words.Count != 1) throw new Exception();
-                                Console.Clear();
-                            }
-                            catch
-                            {
-                                Console.WriteLine("Invalid syntax");
-                            }
-                            break;
-                        case "exit":
-                            try
-                            {
-                                if (words.Count != 1) throw new Exception();
-                                exit = true;
-                            }
-                            catch
-                            {
-                                if (words.Count != 1) throw new Exception();
-                            }
-                            break;
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("Keyword " + words[0] + " didn't found!");
-                }
-            }
+            
         }
     }
 }

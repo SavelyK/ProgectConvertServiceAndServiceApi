@@ -28,10 +28,13 @@ namespace ConvertService
                         {
                             int taskId = Program.queueTaskId.Dequeue();
                             var file = db.DbModels.FirstOrDefault(t => t.Id == taskId);
+                            if (file != null) 
+                            { 
                             file.Status = DbModel.StatusProces.Completed;
                             file.Path = file.Path.Replace(".docx", ".pdf");
                             file.FileName = file.FileName.Replace(".docx", ".pdf");
                             db.SaveChanges();
+                            }
                         }
                     }
                 }
@@ -130,7 +133,7 @@ namespace ConvertService
 
             string input;
             List<string> words = new List<string>();
-            string[] keywords = { "clear", "exit", "help", "priority" };
+            string[] keywords = { "clear", "exit", "help", "priority", "threadlimit" };
             bool exit = false;
             while (!exit)
             {
@@ -190,16 +193,17 @@ namespace ConvertService
                             try
                             {
                                 if (words.Count != 1) throw new Exception();
-                                Console.WriteLine($"\nСписок команд консоли:" +
-                                    $"\n\n\n\tclear - чистит консоль" +
-                                    $"\n\n\texit - завершает работу программы" +
-                                    $"\n\n\thelp - выводит справку о командах" +
-                                    $"\n\n\tpriority lowest, priority belownormal, priority normal" +
-                                    $"\n\tpriority abovenormal и  priority highest -" +
-                                    $"\n\tкоманды для настройки параметров алгоритма выбора элемента" +
-                                    $"\n\tиз очереди с соответствующим приоритетом" +
-                                    $"\n\tНа обрабку выбирается тот элемент у которого" +
-                                    $"\n\tпроизведение времени ожидания, на параметр выше");
+                                Console.WriteLine($"\nList of console commands:" +
+                                    $"\n\n\n\tclear - cleans the console screen" +
+                                    $"\n\n\texit - exits the program" +
+                                    $"\n\n\thelp - displays help about commands" +
+                                    $"\n\n\tthreadlimit - configures the number of threads" +
+                                    $"\n\n\tpriority lowest, " +
+                                    $"\n\tpriority belownormal," +
+                                    $"\n\tpriority normal" +
+                                    $"\n\tpriority abovenormal " +
+                                    $"\n\tpriority highest " +
+                                    $"\n\t\t\t\tall commands for setting parameters of the element selection algorithm");
                             }
                             catch
                             {
@@ -284,7 +288,26 @@ namespace ConvertService
                             {
                                 Console.WriteLine("Invalid syntax");
                             }
-
+                            break;
+                        case "threadlimit":
+                            try
+                            {
+                                if (words.Count != 1) throw new Exception();
+                                Console.WriteLine("enter an integer greater than zero");
+                                int newThredLimit = int.Parse(Console.ReadLine());
+                                if (newThredLimit <= 0)
+                                {
+                                    throw new Exception();
+                                }
+                                else
+                                {
+                                    Program.limitedTasks = newThredLimit;
+                                }
+                            }
+                            catch
+                            {
+                                Console.WriteLine("Invalid syntax");
+                            }
                             break;
                     }
                 }

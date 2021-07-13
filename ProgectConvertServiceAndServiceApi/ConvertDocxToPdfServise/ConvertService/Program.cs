@@ -16,7 +16,7 @@ namespace ConvertService
                                                                                             //different priorities using a selection algorithm based on
                                                                                             //the waiting time and the given factor
 
-        internal static int limitedTasks = 4;
+        internal static int limitedTasks = 3;
         public static Queue<int> queueTaskId;
         static void Main(string[] args)
         {

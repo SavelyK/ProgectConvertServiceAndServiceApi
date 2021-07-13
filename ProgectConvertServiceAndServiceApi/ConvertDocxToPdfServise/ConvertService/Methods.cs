@@ -17,13 +17,13 @@ namespace ConvertService
 
         internal async static Task QueueLiquidatorAsync() //a method that records completed tasks in the database
         {
-            await Task.Run(async() =>
+            await Task.Run(async () =>
             {
                 using (var db = new MyDbContext())
                 {
                     while (true)
                     {
-                            await Task.Delay(50);
+                        await Task.Delay(50);
                         if (Program.queueTaskId.Count() != 0)
                         {
                             int taskId = Program.queueTaskId.Dequeue();
@@ -37,41 +37,41 @@ namespace ConvertService
                 }
             });
         }
-        
+
 
         internal static void ServiceRestart() //a method that saves tasks in the event of a service restart
         {
-           using (var db = new MyDbContext())
-           {
-               while (true)
-               { 
-                   var file = db.DbModels.FirstOrDefault(t => t.Status == DbModel.StatusProces.InProgress);
+            using (var db = new MyDbContext())
+            {
+                while (true)
+                {
+                    var file = db.DbModels.FirstOrDefault(t => t.Status == DbModel.StatusProces.InProgress);
                     if (file != null)
                     {
                         file.Status = DbModel.StatusProces.Wait;
                         db.SaveChanges();
                     }
                     else break;
-               }
-           }
+                }
+            }
         }
 
 
-        internal  static Reserv SelectClient(Queue<Reserv>[] nameArrayQueues) //selection algorithm from queues with different priorities.
+        internal static Reserv SelectClient(Queue<Reserv>[] nameArrayQueues) //selection algorithm from queues with different priorities.
         {
             double[] queueWeight = new double[5];
             do
             {
                 new ManualResetEvent(false).WaitOne(50); //alternative Task.Delay() for synchronous method
                 for (int i = 0; i < 5; i++)
-            {
-                queueWeight[i] = 0.0;
-            }
+                {
+                    queueWeight[i] = 0.0;
+                }
                 for (int i = 0; i < 5; i++)
                 {
                     if (nameArrayQueues[i].Count() != 0)
                     {
-                        queueWeight[i] = DateTime.Now.Subtract(nameArrayQueues[i].Peek().TimeRegistrInDb).TotalMilliseconds * (Program.priorityRatio[i]);
+                        queueWeight[i] = DateTime.Now.Subtract(nameArrayQueues[i].Peek().TimeRegistrInDb).TotalMilliseconds * Program.priorityRatio[i];
                     }
                     else
                     { queueWeight[i] = 0.0; }
@@ -79,57 +79,58 @@ namespace ConvertService
             }
             while (queueWeight.Max() == 0);
 
-             return  nameArrayQueues[Array.IndexOf(queueWeight, queueWeight.Max())].Dequeue(); 
+            return nameArrayQueues[Array.IndexOf(queueWeight, queueWeight.Max())].Dequeue();
         }
 
-         
+
 
         internal static void Convert(Reserv res) //convert doc to pdf. Using package sautinsoft.socument.
         {
-           Console.WriteLine($"задача на конвертацию файла номер: {Task.CurrentId} сработала в потоке: {Thread.CurrentThread.ManagedThreadId}.");
+            Console.WriteLine($"задача на конвертацию файла номер: {Task.CurrentId} сработала в потоке: {Thread.CurrentThread.ManagedThreadId}.");
             var sw = new Stopwatch();
             sw.Start();
-           string path = res.FilePath;
+            string path = res.FilePath;
             byte[] fileBytes = File.ReadAllBytes(path);
-          using (MemoryStream docxStream = new MemoryStream(fileBytes)) 
+            using (MemoryStream docxStream = new MemoryStream(fileBytes))
             {
-              DocumentCore  dc = DocumentCore.Load(docxStream, new DocxLoadOptions());
-              dc.Save(path.Replace(".docx", ".pdf"));
+                DocumentCore dc = DocumentCore.Load(docxStream, new DocxLoadOptions());
+                dc.Save(path.Replace(".docx", ".pdf"));
             }
             sw.Stop();
             Console.WriteLine($"задача на конвертацию файла номер: {Task.CurrentId} закончила работу у потоке: {Thread.CurrentThread.ManagedThreadId} за время {sw.ElapsedMilliseconds} длина файла {res.FileLength}");
-           Program.queueTaskId.Enqueue(res.TaskId);
-            
+            Program.queueTaskId.Enqueue(res.TaskId);
+
         }
-     
+
         internal async static Task EnqueueQueueAsync(Queue<Reserv>[] nameArrayQueues) //method for creating a queue of data for processing by the task manager
         {
-            Console.WriteLine("hello");
-             await Task.Run(async() =>
-            {
-                using (var db = new MyDbContext())
-                {
-                    while (true)
-                    {
-                        await Task.Delay(50);
-                        var file = db.DbModels.FirstOrDefault(t => t.Status == DbModel.StatusProces.Wait);
-                        if (file != null)
-                        {
-                            file.Status = DbModel.StatusProces.InProgress;
-                            Reserv res = new Reserv(file.Id, file.Path, file.LoadTime, file.FileLength);
-                            db.SaveChanges();
-                            nameArrayQueues[file.Priority].Enqueue(res);
-                        }
-                    }
-                }
-            });
-        } 
+            Console.WriteLine("start");
+            await Task.Run(async () =>
+           {
+               using (var db = new MyDbContext())
+               {
+                   while (true)
+                   {
+                       await Task.Delay(50);
+                       var file = db.DbModels.FirstOrDefault(t => t.Status == DbModel.StatusProces.Wait);
+                       if (file != null)
+                       {
+                           file.Status = DbModel.StatusProces.InProgress;
+                           Reserv res = new Reserv(file.Id, file.Path, file.LoadTime, file.FileLength);
+                           db.SaveChanges();
+                           nameArrayQueues[file.Priority].Enqueue(res);
+                       }
+                   }
+               }
+           });
+        }
 
-       public static void CommandString()
+        public static void CommandString()
         {
+
             string input;
             List<string> words = new List<string>();
-            string[] keywords = { "clear", "exit" };
+            string[] keywords = { "clear", "exit", "help", "priority" };
             bool exit = false;
             while (!exit)
             {
@@ -139,22 +140,24 @@ namespace ConvertService
                 {
                     input = Console.ReadLine();
                 } while (input == "");
-                string[] splitStr = input.Split(" ");
-                foreach (string str in splitStr)
+                string[] w = input.Split(" ");
+                foreach (string ww in w)
                 {
-                    if (str != "")
+                    if (ww != "")
                     {
-                        words.Add(str);
-                    };
+                        words.Add(ww);
+                    }
                 }
 
                 bool found = false;
                 foreach (string key in keywords)
                 {
+
                     if (words[0] == key)
                     {
                         found = true;
                     }
+
                 }
                 if (found)
                 {
@@ -172,7 +175,6 @@ namespace ConvertService
                                 Console.WriteLine("Invalid syntax");
                             }
                             break;
-
                         case "exit":
                             try
                             {
@@ -183,6 +185,106 @@ namespace ConvertService
                             {
                                 if (words.Count != 1) throw new Exception();
                             }
+                            break;
+                        case "help":
+                            try
+                            {
+                                if (words.Count != 1) throw new Exception();
+                                Console.WriteLine($"\nСписок команд консоли:" +
+                                    $"\n\n\n\tclear - чистит консоль" +
+                                    $"\n\n\texit - завершает работу программы" +
+                                    $"\n\n\thelp - выводит справку о командах" +
+                                    $"\n\n\tpriority lowest, priority belownormal, priority normal" +
+                                    $"\n\tpriority abovenormal и  priority highest -" +
+                                    $"\n\tкоманды для настройки параметров алгоритма выбора элемента" +
+                                    $"\n\tиз очереди с соответствующим приоритетом" +
+                                    $"\n\tНа обрабку выбирается тот элемент у которого" +
+                                    $"\n\tпроизведение времени ожидания, на параметр выше");
+                            }
+                            catch
+                            {
+                                Console.WriteLine("Invalid syntax");
+                            }
+                            break;
+                        case "priority":
+                            try
+                            {
+
+                                if (words[1] == "lowest")
+                                {
+                                    Console.WriteLine("enter an integer greater than zero");
+                                    int newPriorityRatio = int.Parse(Console.ReadLine());
+                                    if (newPriorityRatio <= 0)
+                                    {
+                                        throw new Exception();
+                                    }
+                                    else
+                                    {
+                                        Program.priorityRatio[0] = newPriorityRatio;
+                                    }
+                                }
+                                else if (words[1] == "belownormal")
+                                {
+                                    Console.WriteLine("enter an integer greater than zero");
+                                    int newPriorityRatio = int.Parse(Console.ReadLine());
+                                    if (newPriorityRatio <= 0)
+                                    {
+                                        throw new Exception();
+                                    }
+                                    else
+                                    {
+                                        Program.priorityRatio[1] = newPriorityRatio;
+                                    }
+                                }
+                                else if (words[1] == "normal")
+                                {
+                                    Console.WriteLine("enter an integer greater than zero");
+                                    int newPriorityRatio = int.Parse(Console.ReadLine());
+                                    if (newPriorityRatio <= 0)
+                                    {
+                                        throw new Exception();
+                                    }
+                                    else
+                                    {
+                                        Program.priorityRatio[2] = newPriorityRatio;
+                                    }
+                                }
+                                else if (words[1] == "abovenormal")
+                                {
+                                    Console.WriteLine("enter an integer greater than zero");
+                                    int newPriorityRatio = int.Parse(Console.ReadLine());
+                                    if (newPriorityRatio <= 0)
+                                    {
+                                        throw new Exception();
+                                    }
+                                    else
+                                    {
+                                        Program.priorityRatio[3] = newPriorityRatio;
+                                    }
+                                }
+                                else if (words[1] == "highest")
+                                {
+                                    Console.WriteLine("enter an integer greater than zero");
+                                    int newPriorityRatio = int.Parse(Console.ReadLine());
+                                    if (newPriorityRatio <= 0)
+                                    {
+                                        throw new Exception();
+                                    }
+                                    else
+                                    {
+                                        Program.priorityRatio[4] = newPriorityRatio;
+                                    }
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Unknown parametr");
+                                }
+                            }
+                            catch
+                            {
+                                Console.WriteLine("Invalid syntax");
+                            }
+
                             break;
                     }
                 }

@@ -12,16 +12,15 @@ namespace ConvertService
     class Program
     {
 
-        internal static double[] priorityRatio = new double[5] { 1.0, 2.0, 3.0, 4.0, 5.0 }; //priority factor for selecting an item from queues with
+        internal static int[] priorityRatio = new int[5] { 1, 2, 3, 4, 5 }; //priority factor for selecting an item from queues with
                                                                                             //different priorities using a selection algorithm based on
                                                                                             //the waiting time and the given factor
 
-        private static readonly int limitedTasks = 5;
-        public static int countTasks = 0;
+        internal static int limitedTasks = 4;
         public static Queue<int> queueTaskId;
         static void Main(string[] args)
         {
-
+            //limitedTasks = int.Parse(Console.ReadLine());
             TaskScheduler scheduler = new LimitedConcurrencyTaskScheduler(limitedTasks);
             IConfiguration config = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json", true, true)
@@ -58,7 +57,8 @@ namespace ConvertService
                    taskConvert.Start(scheduler);
                }
            });
-            Methods.CommandString();
+
+           Methods.CommandString();
 
             
         }

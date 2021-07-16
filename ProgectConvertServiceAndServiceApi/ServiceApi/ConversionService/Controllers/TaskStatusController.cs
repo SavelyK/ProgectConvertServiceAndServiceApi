@@ -39,17 +39,21 @@ namespace ServiceApi.Controllers
             try
             {
                 DbModel status = await db.DbModels.FirstOrDefaultAsync(x => x.Id == id);
-                if (status.Status == DbModel.StatusProces.InProgress)
+                if (status.Status != DbModel.StatusProces.Completed)
                 {
 
                     return Ok(new ObjectResult("status is being processed"));
                 }
-                if (status == null)
+
+                else if (status.Status == DbModel.StatusProces.Completed)
+                {
+                    return Ok(new ObjectResult($"status completed. Path the file: {status.FileName}"));
+                }
+                else 
                 {
                     return NotFound();
                 }
-                else
-                    return Ok(new ObjectResult($"status completed. Path the file: {status.FileName}"));
+
             }
             catch (Exception)
             {

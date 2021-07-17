@@ -1,0 +1,14 @@
+C:\Users\zakal\source\repos\СonversionService\ServicePersistence\bin\Debug\netcoreapp3.1\ServicePersistence.deps.json
+C:\Users\zakal\source\repos\СonversionService\ServicePersistence\bin\Debug\netcoreapp3.1\ServicePersistence.dll
+C:\Users\zakal\source\repos\СonversionService\ServicePersistence\bin\Debug\netcoreapp3.1\ServicePersistence.pdb
+C:\Users\zakal\source\repos\СonversionService\ServicePersistence\bin\Debug\netcoreapp3.1\LibraryApplication.dll
+C:\Users\zakal\source\repos\СonversionService\ServicePersistence\bin\Debug\netcoreapp3.1\LibraryModels.dll
+C:\Users\zakal\source\repos\СonversionService\ServicePersistence\bin\Debug\netcoreapp3.1\LibraryApplication.pdb
+C:\Users\zakal\source\repos\СonversionService\ServicePersistence\bin\Debug\netcoreapp3.1\LibraryModels.pdb
+C:\Users\zakal\source\repos\СonversionService\ServicePersistence\obj\Debug\netcoreapp3.1\ServicePersistence.csproj.AssemblyReference.cache
+C:\Users\zakal\source\repos\СonversionService\ServicePersistence\obj\Debug\netcoreapp3.1\ServicePersistence.AssemblyInfoInputs.cache
+C:\Users\zakal\source\repos\СonversionService\ServicePersistence\obj\Debug\netcoreapp3.1\ServicePersistence.AssemblyInfo.cs
+C:\Users\zakal\source\repos\СonversionService\ServicePersistence\obj\Debug\netcoreapp3.1\ServicePersistence.csproj.CoreCompileInputs.cache
+C:\Users\zakal\source\repos\СonversionService\ServicePersistence\obj\Debug\netcoreapp3.1\ServicePersistence.csproj.CopyComplete
+C:\Users\zakal\source\repos\СonversionService\ServicePersistence\obj\Debug\netcoreapp3.1\ServicePersistence.dll
+C:\Users\zakal\source\repos\СonversionService\ServicePersistence\obj\Debug\netcoreapp3.1\ServicePersistence.pdb

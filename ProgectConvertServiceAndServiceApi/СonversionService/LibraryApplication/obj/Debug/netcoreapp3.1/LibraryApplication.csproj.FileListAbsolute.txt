@@ -1,0 +1,12 @@
+C:\Users\zakal\source\repos\СonversionService\LibraryApplication\bin\Debug\netcoreapp3.1\LibraryApplication.deps.json
+C:\Users\zakal\source\repos\СonversionService\LibraryApplication\bin\Debug\netcoreapp3.1\LibraryApplication.dll
+C:\Users\zakal\source\repos\СonversionService\LibraryApplication\bin\Debug\netcoreapp3.1\LibraryApplication.pdb
+C:\Users\zakal\source\repos\СonversionService\LibraryApplication\bin\Debug\netcoreapp3.1\LibraryModels.dll
+C:\Users\zakal\source\repos\СonversionService\LibraryApplication\bin\Debug\netcoreapp3.1\LibraryModels.pdb
+C:\Users\zakal\source\repos\СonversionService\LibraryApplication\obj\Debug\netcoreapp3.1\LibraryApplication.csproj.AssemblyReference.cache
+C:\Users\zakal\source\repos\СonversionService\LibraryApplication\obj\Debug\netcoreapp3.1\LibraryApplication.AssemblyInfoInputs.cache
+C:\Users\zakal\source\repos\СonversionService\LibraryApplication\obj\Debug\netcoreapp3.1\LibraryApplication.AssemblyInfo.cs
+C:\Users\zakal\source\repos\СonversionService\LibraryApplication\obj\Debug\netcoreapp3.1\LibraryApplication.csproj.CoreCompileInputs.cache
+C:\Users\zakal\source\repos\СonversionService\LibraryApplication\obj\Debug\netcoreapp3.1\LibraryApplication.csproj.CopyComplete
+C:\Users\zakal\source\repos\СonversionService\LibraryApplication\obj\Debug\netcoreapp3.1\LibraryApplication.dll
+C:\Users\zakal\source\repos\СonversionService\LibraryApplication\obj\Debug\netcoreapp3.1\LibraryApplication.pdb

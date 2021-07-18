@@ -19,4 +19,8 @@
     <ProjectReference Include="..\ServiceWebApi\ServiceWebApi.csproj" />
   </ItemGroup>
 
+	<ItemGroup>
+		<SourceFolder Include="$(ProjectDir)$(FolderName)\**\*.*"/>
+	</ItemGroup>
+
 </Project>

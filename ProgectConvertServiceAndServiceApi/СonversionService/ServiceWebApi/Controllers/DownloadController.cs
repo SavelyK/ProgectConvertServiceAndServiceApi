@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Hosting;
 using System.IO;
 using Microsoft.AspNetCore.Http;
 using System;
+using ServicePersistence;
+using LibraryModels;
+using System.Linq;
 
 namespace ServiceWebApi.Controllers
 {
@@ -31,21 +34,22 @@ namespace ServiceWebApi.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public IActionResult GetFile(string fileName)
+        public FileResult GetFile(string fileName)
         {
-            try
-            {
-                fileName = $"wwwroot/uploads/{fileName}";
-                string file_path = Path.Combine(_appEnvironment.ContentRootPath, fileName);
+          
+                string path;
+                using (var db = new MyDbContext())
+                {  
+                    var file = db.DbModels.FirstOrDefault(p => p.FileName == fileName);
+                    path = file.Path;
+                }
+                byte[] mas = System.IO.File.ReadAllBytes(path);
 
                 string file_type = "application/pdf";
 
-                return Ok(PhysicalFile(file_path, file_type));
-            }
-            catch (Exception)
-            {
-                return StatusCode(500);
-            }
+                return File(mas, file_type, fileName);
+         
+          
 
         }
     }

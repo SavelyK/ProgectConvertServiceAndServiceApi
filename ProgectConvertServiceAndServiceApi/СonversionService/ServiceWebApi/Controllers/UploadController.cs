@@ -44,6 +44,7 @@ namespace ServiceWebApi.Controllers
 
                     if (objectFile.files.Length > 0)
                     {
+
                         string path = _webHostEnvironment.WebRootPath + "\\uploads\\";
                         if (!Directory.Exists(path))
                         {

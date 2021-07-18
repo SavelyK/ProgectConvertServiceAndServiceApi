@@ -1,5 +1,9 @@
-﻿using Microsoft.Extensions.Hosting;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.FileProviders;
+using Microsoft.Extensions.Hosting;
 using System;
+using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -23,7 +27,6 @@ namespace ConvertDocxToPdfService
             Console.WriteLine("Service stopped");
             return Task.CompletedTask;
         }
-
 
     }
 }

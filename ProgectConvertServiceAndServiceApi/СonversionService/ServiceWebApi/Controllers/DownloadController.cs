@@ -34,9 +34,10 @@ namespace ServiceWebApi.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public FileResult GetFile(string fileName)
+        public ActionResult GetFile(string fileName)
         {
-          
+            try
+            {
                 string path;
                 using (var db = new MyDbContext())
                 {  
@@ -48,8 +49,11 @@ namespace ServiceWebApi.Controllers
                 string file_type = "application/pdf";
 
                 return File(mas, file_type, fileName);
-         
-          
+            }
+            catch (Exception)
+            {
+                return StatusCode(500);
+            }
 
         }
     }

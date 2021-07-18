@@ -4,7 +4,6 @@ using System.IO;
 using Microsoft.AspNetCore.Http;
 using System;
 using ServicePersistence;
-using LibraryModels;
 using System.Linq;
 
 namespace ServiceWebApi.Controllers
@@ -27,12 +26,11 @@ namespace ServiceWebApi.Controllers
         /// <param name="fileName"></param>
         /// <returns>Returns pdf file</returns>
         /// <response code="200">Success</response>
-        /// <response code="404">if the request contains an incorrect file name</response>
+        /// <response code="500">ServerError</response>
 
         [HttpGet]
         [Route("{fileName}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public ActionResult GetFile(string fileName)
         {

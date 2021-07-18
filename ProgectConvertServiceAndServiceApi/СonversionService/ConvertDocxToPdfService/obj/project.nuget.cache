@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "l/4pbk3TGFtzNMOsrGroDkgeHGjR4tf1wJR5eKnQ2nZagWemf9L35PJHCymkON4KKB0Wb7SucvAmPwzyY6sRaQ==",
+  "dgSpecHash": "EpHshTL+srLP+KTNmtoCunRsN7D89C1mJWS2TTpOHm5rWrwITxmsBOmxgDh32VTEpduvpq6kfCHrWpyNQD+6Yw==",
   "success": true,
   "projectFilePath": "C:\\Service\\ProgectConvertServiceAndServiceApi\\СonversionService\\ConvertDocxToPdfService\\ConvertDocxToPdfService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\zakal\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
+    "C:\\Users\\zakal\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\9.0.0\\mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.8\\microsoft.aspnetcore.http.features.5.0.8.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",

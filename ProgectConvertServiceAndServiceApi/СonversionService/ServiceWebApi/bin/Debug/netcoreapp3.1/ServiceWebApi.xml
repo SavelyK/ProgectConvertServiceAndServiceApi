@@ -11,7 +11,7 @@
             <param name="fileName"></param>
             <returns>Returns pdf file</returns>
             <response code="200">Success</response>
-            <response code="404">if the request contains an incorrect file name</response>
+            <response code="500">ServerError</response>
         </member>
         <member name="M:ServiceWebApi.Controllers.TaskStatusController.GetStatus(System.Int32)">
             <summary>

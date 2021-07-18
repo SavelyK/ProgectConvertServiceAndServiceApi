@@ -5,8 +5,7 @@ using Microsoft.Extensions.Hosting;
 using ServicePersistence;
 using System.Threading.Tasks;
 using ConvertDocxToPdfService;
-using System;
-using System.IO;
+
 
 namespace ServiceWebApi
 {
@@ -14,23 +13,23 @@ namespace ServiceWebApi
     {
         public static async Task Main(string[] args)
         {
-            var hostConvert = CreateConvertHostBuilder(args).Build();
+            var hostConvert = CreateConvertHostBuilder(args).Build(); //host convert service
                
-            var hostApi = CreateApiHostBuilder(args).Build();
+            var hostApi = CreateApiHostBuilder(args).Build();  // host web api
             await Task.WhenAny
                 (
-             hostConvert.RunAsync(),
+                 hostConvert.RunAsync(), 
                  hostApi.RunAsync()
                 );
 
         }
 
-        public static IHostBuilder CreateConvertHostBuilder(string[] args)
+        public static IHostBuilder CreateConvertHostBuilder(string[] args) 
         {
             return Host.CreateDefaultBuilder()
                 .ConfigureServices(services =>
                 {
-                    services.AddHostedService<Start>()
+                    services.AddHostedService<Start>() 
                     .AddDbContext<MyDbContext>(options => options.UseSqlServer("Server=localhost;Database=Data55;Trusted_Connection=True;"));
                     services.AddSingleton<IStartService, StartService>();
                     services.AddSingleton<IMethods, Methods>();
@@ -38,7 +37,7 @@ namespace ServiceWebApi
                 });
 
         }
-        public static IHostBuilder CreateApiHostBuilder(string[] args)
+        public static IHostBuilder CreateApiHostBuilder(string[] args) 
         {
             return Host.CreateDefaultBuilder()
             .ConfigureWebHostDefaults(webBuilder =>

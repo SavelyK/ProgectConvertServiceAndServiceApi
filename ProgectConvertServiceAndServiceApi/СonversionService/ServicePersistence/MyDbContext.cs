@@ -11,7 +11,7 @@ namespace ServicePersistence
         private readonly string connectionString;
         public DbSet<DbModel> DbModels { get; set; }
         public MyDbContext()
-             : this("Server=localhost;Database=Data54;Trusted_Connection=True;")
+             : this("Server=localhost;Database=Data56;Trusted_Connection=True;")
         {
             Database.EnsureCreated();
         }

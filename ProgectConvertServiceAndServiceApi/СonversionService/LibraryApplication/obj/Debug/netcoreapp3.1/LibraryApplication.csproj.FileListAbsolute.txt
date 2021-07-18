@@ -10,3 +10,15 @@ C:\Users\zakal\source\repos\СonversionService\LibraryApplication\obj\Debug\netc
 C:\Users\zakal\source\repos\СonversionService\LibraryApplication\obj\Debug\netcoreapp3.1\LibraryApplication.csproj.CopyComplete
 C:\Users\zakal\source\repos\СonversionService\LibraryApplication\obj\Debug\netcoreapp3.1\LibraryApplication.dll
 C:\Users\zakal\source\repos\СonversionService\LibraryApplication\obj\Debug\netcoreapp3.1\LibraryApplication.pdb
+C:\Service\ProgectConvertServiceAndServiceApi\СonversionService\LibraryApplication\bin\Debug\netcoreapp3.1\LibraryApplication.deps.json
+C:\Service\ProgectConvertServiceAndServiceApi\СonversionService\LibraryApplication\bin\Debug\netcoreapp3.1\LibraryApplication.dll
+C:\Service\ProgectConvertServiceAndServiceApi\СonversionService\LibraryApplication\bin\Debug\netcoreapp3.1\LibraryApplication.pdb
+C:\Service\ProgectConvertServiceAndServiceApi\СonversionService\LibraryApplication\bin\Debug\netcoreapp3.1\LibraryModels.dll
+C:\Service\ProgectConvertServiceAndServiceApi\СonversionService\LibraryApplication\bin\Debug\netcoreapp3.1\LibraryModels.pdb
+C:\Service\ProgectConvertServiceAndServiceApi\СonversionService\LibraryApplication\obj\Debug\netcoreapp3.1\LibraryApplication.csproj.AssemblyReference.cache
+C:\Service\ProgectConvertServiceAndServiceApi\СonversionService\LibraryApplication\obj\Debug\netcoreapp3.1\LibraryApplication.AssemblyInfoInputs.cache
+C:\Service\ProgectConvertServiceAndServiceApi\СonversionService\LibraryApplication\obj\Debug\netcoreapp3.1\LibraryApplication.AssemblyInfo.cs
+C:\Service\ProgectConvertServiceAndServiceApi\СonversionService\LibraryApplication\obj\Debug\netcoreapp3.1\LibraryApplication.csproj.CoreCompileInputs.cache
+C:\Service\ProgectConvertServiceAndServiceApi\СonversionService\LibraryApplication\obj\Debug\netcoreapp3.1\LibraryApplication.csproj.CopyComplete
+C:\Service\ProgectConvertServiceAndServiceApi\СonversionService\LibraryApplication\obj\Debug\netcoreapp3.1\LibraryApplication.dll
+C:\Service\ProgectConvertServiceAndServiceApi\СonversionService\LibraryApplication\obj\Debug\netcoreapp3.1\LibraryApplication.pdb

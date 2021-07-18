@@ -164,3 +164,4 @@ C:\Service\ProgectConvertServiceAndServiceApi\СonversionService\ServiceWebApi\o
 C:\Service\ProgectConvertServiceAndServiceApi\СonversionService\ServiceWebApi\obj\Debug\netcoreapp3.1\ServiceWebApi.xml
 C:\Service\ProgectConvertServiceAndServiceApi\СonversionService\ServiceWebApi\obj\Debug\netcoreapp3.1\ServiceWebApi.pdb
 C:\Service\ProgectConvertServiceAndServiceApi\СonversionService\ServiceWebApi\obj\Debug\netcoreapp3.1\ServiceWebApi.genruntimeconfig.cache
+C:\Service\ProgectConvertServiceAndServiceApi\СonversionService\ServiceWebApi\bin\Debug\netcoreapp3.1\MediatR.Extensions.Microsoft.DependencyInjection.dll

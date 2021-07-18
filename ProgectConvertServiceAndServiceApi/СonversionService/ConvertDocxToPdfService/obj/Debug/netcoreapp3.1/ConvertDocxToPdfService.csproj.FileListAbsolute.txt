@@ -216,3 +216,4 @@ C:\Service\ProgectConvertServiceAndServiceApi\СonversionService\ConvertDocxToPd
 C:\Service\ProgectConvertServiceAndServiceApi\СonversionService\ConvertDocxToPdfService\obj\Debug\netcoreapp3.1\ConvertDocxToPdfService.dll
 C:\Service\ProgectConvertServiceAndServiceApi\СonversionService\ConvertDocxToPdfService\obj\Debug\netcoreapp3.1\ConvertDocxToPdfService.pdb
 C:\Service\ProgectConvertServiceAndServiceApi\СonversionService\ConvertDocxToPdfService\obj\Debug\netcoreapp3.1\ConvertDocxToPdfService.genruntimeconfig.cache
+C:\Service\ProgectConvertServiceAndServiceApi\СonversionService\ConvertDocxToPdfService\bin\Debug\netcoreapp3.1\MediatR.Extensions.Microsoft.DependencyInjection.dll

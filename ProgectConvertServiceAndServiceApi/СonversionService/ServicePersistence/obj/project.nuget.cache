@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "KeIQJPjHflHzUR3U17XOliDtU7K15uvLZ031OghqqoUT4ZQPwjKe9JM7uFewMTYz8/rbZkXVtH8xVlfrdxLHSg==",
+  "dgSpecHash": "8tXZ6p/FYcX7AJo9WZt1RyFn9FgvuP/cUSnWgw7Lu53njGhlpVWgInNujXn/5CRtKdTXWAYxOiNuDnKyuNeWRQ==",
   "success": true,
   "projectFilePath": "C:\\Service\\ProgectConvertServiceAndServiceApi\\СonversionService\\ServicePersistence\\ServicePersistence.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\zakal\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
+    "C:\\Users\\zakal\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\9.0.0\\mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.8\\microsoft.aspnetcore.http.features.5.0.8.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",

@@ -8,6 +8,7 @@ using ServicePersistence;
 using System;
 using System.IO;
 using System.Reflection;
+using LibraryApplication;
 
 namespace ServiceWebApi
 {
@@ -21,6 +22,8 @@ namespace ServiceWebApi
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddApplication();
+            services.AddPersistence(configuration);
             services.AddControllers();
             services.AddDbContext<MyDbContext>(optionsBuilder => optionsBuilder.UseSqlServer(configuration.GetConnectionString("main")));
             services.AddSwaggerGen(config =>

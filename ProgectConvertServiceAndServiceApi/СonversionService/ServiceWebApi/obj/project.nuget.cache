@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "cseEe7t5VzZtIwZ3qKtNJH+k2wgk3IEifkhQJUWGzEUxdckxgyWESvCOigL4/X6qqHtlOPamvNkVxtFJ1PRGMg==",
+  "dgSpecHash": "KScVG4r/MiJ9zij650zI9d0yw7ql0JJYD6fqqBfavzxFP66H2ExdLVKa7zpVli39jS4TRHYMjORFn5C5El6/+w==",
   "success": true,
   "projectFilePath": "C:\\Service\\ProgectConvertServiceAndServiceApi\\СonversionService\\ServiceWebApi\\ServiceWebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\zakal\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
+    "C:\\Users\\zakal\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\9.0.0\\mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.8\\microsoft.aspnetcore.http.features.5.0.8.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",

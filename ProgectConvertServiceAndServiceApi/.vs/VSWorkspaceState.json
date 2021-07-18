@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\СonversionService"
+    "\\СonversionService",
+    "\\СonversionService\\ConvertDocxToPdfService"
   ],
-  "SelectedNode": "\\СonversionService\\СonversionService.sln",
+  "SelectedNode": "\\СonversionService\\ConvertDocxToPdfService\\Program.cs",
   "PreviewInSolutionExplorer": false
 }

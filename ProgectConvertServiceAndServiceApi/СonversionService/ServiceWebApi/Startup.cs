@@ -47,9 +47,10 @@ namespace ServiceWebApi
                 config.RoutePrefix = string.Empty;
                 config.SwaggerEndpoint("swagger/v1/swagger.json", "Notes API");
             });
-            app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseHttpsRedirection();
+            app.UseCors(builder => builder.AllowAnyOrigin());
 
             app.UseAuthorization();
 

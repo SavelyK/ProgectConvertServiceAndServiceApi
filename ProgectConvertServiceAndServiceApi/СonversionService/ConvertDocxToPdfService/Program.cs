@@ -30,7 +30,7 @@ namespace ServiceWebApi
                 .ConfigureServices(services =>
                 {
                     services.AddHostedService<Start>() 
-                    .AddDbContext<MyDbContext>(options => options.UseSqlServer("Server=localhost;Database=Data55;Trusted_Connection=True;"));
+                    .AddDbContext<MyDbContext>(options => options.UseSqlServer("Server=localhost;Database=Data58;Trusted_Connection=True;"));
                     services.AddSingleton<IStartService, StartService>();
                     services.AddSingleton<IMethods, Methods>();
 

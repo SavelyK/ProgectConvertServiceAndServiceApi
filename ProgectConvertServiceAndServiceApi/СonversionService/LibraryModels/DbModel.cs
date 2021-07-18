@@ -13,7 +13,7 @@ namespace LibraryModels
             InProgress,
             Completed
         }
-
+        public Guid UserId { get; set; }
         public int Id { get; set; }
         public string FileName { get; set; }
         public string Path { get; set; }

@@ -13,9 +13,10 @@ namespace ServiceWebApi
     {
         public static async Task Main(string[] args)
         {
-            var hostConvert = CreateConvertHostBuilder(args).Build(); //host convert service
+            var hostConvert = CreateConvertHostBuilder(args).Build(); 
                
-            var hostApi = CreateApiHostBuilder(args).Build();  // host web api
+            var hostApi = CreateApiHostBuilder(args).Build();
+           
             await Task.WhenAny
                 (
                  hostConvert.RunAsync(), 

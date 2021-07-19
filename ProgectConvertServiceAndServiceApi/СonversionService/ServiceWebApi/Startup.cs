@@ -24,6 +24,18 @@ namespace ServiceWebApi
         {
             services.AddApplication();
             services.AddPersistence(configuration);
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll", policy =>
+                  {
+                      policy.AllowAnyHeader();
+                      policy.AllowAnyMethod();
+                      policy.AllowAnyOrigin();
+                  });
+            });
+
+
+
             services.AddControllers();
             services.AddDbContext<MyDbContext>(optionsBuilder => optionsBuilder.UseSqlServer(configuration.GetConnectionString("main")));
             services.AddSwaggerGen(config =>
@@ -40,7 +52,7 @@ namespace ServiceWebApi
             {
                 app.UseDeveloperExceptionPage();
             }
-            
+
             app.UseSwagger();
             app.UseSwaggerUI(config =>
             {

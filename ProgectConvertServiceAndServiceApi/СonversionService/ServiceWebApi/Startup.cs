@@ -62,7 +62,7 @@ namespace ServiceWebApi
 
             app.UseRouting();
             app.UseHttpsRedirection();
-            app.UseCors(builder => builder.AllowAnyOrigin());
+            app.UseCors("AllowAll");
 
             app.UseAuthorization();
 

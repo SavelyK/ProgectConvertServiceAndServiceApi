@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "XwoMt58HtyMhIdoHbH+Y1ZutAgQww7c7PlDWylQqEpc1pDvVwapEzpBHuEf+TsRI6Pt7kQ1IHaM6dOWAM2CzpQ==",
+  "dgSpecHash": "Tfr9h2vXeRQ9lUnF441CB8mFsGmlkTxLAeAxk+0r9wvKsewPvXSoowMAny3fn/NRGR1XXSDNXddqVvftydrKrw==",
   "success": true,
   "projectFilePath": "C:\\Service\\new version of the project\\ServicesConvertAndApi\\Repository.Persistence\\RepositoryPersistence.csproj",
   "expectedPackageFiles": [
@@ -39,8 +39,6 @@
     "C:\\Users\\zakal\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
-    "C:\\Users\\zakal\\.nuget\\packages\\serilog\\2.10.0\\serilog.2.10.0.nupkg.sha512",
-    "C:\\Users\\zakal\\.nuget\\packages\\serilog.sinks.file\\5.0.0\\serilog.sinks.file.5.0.0.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\system.collections.immutable\\5.0.0\\system.collections.immutable.5.0.0.nupkg.sha512",

@@ -14,6 +14,7 @@ namespace RepositoryWebApi
     {
         public static async Task Main(string[] args)
         {
+         
             var hostApi = CreateApiHostBuilder(args).Build();
             using (var scope = hostApi.Services.CreateScope())
             {

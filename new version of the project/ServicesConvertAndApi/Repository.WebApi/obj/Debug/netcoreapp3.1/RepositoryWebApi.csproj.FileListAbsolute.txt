@@ -113,6 +113,12 @@ C:\Users\zakal\source\repos\ServicesConvertAndApi\Repository.WebApi\bin\Debug\ne
 C:\Users\zakal\source\repos\ServicesConvertAndApi\Repository.WebApi\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
 C:\Users\zakal\source\repos\ServicesConvertAndApi\Repository.WebApi\bin\Debug\netcoreapp3.1\ConvertDocxToPdfService.dll
 C:\Users\zakal\source\repos\ServicesConvertAndApi\Repository.WebApi\bin\Debug\netcoreapp3.1\ConvertDocxToPdfService.pdb
+C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\obj\Debug\netcoreapp3.1\RepositoryWebApi.AssemblyInfoInputs.cache
+C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\obj\Debug\netcoreapp3.1\RepositoryWebApi.AssemblyInfo.cs
+C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\obj\Debug\netcoreapp3.1\RepositoryWebApi.csproj.CoreCompileInputs.cache
+C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\obj\Debug\netcoreapp3.1\RepositoryWebApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\obj\Debug\netcoreapp3.1\RepositoryWebApi.csproj.AssemblyReference.cache
+C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\obj\Debug\netcoreapp3.1\RepositoryWebApi.MvcApplicationPartsAssemblyInfo.cs
 C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\bin\Debug\netcoreapp3.1\ConvertDocxToPdfService.deps.json
 C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\bin\Debug\netcoreapp3.1\ConvertDocxToPdfService.runtimeconfig.json
 C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\bin\Debug\netcoreapp3.1\ConvertDocxToPdfService.runtimeconfig.dev.json
@@ -125,6 +131,7 @@ C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\bi
 C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\bin\Debug\netcoreapp3.1\RepositoryWebApi.runtimeconfig.dev.json
 C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\bin\Debug\netcoreapp3.1\RepositoryWebApi.dll
 C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\bin\Debug\netcoreapp3.1\RepositoryWebApi.pdb
+C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\bin\Debug\netcoreapp3.1\RepositoryWebApi.xml
 C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\bin\Debug\netcoreapp3.1\AutoMapper.dll
 C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\bin\Debug\netcoreapp3.1\FluentValidation.dll
@@ -173,8 +180,6 @@ C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\bi
 C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\bin\Debug\netcoreapp3.1\Microsoft.Win32.Registry.dll
 C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\bin\Debug\netcoreapp3.1\SautinSoft.Document.dll
-C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\bin\Debug\netcoreapp3.1\Serilog.dll
-C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\bin\Debug\netcoreapp3.1\Serilog.Sinks.File.dll
 C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
 C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -216,17 +221,12 @@ C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\bi
 C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\bin\Debug\netcoreapp3.1\RepositoryApplication.pdb
 C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\bin\Debug\netcoreapp3.1\RepositoryPersistence.pdb
 C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\bin\Debug\netcoreapp3.1\RepositoryDomain.pdb
-C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\obj\Debug\netcoreapp3.1\RepositoryWebApi.csproj.AssemblyReference.cache
-C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\obj\Debug\netcoreapp3.1\RepositoryWebApi.AssemblyInfoInputs.cache
-C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\obj\Debug\netcoreapp3.1\RepositoryWebApi.AssemblyInfo.cs
-C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\obj\Debug\netcoreapp3.1\RepositoryWebApi.csproj.CoreCompileInputs.cache
-C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\obj\Debug\netcoreapp3.1\RepositoryWebApi.MvcApplicationPartsAssemblyInfo.cs
-C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\obj\Debug\netcoreapp3.1\RepositoryWebApi.MvcApplicationPartsAssemblyInfo.cache
 C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\obj\Debug\netcoreapp3.1\staticwebassets\RepositoryWebApi.StaticWebAssets.Manifest.cache
 C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\obj\Debug\netcoreapp3.1\staticwebassets\RepositoryWebApi.StaticWebAssets.xml
 C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\obj\Debug\netcoreapp3.1\scopedcss\bundle\RepositoryWebApi.styles.css
 C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\obj\Debug\netcoreapp3.1\RepositoryWebApi.RazorTargetAssemblyInfo.cache
 C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\obj\Debug\netcoreapp3.1\RepositoryWebApi.csproj.CopyComplete
 C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\obj\Debug\netcoreapp3.1\RepositoryWebApi.dll
+C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\obj\Debug\netcoreapp3.1\RepositoryWebApi.xml
 C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\obj\Debug\netcoreapp3.1\RepositoryWebApi.pdb
 C:\Service\new version of the project\ServicesConvertAndApi\Repository.WebApi\obj\Debug\netcoreapp3.1\RepositoryWebApi.genruntimeconfig.cache

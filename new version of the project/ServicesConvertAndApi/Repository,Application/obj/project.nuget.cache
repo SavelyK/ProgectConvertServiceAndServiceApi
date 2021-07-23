@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "qlM6FjvH4NU9gaM5D4nPccX/oow9avEHlngv8gkwqpwRV0zUHXSt3qhc4tCqsfQAvtqiVBRzKZjWz2wCAYyw0Q==",
+  "dgSpecHash": "GuSqztZ8UCFgFFxul800VFkKkGSpjX8SXCVtWOnLAajiSVWmoyqoVs+30cmGcaOnwJFs2o+PRxnL9K0A3Q2U5Q==",
   "success": true,
   "projectFilePath": "C:\\Service\\new version of the project\\ServicesConvertAndApi\\Repository,Application\\RepositoryApplication.csproj",
   "expectedPackageFiles": [
@@ -21,8 +21,6 @@
     "C:\\Users\\zakal\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
-    "C:\\Users\\zakal\\.nuget\\packages\\serilog\\2.10.0\\serilog.2.10.0.nupkg.sha512",
-    "C:\\Users\\zakal\\.nuget\\packages\\serilog.sinks.file\\5.0.0\\serilog.sinks.file.5.0.0.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\system.collections.immutable\\5.0.0\\system.collections.immutable.5.0.0.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.1\\system.diagnostics.diagnosticsource.5.0.1.nupkg.sha512",

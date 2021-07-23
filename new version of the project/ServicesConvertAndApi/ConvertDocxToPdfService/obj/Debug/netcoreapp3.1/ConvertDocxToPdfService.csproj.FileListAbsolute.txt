@@ -103,6 +103,9 @@ C:\Users\zakal\source\repos\ServicesConvertAndApi\ConvertDocxToPdfService\bin\De
 C:\Users\zakal\source\repos\ServicesConvertAndApi\ConvertDocxToPdfService\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\zakal\source\repos\ServicesConvertAndApi\ConvertDocxToPdfService\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\zakal\source\repos\ServicesConvertAndApi\ConvertDocxToPdfService\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Service\new version of the project\ServicesConvertAndApi\ConvertDocxToPdfService\obj\Debug\netcoreapp3.1\ConvertDocxToPdfService.AssemblyInfoInputs.cache
+C:\Service\new version of the project\ServicesConvertAndApi\ConvertDocxToPdfService\obj\Debug\netcoreapp3.1\ConvertDocxToPdfService.AssemblyInfo.cs
+C:\Service\new version of the project\ServicesConvertAndApi\ConvertDocxToPdfService\obj\Debug\netcoreapp3.1\ConvertDocxToPdfService.csproj.CoreCompileInputs.cache
 C:\Service\new version of the project\ServicesConvertAndApi\ConvertDocxToPdfService\bin\Debug\netcoreapp3.1\ConvertDocxToPdfService.exe
 C:\Service\new version of the project\ServicesConvertAndApi\ConvertDocxToPdfService\bin\Debug\netcoreapp3.1\ConvertDocxToPdfService.deps.json
 C:\Service\new version of the project\ServicesConvertAndApi\ConvertDocxToPdfService\bin\Debug\netcoreapp3.1\ConvertDocxToPdfService.runtimeconfig.json
@@ -157,8 +160,6 @@ C:\Service\new version of the project\ServicesConvertAndApi\ConvertDocxToPdfServ
 C:\Service\new version of the project\ServicesConvertAndApi\ConvertDocxToPdfService\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
 C:\Service\new version of the project\ServicesConvertAndApi\ConvertDocxToPdfService\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Service\new version of the project\ServicesConvertAndApi\ConvertDocxToPdfService\bin\Debug\netcoreapp3.1\SautinSoft.Document.dll
-C:\Service\new version of the project\ServicesConvertAndApi\ConvertDocxToPdfService\bin\Debug\netcoreapp3.1\Serilog.dll
-C:\Service\new version of the project\ServicesConvertAndApi\ConvertDocxToPdfService\bin\Debug\netcoreapp3.1\Serilog.Sinks.File.dll
 C:\Service\new version of the project\ServicesConvertAndApi\ConvertDocxToPdfService\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 C:\Service\new version of the project\ServicesConvertAndApi\ConvertDocxToPdfService\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
 C:\Service\new version of the project\ServicesConvertAndApi\ConvertDocxToPdfService\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
@@ -203,9 +204,6 @@ C:\Service\new version of the project\ServicesConvertAndApi\ConvertDocxToPdfServ
 C:\Service\new version of the project\ServicesConvertAndApi\ConvertDocxToPdfService\bin\Debug\netcoreapp3.1\RepositoryDomain.pdb
 C:\Service\new version of the project\ServicesConvertAndApi\ConvertDocxToPdfService\bin\Debug\netcoreapp3.1\RepositoryPersistence.pdb
 C:\Service\new version of the project\ServicesConvertAndApi\ConvertDocxToPdfService\obj\Debug\netcoreapp3.1\ConvertDocxToPdfService.csproj.AssemblyReference.cache
-C:\Service\new version of the project\ServicesConvertAndApi\ConvertDocxToPdfService\obj\Debug\netcoreapp3.1\ConvertDocxToPdfService.AssemblyInfoInputs.cache
-C:\Service\new version of the project\ServicesConvertAndApi\ConvertDocxToPdfService\obj\Debug\netcoreapp3.1\ConvertDocxToPdfService.AssemblyInfo.cs
-C:\Service\new version of the project\ServicesConvertAndApi\ConvertDocxToPdfService\obj\Debug\netcoreapp3.1\ConvertDocxToPdfService.csproj.CoreCompileInputs.cache
 C:\Service\new version of the project\ServicesConvertAndApi\ConvertDocxToPdfService\obj\Debug\netcoreapp3.1\ConvertDocxToPdfService.csproj.CopyComplete
 C:\Service\new version of the project\ServicesConvertAndApi\ConvertDocxToPdfService\obj\Debug\netcoreapp3.1\ConvertDocxToPdfService.dll
 C:\Service\new version of the project\ServicesConvertAndApi\ConvertDocxToPdfService\obj\Debug\netcoreapp3.1\ConvertDocxToPdfService.pdb

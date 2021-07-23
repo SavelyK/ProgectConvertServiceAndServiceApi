@@ -8,6 +8,8 @@ using RepositoryApplication.Interfases;
 using RepositoryApplication;
 using RepositoryPersistence;
 using Microsoft.Extensions.Configuration;
+using System.IO;
+
 
 namespace RepositoryWebApi
 {
@@ -34,13 +36,14 @@ namespace RepositoryWebApi
                     policy.AllowAnyOrigin();
                 });
             });
-            services.AddSwaggerGen(//config =>
-            //{
-            //    var xmlFile = $"{ Assembly.GetExecutingAssembly().GetName().Name}.xml";
-            //    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-            //    config.IncludeXmlComments(xmlPath);
-            //}
+            services.AddSwaggerGen(config =>
+            {
+                var xmlFile = $"{ Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(System.AppContext.BaseDirectory, xmlFile);
+                config.IncludeXmlComments(xmlPath);
+            }
             );
+
             
 
         }
@@ -56,7 +59,7 @@ namespace RepositoryWebApi
             app.UseSwaggerUI(config =>
             {
                 config.RoutePrefix = string.Empty;
-                config.SwaggerEndpoint("swagger/v1/swagger.json", "Notes API");
+                config.SwaggerEndpoint("swagger/v1/swagger.json", "RepositoryWebAPI");
             });
             app.UseSwagger();
             app.UseSwaggerUI();

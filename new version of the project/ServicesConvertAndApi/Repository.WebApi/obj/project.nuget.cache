@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ikIGL33retrH4LZO3wv9QpQm4gsgu0TKE9zp605o37+L+hdSKEMieEO3DOvpOhS474TKCtbrDB1Y1w5RwT0gKA==",
+  "dgSpecHash": "72FlCXUDAm/ENfM6sWzs+uoUNE0axGg4vqzTmypdcgwgFOtblUjmsC5NygcUZ3z1DwEK8FEUhIvXavoyz45pnQ==",
   "success": true,
   "projectFilePath": "C:\\Service\\new version of the project\\ServicesConvertAndApi\\Repository.WebApi\\RepositoryWebApi.csproj",
   "expectedPackageFiles": [
@@ -60,8 +60,6 @@
     "C:\\Users\\zakal\\.nuget\\packages\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\sautinsoft.document\\5.3.6.22\\sautinsoft.document.5.3.6.22.nupkg.sha512",
-    "C:\\Users\\zakal\\.nuget\\packages\\serilog\\2.10.0\\serilog.2.10.0.nupkg.sha512",
-    "C:\\Users\\zakal\\.nuget\\packages\\serilog.sinks.file\\5.0.0\\serilog.sinks.file.5.0.0.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\swashbuckle.aspnetcore\\6.1.4\\swashbuckle.aspnetcore.6.1.4.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.1.4\\swashbuckle.aspnetcore.swagger.6.1.4.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.1.4\\swashbuckle.aspnetcore.swaggergen.6.1.4.nupkg.sha512",

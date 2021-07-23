@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RepositoryDomain", "Reposit
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RepositoryApplication", "Repository,Application\RepositoryApplication.csproj", "{53B372F3-D7A7-40C5-B8BB-375DB61E685F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvertDocxToPdfService", "ConvertDocxToPdfService\ConvertDocxToPdfService.csproj", "{C32CC475-D46C-4D01-A284-71F51E422B7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConvertDocxToPdfService", "ConvertDocxToPdfService\ConvertDocxToPdfService.csproj", "{C32CC475-D46C-4D01-A284-71F51E422B7E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

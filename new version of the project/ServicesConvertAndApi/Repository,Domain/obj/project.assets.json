@@ -94,11 +94,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\zakal\\source\\repos\\ServicesConvertAndApi\\Repository,Domain\\RepositoryDomain.csproj",
+      "projectUniqueName": "C:\\Service\\new version of the project\\ServicesConvertAndApi\\Repository,Domain\\RepositoryDomain.csproj",
       "projectName": "RepositoryDomain",
-      "projectPath": "C:\\Users\\zakal\\source\\repos\\ServicesConvertAndApi\\Repository,Domain\\RepositoryDomain.csproj",
+      "projectPath": "C:\\Service\\new version of the project\\ServicesConvertAndApi\\Repository,Domain\\RepositoryDomain.csproj",
       "packagesPath": "C:\\Users\\zakal\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\zakal\\source\\repos\\ServicesConvertAndApi\\Repository,Domain\\obj\\",
+      "outputPath": "C:\\Service\\new version of the project\\ServicesConvertAndApi\\Repository,Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

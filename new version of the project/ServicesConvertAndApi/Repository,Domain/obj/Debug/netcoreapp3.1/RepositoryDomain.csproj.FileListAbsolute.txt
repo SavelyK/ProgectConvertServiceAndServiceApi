@@ -6,3 +6,11 @@ C:\Users\zakal\source\repos\ServicesConvertAndApi\Repository,Domain\obj\Debug\ne
 C:\Users\zakal\source\repos\ServicesConvertAndApi\Repository,Domain\obj\Debug\netcoreapp3.1\RepositoryDomain.csproj.CoreCompileInputs.cache
 C:\Users\zakal\source\repos\ServicesConvertAndApi\Repository,Domain\obj\Debug\netcoreapp3.1\RepositoryDomain.dll
 C:\Users\zakal\source\repos\ServicesConvertAndApi\Repository,Domain\obj\Debug\netcoreapp3.1\RepositoryDomain.pdb
+C:\Service\new version of the project\ServicesConvertAndApi\Repository,Domain\bin\Debug\netcoreapp3.1\RepositoryDomain.deps.json
+C:\Service\new version of the project\ServicesConvertAndApi\Repository,Domain\bin\Debug\netcoreapp3.1\RepositoryDomain.dll
+C:\Service\new version of the project\ServicesConvertAndApi\Repository,Domain\bin\Debug\netcoreapp3.1\RepositoryDomain.pdb
+C:\Service\new version of the project\ServicesConvertAndApi\Repository,Domain\obj\Debug\netcoreapp3.1\RepositoryDomain.AssemblyInfoInputs.cache
+C:\Service\new version of the project\ServicesConvertAndApi\Repository,Domain\obj\Debug\netcoreapp3.1\RepositoryDomain.AssemblyInfo.cs
+C:\Service\new version of the project\ServicesConvertAndApi\Repository,Domain\obj\Debug\netcoreapp3.1\RepositoryDomain.csproj.CoreCompileInputs.cache
+C:\Service\new version of the project\ServicesConvertAndApi\Repository,Domain\obj\Debug\netcoreapp3.1\RepositoryDomain.dll
+C:\Service\new version of the project\ServicesConvertAndApi\Repository,Domain\obj\Debug\netcoreapp3.1\RepositoryDomain.pdb

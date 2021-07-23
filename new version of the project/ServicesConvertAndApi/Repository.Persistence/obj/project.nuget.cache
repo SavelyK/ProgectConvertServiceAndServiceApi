@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "o7Iha6Zj/cTudxAqRHWkNiVpCfv1ljZCUoR3X/sSHtjqJj5VrFNUsZLU7jH4ijxelLbPPHu5Rgu7+8Kf+W4oeg==",
+  "dgSpecHash": "XwoMt58HtyMhIdoHbH+Y1ZutAgQww7c7PlDWylQqEpc1pDvVwapEzpBHuEf+TsRI6Pt7kQ1IHaM6dOWAM2CzpQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\zakal\\source\\repos\\ServicesConvertAndApi\\Repository.Persistence\\RepositoryPersistence.csproj",
+  "projectFilePath": "C:\\Service\\new version of the project\\ServicesConvertAndApi\\Repository.Persistence\\RepositoryPersistence.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\zakal\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
+    "C:\\Users\\zakal\\.nuget\\packages\\fluentvalidation\\10.3.0\\fluentvalidation.10.3.0.nupkg.sha512",
+    "C:\\Users\\zakal\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\10.3.0\\fluentvalidation.dependencyinjectionextensions.10.3.0.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\9.0.0\\mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

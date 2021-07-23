@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "YjPOVNrcrT2AN1lA7ka8+PiafHohte0LKMQbaiLdLud5jbeIBHWOHiXXVUeh9Wbbg3ktICWpNxtPK1YwqmPj8Q==",
+  "dgSpecHash": "g3eO7n46b6FLonaN6eru7U9l4fPEEfg7/6dq2M2of9HSdKOHRKe5mb3FLsSFeADmjaIFrOIeeos5lezRgTpftg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\zakal\\source\\repos\\ServicesConvertAndApi\\ConvertDocxToPdfService\\ConvertDocxToPdfService.csproj",
+  "projectFilePath": "C:\\Service\\new version of the project\\ServicesConvertAndApi\\ConvertDocxToPdfService\\ConvertDocxToPdfService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\zakal\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
+    "C:\\Users\\zakal\\.nuget\\packages\\fluentvalidation\\10.3.0\\fluentvalidation.10.3.0.nupkg.sha512",
+    "C:\\Users\\zakal\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\10.3.0\\fluentvalidation.dependencyinjectionextensions.10.3.0.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\9.0.0\\mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

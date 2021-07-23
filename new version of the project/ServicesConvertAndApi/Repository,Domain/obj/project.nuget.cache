@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "T5JL7npF4ZBplMTBQYbWaHEs6VPgbxwJkF2F76FUJTy23f3zBJrVyy+x+HvRkjm5QBF986qTD9pn+aq/JfgMqQ==",
+  "dgSpecHash": "GlCC/60JSLjE/fr8eA3x+mq/6shRh2BNHr6jcjzOeeO75Tlp5zKNXjClo1j4PFSfb/poCp+bxImeVee1rckc1g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\zakal\\source\\repos\\ServicesConvertAndApi\\Repository,Domain\\RepositoryDomain.csproj",
+  "projectFilePath": "C:\\Service\\new version of the project\\ServicesConvertAndApi\\Repository,Domain\\RepositoryDomain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\zakal\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\9.0.0\\mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",

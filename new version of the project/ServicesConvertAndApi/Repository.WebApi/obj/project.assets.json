@@ -29,6 +29,28 @@
           "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
         }
       },
+      "FluentValidation/10.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/FluentValidation.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentValidation.dll": {}
+        }
+      },
+      "FluentValidation.DependencyInjectionExtensions/10.3.0": {
+        "type": "package",
+        "dependencies": {
+          "FluentValidation": "10.3.0",
+          "Microsoft.Extensions.Dependencyinjection.Abstractions": "2.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll": {}
+        }
+      },
       "MediatR/9.0.0": {
         "type": "package",
         "compile": {
@@ -2012,6 +2034,8 @@
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
           "AutoMapper": "10.1.1",
+          "FluentValidation": "10.3.0",
+          "FluentValidation.DependencyInjectionExtensions": "10.3.0",
           "MediatR": "9.0.0",
           "MediatR.Extensions.Microsoft.DependencyInjection": "9.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.8",
@@ -2087,6 +2111,40 @@
         "automapper.extensions.microsoft.dependencyinjection.nuspec",
         "icon.png",
         "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll"
+      ]
+    },
+    "FluentValidation/10.3.0": {
+      "sha512": "ujEB9UMBPDLib6dyhSRhl93IE6ko4ZU6Nz9MFqohaKcvyf06Hk0yDQUFJGF6RgAOsm27O7ZZHVDpXx7oU5vBcg==",
+      "type": "package",
+      "path": "fluentvalidation/10.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fluent-validation-icon.png",
+        "fluentvalidation.10.3.0.nupkg.sha512",
+        "fluentvalidation.nuspec",
+        "lib/net5.0/FluentValidation.dll",
+        "lib/net5.0/FluentValidation.xml",
+        "lib/netstandard2.0/FluentValidation.dll",
+        "lib/netstandard2.0/FluentValidation.xml",
+        "lib/netstandard2.1/FluentValidation.dll",
+        "lib/netstandard2.1/FluentValidation.xml"
+      ]
+    },
+    "FluentValidation.DependencyInjectionExtensions/10.3.0": {
+      "sha512": "d2QCRJivTfDGCVXKbsSIks2mI744TCUL8ZPrJccnxIIbmvuj51C8KfyomnyJSMBnxLIhigI4LrdsXHzW3uUIHw==",
+      "type": "package",
+      "path": "fluentvalidation.dependencyinjectionextensions/10.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fluent-validation-icon.png",
+        "fluentvalidation.dependencyinjectionextensions.10.3.0.nupkg.sha512",
+        "fluentvalidation.dependencyinjectionextensions.nuspec",
+        "lib/netstandard2.0/FluentValidation.DependencyInjectionExtensions.dll",
+        "lib/netstandard2.0/FluentValidation.DependencyInjectionExtensions.xml",
+        "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll",
+        "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.xml"
       ]
     },
     "MediatR/9.0.0": {
@@ -7112,11 +7170,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\zakal\\source\\repos\\ServicesConvertAndApi\\Repository.WebApi\\RepositoryWebApi.csproj",
+      "projectUniqueName": "C:\\Service\\new version of the project\\ServicesConvertAndApi\\Repository.WebApi\\RepositoryWebApi.csproj",
       "projectName": "RepositoryWebApi",
-      "projectPath": "C:\\Users\\zakal\\source\\repos\\ServicesConvertAndApi\\Repository.WebApi\\RepositoryWebApi.csproj",
+      "projectPath": "C:\\Service\\new version of the project\\ServicesConvertAndApi\\Repository.WebApi\\RepositoryWebApi.csproj",
       "packagesPath": "C:\\Users\\zakal\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\zakal\\source\\repos\\ServicesConvertAndApi\\Repository.WebApi\\obj\\",
+      "outputPath": "C:\\Service\\new version of the project\\ServicesConvertAndApi\\Repository.WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -7139,14 +7197,14 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\zakal\\source\\repos\\ServicesConvertAndApi\\ConvertDocxToPdfService\\ConvertDocxToPdfService.csproj": {
-              "projectPath": "C:\\Users\\zakal\\source\\repos\\ServicesConvertAndApi\\ConvertDocxToPdfService\\ConvertDocxToPdfService.csproj"
+            "C:\\Service\\new version of the project\\ServicesConvertAndApi\\ConvertDocxToPdfService\\ConvertDocxToPdfService.csproj": {
+              "projectPath": "C:\\Service\\new version of the project\\ServicesConvertAndApi\\ConvertDocxToPdfService\\ConvertDocxToPdfService.csproj"
             },
-            "C:\\Users\\zakal\\source\\repos\\ServicesConvertAndApi\\Repository,Application\\RepositoryApplication.csproj": {
-              "projectPath": "C:\\Users\\zakal\\source\\repos\\ServicesConvertAndApi\\Repository,Application\\RepositoryApplication.csproj"
+            "C:\\Service\\new version of the project\\ServicesConvertAndApi\\Repository,Application\\RepositoryApplication.csproj": {
+              "projectPath": "C:\\Service\\new version of the project\\ServicesConvertAndApi\\Repository,Application\\RepositoryApplication.csproj"
             },
-            "C:\\Users\\zakal\\source\\repos\\ServicesConvertAndApi\\Repository.Persistence\\RepositoryPersistence.csproj": {
-              "projectPath": "C:\\Users\\zakal\\source\\repos\\ServicesConvertAndApi\\Repository.Persistence\\RepositoryPersistence.csproj"
+            "C:\\Service\\new version of the project\\ServicesConvertAndApi\\Repository.Persistence\\RepositoryPersistence.csproj": {
+              "projectPath": "C:\\Service\\new version of the project\\ServicesConvertAndApi\\Repository.Persistence\\RepositoryPersistence.csproj"
             }
           }
         }

@@ -14,7 +14,6 @@ namespace RepositoryWebApi.Controllers
 
         [HttpGet]
         [Route("{id}")]
-
         public async Task<ActionResult<TaskStatusVm>> GetTaskStatus(Guid id)
         {
             var query = new GetTaskStatusQuery

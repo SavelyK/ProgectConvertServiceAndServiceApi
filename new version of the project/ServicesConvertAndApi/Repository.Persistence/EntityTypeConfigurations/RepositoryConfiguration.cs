@@ -13,7 +13,7 @@ namespace RepositoryPersistence.EntityTypeConfigurations
             builder.HasKey(repository => repository.Id);
             builder.HasIndex(repository => repository.Id).IsUnique();
             builder.Property(repository => repository.Id).ValueGeneratedOnAdd();
-            builder.Property(repository => repository.FileName).HasMaxLength(100);
+            builder.Property(repository => repository.FileName).HasMaxLength(200);
             builder.Property(repository => repository.Path).HasMaxLength(200);
         }
     }

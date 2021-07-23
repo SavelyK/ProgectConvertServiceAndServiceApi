@@ -1,0 +1,12 @@
+C:\Users\zakal\source\repos\ServicesConvertAndApi\Repository,Domain\bin\Debug\netcoreapp3.1\Repository,Domain.deps.json
+C:\Users\zakal\source\repos\ServicesConvertAndApi\Repository,Domain\bin\Debug\netcoreapp3.1\Repository,Domain.dll
+C:\Users\zakal\source\repos\ServicesConvertAndApi\Repository,Domain\bin\Debug\netcoreapp3.1\Repository,Domain.pdb
+C:\Users\zakal\source\repos\ServicesConvertAndApi\Repository,Domain\bin\Debug\netcoreapp3.1\Repository,Application.dll
+C:\Users\zakal\source\repos\ServicesConvertAndApi\Repository,Domain\bin\Debug\netcoreapp3.1\Repository,Application.pdb
+C:\Users\zakal\source\repos\ServicesConvertAndApi\Repository,Domain\obj\Debug\netcoreapp3.1\Repository,Domain.csproj.AssemblyReference.cache
+C:\Users\zakal\source\repos\ServicesConvertAndApi\Repository,Domain\obj\Debug\netcoreapp3.1\Repository,Domain.AssemblyInfoInputs.cache
+C:\Users\zakal\source\repos\ServicesConvertAndApi\Repository,Domain\obj\Debug\netcoreapp3.1\Repository,Domain.AssemblyInfo.cs
+C:\Users\zakal\source\repos\ServicesConvertAndApi\Repository,Domain\obj\Debug\netcoreapp3.1\Repository,Domain.csproj.CoreCompileInputs.cache
+C:\Users\zakal\source\repos\ServicesConvertAndApi\Repository,Domain\obj\Debug\netcoreapp3.1\Repository,Domain.csproj.CopyComplete
+C:\Users\zakal\source\repos\ServicesConvertAndApi\Repository,Domain\obj\Debug\netcoreapp3.1\Repository,Domain.dll
+C:\Users\zakal\source\repos\ServicesConvertAndApi\Repository,Domain\obj\Debug\netcoreapp3.1\Repository,Domain.pdb

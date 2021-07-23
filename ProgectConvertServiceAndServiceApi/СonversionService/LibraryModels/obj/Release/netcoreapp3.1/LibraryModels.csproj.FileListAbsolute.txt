@@ -1,9 +1,0 @@
-C:\Service\ProgectConvertServiceAndServiceApi\СonversionService\LibraryModels\bin\Release\netcoreapp3.1\LibraryModels.deps.json
-C:\Service\ProgectConvertServiceAndServiceApi\СonversionService\LibraryModels\bin\Release\netcoreapp3.1\LibraryModels.dll
-C:\Service\ProgectConvertServiceAndServiceApi\СonversionService\LibraryModels\bin\Release\netcoreapp3.1\LibraryModels.pdb
-C:\Service\ProgectConvertServiceAndServiceApi\СonversionService\LibraryModels\obj\Release\netcoreapp3.1\LibraryModels.csproj.AssemblyReference.cache
-C:\Service\ProgectConvertServiceAndServiceApi\СonversionService\LibraryModels\obj\Release\netcoreapp3.1\LibraryModels.AssemblyInfoInputs.cache
-C:\Service\ProgectConvertServiceAndServiceApi\СonversionService\LibraryModels\obj\Release\netcoreapp3.1\LibraryModels.AssemblyInfo.cs
-C:\Service\ProgectConvertServiceAndServiceApi\СonversionService\LibraryModels\obj\Release\netcoreapp3.1\LibraryModels.csproj.CoreCompileInputs.cache
-C:\Service\ProgectConvertServiceAndServiceApi\СonversionService\LibraryModels\obj\Release\netcoreapp3.1\LibraryModels.dll
-C:\Service\ProgectConvertServiceAndServiceApi\СonversionService\LibraryModels\obj\Release\netcoreapp3.1\LibraryModels.pdb

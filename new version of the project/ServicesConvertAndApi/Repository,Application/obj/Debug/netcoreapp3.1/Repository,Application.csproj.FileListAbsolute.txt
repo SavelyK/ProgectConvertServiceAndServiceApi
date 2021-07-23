@@ -1,0 +1,8 @@
+C:\Users\zakal\source\repos\ServicesConvertAndApi\Repository,Application\bin\Debug\netcoreapp3.1\Repository,Application.deps.json
+C:\Users\zakal\source\repos\ServicesConvertAndApi\Repository,Application\bin\Debug\netcoreapp3.1\Repository,Application.dll
+C:\Users\zakal\source\repos\ServicesConvertAndApi\Repository,Application\bin\Debug\netcoreapp3.1\Repository,Application.pdb
+C:\Users\zakal\source\repos\ServicesConvertAndApi\Repository,Application\obj\Debug\netcoreapp3.1\Repository,Application.AssemblyInfoInputs.cache
+C:\Users\zakal\source\repos\ServicesConvertAndApi\Repository,Application\obj\Debug\netcoreapp3.1\Repository,Application.AssemblyInfo.cs
+C:\Users\zakal\source\repos\ServicesConvertAndApi\Repository,Application\obj\Debug\netcoreapp3.1\Repository,Application.csproj.CoreCompileInputs.cache
+C:\Users\zakal\source\repos\ServicesConvertAndApi\Repository,Application\obj\Debug\netcoreapp3.1\Repository,Application.dll
+C:\Users\zakal\source\repos\ServicesConvertAndApi\Repository,Application\obj\Debug\netcoreapp3.1\Repository,Application.pdb

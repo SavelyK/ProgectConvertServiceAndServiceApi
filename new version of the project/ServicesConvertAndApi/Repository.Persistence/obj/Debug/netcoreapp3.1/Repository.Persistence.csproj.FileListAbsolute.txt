@@ -1,0 +1,9 @@
+C:\Users\zakal\source\repos\ServicesConvertAndApi\Repository.Persistence\bin\Debug\netcoreapp3.1\Repository.Persistence.deps.json
+C:\Users\zakal\source\repos\ServicesConvertAndApi\Repository.Persistence\bin\Debug\netcoreapp3.1\Repository.Persistence.dll
+C:\Users\zakal\source\repos\ServicesConvertAndApi\Repository.Persistence\bin\Debug\netcoreapp3.1\Repository.Persistence.pdb
+C:\Users\zakal\source\repos\ServicesConvertAndApi\Repository.Persistence\obj\Debug\netcoreapp3.1\Repository.Persistence.csproj.AssemblyReference.cache
+C:\Users\zakal\source\repos\ServicesConvertAndApi\Repository.Persistence\obj\Debug\netcoreapp3.1\Repository.Persistence.AssemblyInfoInputs.cache
+C:\Users\zakal\source\repos\ServicesConvertAndApi\Repository.Persistence\obj\Debug\netcoreapp3.1\Repository.Persistence.AssemblyInfo.cs
+C:\Users\zakal\source\repos\ServicesConvertAndApi\Repository.Persistence\obj\Debug\netcoreapp3.1\Repository.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\zakal\source\repos\ServicesConvertAndApi\Repository.Persistence\obj\Debug\netcoreapp3.1\Repository.Persistence.dll
+C:\Users\zakal\source\repos\ServicesConvertAndApi\Repository.Persistence\obj\Debug\netcoreapp3.1\Repository.Persistence.pdb

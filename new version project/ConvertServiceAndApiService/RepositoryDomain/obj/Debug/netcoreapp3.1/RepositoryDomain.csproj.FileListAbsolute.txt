@@ -7,3 +7,12 @@ C:\Users\zakal\source\repos\ConvertServiceAndApiService\RepositoryDomain\obj\Deb
 C:\Users\zakal\source\repos\ConvertServiceAndApiService\RepositoryDomain\obj\Debug\netcoreapp3.1\RepositoryDomain.csproj.CoreCompileInputs.cache
 C:\Users\zakal\source\repos\ConvertServiceAndApiService\RepositoryDomain\obj\Debug\netcoreapp3.1\RepositoryDomain.dll
 C:\Users\zakal\source\repos\ConvertServiceAndApiService\RepositoryDomain\obj\Debug\netcoreapp3.1\RepositoryDomain.pdb
+C:\Service\new version project\ConvertServiceAndApiService\RepositoryDomain\bin\Debug\netcoreapp3.1\RepositoryDomain.deps.json
+C:\Service\new version project\ConvertServiceAndApiService\RepositoryDomain\bin\Debug\netcoreapp3.1\RepositoryDomain.dll
+C:\Service\new version project\ConvertServiceAndApiService\RepositoryDomain\bin\Debug\netcoreapp3.1\RepositoryDomain.pdb
+C:\Service\new version project\ConvertServiceAndApiService\RepositoryDomain\obj\Debug\netcoreapp3.1\RepositoryDomain.csproj.AssemblyReference.cache
+C:\Service\new version project\ConvertServiceAndApiService\RepositoryDomain\obj\Debug\netcoreapp3.1\RepositoryDomain.AssemblyInfoInputs.cache
+C:\Service\new version project\ConvertServiceAndApiService\RepositoryDomain\obj\Debug\netcoreapp3.1\RepositoryDomain.AssemblyInfo.cs
+C:\Service\new version project\ConvertServiceAndApiService\RepositoryDomain\obj\Debug\netcoreapp3.1\RepositoryDomain.csproj.CoreCompileInputs.cache
+C:\Service\new version project\ConvertServiceAndApiService\RepositoryDomain\obj\Debug\netcoreapp3.1\RepositoryDomain.dll
+C:\Service\new version project\ConvertServiceAndApiService\RepositoryDomain\obj\Debug\netcoreapp3.1\RepositoryDomain.pdb

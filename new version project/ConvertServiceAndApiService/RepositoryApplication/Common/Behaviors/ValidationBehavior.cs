@@ -22,10 +22,10 @@ namespace RepositoryApplication.Common.Behaviors
                 .SelectMany(request => request.Errors)
                 .Where(failure => failure != null)
                 .ToList();
-            //if (failures.Count != 0)
-            //{
-            //    throw new ValidationException(failures);
-            //}
+            if (failures.Count != 0)
+            {
+                throw new ValidationException(failures);
+            }
             return next();
         }
     }

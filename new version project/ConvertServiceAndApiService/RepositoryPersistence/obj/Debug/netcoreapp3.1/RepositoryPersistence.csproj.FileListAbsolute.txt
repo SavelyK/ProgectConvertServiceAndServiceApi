@@ -12,3 +12,17 @@ C:\Users\zakal\source\repos\ConvertServiceAndApiService\RepositoryPersistence\ob
 C:\Users\zakal\source\repos\ConvertServiceAndApiService\RepositoryPersistence\obj\Debug\netcoreapp3.1\RepositoryPersistence.csproj.CopyComplete
 C:\Users\zakal\source\repos\ConvertServiceAndApiService\RepositoryPersistence\obj\Debug\netcoreapp3.1\RepositoryPersistence.dll
 C:\Users\zakal\source\repos\ConvertServiceAndApiService\RepositoryPersistence\obj\Debug\netcoreapp3.1\RepositoryPersistence.pdb
+C:\Service\new version project\ConvertServiceAndApiService\RepositoryPersistence\bin\Debug\netcoreapp3.1\RepositoryPersistence.deps.json
+C:\Service\new version project\ConvertServiceAndApiService\RepositoryPersistence\bin\Debug\netcoreapp3.1\RepositoryPersistence.dll
+C:\Service\new version project\ConvertServiceAndApiService\RepositoryPersistence\bin\Debug\netcoreapp3.1\RepositoryPersistence.pdb
+C:\Service\new version project\ConvertServiceAndApiService\RepositoryPersistence\bin\Debug\netcoreapp3.1\RepositoryApplication.dll
+C:\Service\new version project\ConvertServiceAndApiService\RepositoryPersistence\bin\Debug\netcoreapp3.1\RepositoryDomain.dll
+C:\Service\new version project\ConvertServiceAndApiService\RepositoryPersistence\bin\Debug\netcoreapp3.1\RepositoryApplication.pdb
+C:\Service\new version project\ConvertServiceAndApiService\RepositoryPersistence\bin\Debug\netcoreapp3.1\RepositoryDomain.pdb
+C:\Service\new version project\ConvertServiceAndApiService\RepositoryPersistence\obj\Debug\netcoreapp3.1\RepositoryPersistence.csproj.AssemblyReference.cache
+C:\Service\new version project\ConvertServiceAndApiService\RepositoryPersistence\obj\Debug\netcoreapp3.1\RepositoryPersistence.AssemblyInfoInputs.cache
+C:\Service\new version project\ConvertServiceAndApiService\RepositoryPersistence\obj\Debug\netcoreapp3.1\RepositoryPersistence.AssemblyInfo.cs
+C:\Service\new version project\ConvertServiceAndApiService\RepositoryPersistence\obj\Debug\netcoreapp3.1\RepositoryPersistence.csproj.CoreCompileInputs.cache
+C:\Service\new version project\ConvertServiceAndApiService\RepositoryPersistence\obj\Debug\netcoreapp3.1\RepositoryPersistence.csproj.CopyComplete
+C:\Service\new version project\ConvertServiceAndApiService\RepositoryPersistence\obj\Debug\netcoreapp3.1\RepositoryPersistence.dll
+C:\Service\new version project\ConvertServiceAndApiService\RepositoryPersistence\obj\Debug\netcoreapp3.1\RepositoryPersistence.pdb

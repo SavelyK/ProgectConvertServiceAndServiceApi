@@ -7,6 +7,7 @@
 		<ApplicationIcon />
 		<OutputType>Exe</OutputType>
 		<StartupObject></StartupObject>
+		<LangVersion>9.0</LangVersion>
 	</PropertyGroup>
 
 

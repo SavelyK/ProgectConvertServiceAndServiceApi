@@ -2,16 +2,21 @@
 using RepositoryApplication.Repositorys.Queries.GetTaskStatus;
 using System;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace RepositoryWebApi.Controllers
 {
+    [ApiVersion("1.0")]
+    [ApiVersion("2.0")]
+    //[ApiVersionNeutral]
     [Produces("application/json")]
-    [Route("api/[controller]")]
+    [Route("api/{version:apiVersion}[controller]")]
     [ApiController]
     public class TaskStatusController : BaseController
     {
 
         [HttpGet]
+        [Authorize]
         [Route("{id}")]
         public async Task<ActionResult<TaskStatusVm>> GetTaskStatus(Guid id)
         {

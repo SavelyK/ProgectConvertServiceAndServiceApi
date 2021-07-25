@@ -3,16 +3,18 @@ using RepositoryWebApi.Models;
 using System;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
-using System.Linq;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using AutoMapper;
 using System.Threading.Tasks;
 using RepositoryApplication.Repositorys.Commands.SaveDocxFile;
 
 namespace RepositoryWebApi.Controllers
 {
+    [ApiVersion("1.0")]
+    [ApiVersion("2.0")]
+    //[ApiVersionNeutral]
     [Produces("application/json")]
-    [Route("api/[controller]")]
+    [Route("api/{version:apiVersion}[controller]")]
     [ApiController]
     public class UploadController : BaseController
     {
@@ -27,6 +29,7 @@ namespace RepositoryWebApi.Controllers
 
 
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult<Guid>> PostUploadFile([FromForm] FileUpload objectFile)
         {
             try

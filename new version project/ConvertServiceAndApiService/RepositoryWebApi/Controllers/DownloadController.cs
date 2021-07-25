@@ -2,17 +2,22 @@
 using RepositoryApplication.Repositorys.Queries.GetPath;
 using System;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace RepositoryWebApi.Controllers
 {
+    [ApiVersion("1.0")]
+    [ApiVersion("2.0")]
+    //[ApiVersionNeutral]
     [Produces("application/json")]
-    [Route("api/[controller]")]
+    [Route("api/{version:apiVersion}[controller]")]
     [ApiController]
     public class DownloadController : BaseController
     {
 
 
         [HttpGet]
+        [Authorize]
         [Route("{fileName}")]
         public async Task<ActionResult<PathVm>> GetPdf(string fileName)
         {

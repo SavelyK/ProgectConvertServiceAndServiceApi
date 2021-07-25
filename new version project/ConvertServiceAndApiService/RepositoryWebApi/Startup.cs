@@ -8,8 +8,11 @@ using RepositoryApplication.Interfases;
 using RepositoryApplication;
 using RepositoryPersistence;
 using Microsoft.Extensions.Configuration;
-using System.IO;
-
+using Microsoft.Extensions.Options;
+using RepositoryWebApi.Middlewere;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Swashbuckle.AspNetCore.SwaggerGen;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
 
 namespace RepositoryWebApi
 {
@@ -36,20 +39,31 @@ namespace RepositoryWebApi
                     policy.AllowAnyOrigin();
                 });
             });
-            services.AddSwaggerGen(config =>
+            services.AddAuthentication(config =>
             {
-                var xmlFile = $"{ Assembly.GetExecutingAssembly().GetName().Name}.xml";
-                var xmlPath = Path.Combine(System.AppContext.BaseDirectory, xmlFile);
-                config.IncludeXmlComments(xmlPath);
-            }
-            );
+                config.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                config.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+                .AddJwtBearer("Bearer", options =>
+                {
+                    options.Authority = "https://localhost:44306/";
+                    options.Audience = "RepositoryWebApi";
+                    options.RequireHttpsMetadata = false;
+                });
+            services.AddVersionedApiExplorer(options =>
+            options.GroupNameFormat = "'v'VVV");
+            services.AddTransient<IConfigureOptions<SwaggerGenOptions>,
+                ConfigureSwaggerOptions>();
 
+            services.AddSwaggerGen();
+            services.AddApiVersioning();
 
 
         }
 
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env,
+            IApiVersionDescriptionProvider provider)
         {
             if (env.IsDevelopment())
             {
@@ -58,15 +72,22 @@ namespace RepositoryWebApi
             app.UseSwagger();
             app.UseSwaggerUI(config =>
             {
-                config.RoutePrefix = string.Empty;
-                config.SwaggerEndpoint("swagger/v1/swagger.json", "RepositoryWebAPI");
+                foreach (var description in provider.ApiVersionDescriptions)
+                {
+                    config.SwaggerEndpoint(
+                        $"/swagger/{description.GroupName}/swagger.json",
+                        description.GroupName.ToUpperInvariant());
+                    config.RoutePrefix = string.Empty;  
+                }
             });
-            app.UseSwagger();
-            app.UseSwaggerUI();
+
+            app.UseCastomExeptionHandler();
             app.UseRouting();
             app.UseHttpsRedirection();
             app.UseCors("AllowAll");
+            app.UseAuthentication();
             app.UseAuthorization();
+            app.UseApiVersioning();
 
             app.UseEndpoints(endpoints =>
             {

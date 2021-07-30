@@ -13,6 +13,8 @@ using RepositoryWebApi.Middlewere;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace RepositoryWebApi
 {
@@ -39,17 +41,23 @@ namespace RepositoryWebApi
                     policy.AllowAnyOrigin();
                 });
             });
-            services.AddAuthentication(config =>
-            {
-                config.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                config.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            })
-                .AddJwtBearer("Bearer", options =>
-                {
-                    options.Authority = "https://localhost:44306/";
-                    options.Audience = "RepositoryWebApi";
-                    options.RequireHttpsMetadata = false;
-                });
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+               .AddJwtBearer(options =>
+               {
+                   options.TokenValidationParameters = new TokenValidationParameters
+                   {
+                       ValidateIssuer = true,
+                       ValidateAudience = true,
+                       ValidateLifetime = true,
+                       ValidateIssuerSigningKey = true,
+                       ValidIssuer = Configuration["Jwt:Issuer"],
+                       ValidAudience = Configuration["Jwt:Issuer"],
+                       IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
+
+                   };
+               });
+            services.AddMvc();
+
             services.AddVersionedApiExplorer(options =>
             options.GroupNameFormat = "'v'VVV");
             services.AddTransient<IConfigureOptions<SwaggerGenOptions>,

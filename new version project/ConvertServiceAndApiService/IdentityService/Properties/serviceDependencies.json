@@ -1,0 +1,7 @@
+{
+
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "DbConnection"
+    }
+  }

@@ -49,3 +49,5 @@ C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService
 C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService\ConvertService\obj\Debug\netcoreapp3.1\ConvertService.pdb
 C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService\ConvertService\obj\Debug\netcoreapp3.1\ConvertService.genruntimeconfig.cache
 C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService\ConvertService\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService\ConvertService\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService\ConvertService\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll

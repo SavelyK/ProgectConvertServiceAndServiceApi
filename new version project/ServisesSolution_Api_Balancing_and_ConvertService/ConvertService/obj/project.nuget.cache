@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "x/6xU4otWV+AcOS7vUsEFaxJIp0t22glWTZPjzl66Y/cB3PLZ0QfdzPIvYBiMWFgBcWHiyp29gzsA1kZITgzyQ==",
+  "dgSpecHash": "Etdl+DncJWkNByi+IpRvSiV6tu4votH/M1EFwfhicAHWXs3hdHWf33m0REHC1kilFvNtvO6rCPwf57ZKlKmAhw==",
   "success": true,
   "projectFilePath": "C:\\Service\\new version project\\ServisesSolution_Api_Balancing_and_ConvertService\\ConvertService\\ConvertService.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\zakal\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\zakal\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\microsoft.extensions.configuration\\5.0.0\\microsoft.extensions.configuration.5.0.0.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\microsoft.extensions.configuration.binder\\5.0.0\\microsoft.extensions.configuration.binder.5.0.0.nupkg.sha512",
@@ -36,6 +38,7 @@
     "C:\\Users\\zakal\\.nuget\\packages\\system.diagnostics.eventlog\\5.0.0\\system.diagnostics.eventlog.5.0.0.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\system.security.accesscontrol\\5.0.0\\system.security.accesscontrol.5.0.0.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
+    "C:\\Users\\zakal\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\system.text.json\\5.0.0\\system.text.json.5.0.0.nupkg.sha512"
   ],
   "logs": []

@@ -1,6 +1,7 @@
 ﻿using ConvertService.Interfases;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+
 using System;
 
 namespace ConvertService
@@ -24,6 +25,7 @@ namespace ConvertService
                 {
                     services.AddHostedService<Start>();
                     services.AddSingleton<IStartService, StartService>();
+                    
 
                 });
 

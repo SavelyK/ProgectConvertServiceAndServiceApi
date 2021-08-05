@@ -20,9 +20,9 @@ namespace BalancingService.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<GetDocxItemModel>> PostDocxItem(int port)
+        public async Task<ActionResult<DocxItemModel>> PostDocxItem(int port)
         {
-            var repository = await _context.Repositorys.FirstOrDefaultAsync(x => x.Port == 0 | x.Status == "Wait");
+            var repository = await _context.Repositorys.FirstOrDefaultAsync(x => x.Status == "Wait");
             if(repository == null)
             {
                 return NotFound();
@@ -31,7 +31,7 @@ namespace BalancingService.Controllers
             {
                 repository.Port = port;
                 repository.Status = "InProgres";
-                GetDocxItemModel docxItem = new GetDocxItemModel(repository.Id, repository.Path,
+                DocxItemModel docxItem = new DocxItemModel(repository.Id, repository.Path,
                 repository.LoadTime, repository.Priority, repository.FileLength );
                 _context.SaveChanges();
                 if(docxItem == null)

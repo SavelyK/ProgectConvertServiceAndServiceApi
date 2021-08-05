@@ -1,0 +1,12 @@
+C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService\RepositoryApplication\obj\Debug\netcoreapp3.1\RepositoryApplication.csproj.AssemblyReference.cache
+C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService\RepositoryApplication\obj\Debug\netcoreapp3.1\RepositoryApplication.AssemblyInfoInputs.cache
+C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService\RepositoryApplication\obj\Debug\netcoreapp3.1\RepositoryApplication.AssemblyInfo.cs
+C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService\RepositoryApplication\obj\Debug\netcoreapp3.1\RepositoryApplication.csproj.CoreCompileInputs.cache
+C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService\RepositoryApplication\bin\Debug\netcoreapp3.1\RepositoryApplication.deps.json
+C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService\RepositoryApplication\bin\Debug\netcoreapp3.1\RepositoryApplication.dll
+C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService\RepositoryApplication\bin\Debug\netcoreapp3.1\RepositoryApplication.pdb
+C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService\RepositoryApplication\bin\Debug\netcoreapp3.1\RepositoryDomain.dll
+C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService\RepositoryApplication\bin\Debug\netcoreapp3.1\RepositoryDomain.pdb
+C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService\RepositoryApplication\obj\Debug\netcoreapp3.1\RepositoryApplication.csproj.CopyComplete
+C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService\RepositoryApplication\obj\Debug\netcoreapp3.1\RepositoryApplication.dll
+C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService\RepositoryApplication\obj\Debug\netcoreapp3.1\RepositoryApplication.pdb

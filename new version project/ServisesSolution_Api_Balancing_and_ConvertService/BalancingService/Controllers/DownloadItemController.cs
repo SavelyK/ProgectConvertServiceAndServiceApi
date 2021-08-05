@@ -19,8 +19,8 @@ namespace BalancingService.Controllers
             _context = context;
         }
 
-        [HttpGet]
-        public async Task<ActionResult<GetDocxItemModel>> GetDocxItem(int port)
+        [HttpPost]
+        public async Task<ActionResult<GetDocxItemModel>> PostDocxItem(int port)
         {
             var repository = await _context.Repositorys.FirstOrDefaultAsync(x => x.Port == 0 | x.Status == "Wait");
             if(repository == null)

@@ -29,25 +29,7 @@ namespace RepositoryWebApi
             }
             hostApi.Run();
         }
-            // var hostConvert = CreateConvertHostBuilder(args).Build();
-
-            //    await Task.WhenAny
-            //       (
-            //        hostConvert.RunAsync(),
-            //        hostApi.RunAsync()
-            //       );
-            //}
-            //public static IHostBuilder CreateConvertHostBuilder(string[] args)
-            //{
-            //    return Host.CreateDefaultBuilder()
-            //        .ConfigureServices(services =>
-            //        {
-            //            services.AddHostedService<ConvertService>();
-            //            services.AddSingleton<IStartConvertService, StartConvertService>();
-            //            services.AddSingleton<IMethods, Methods>();
-
-            //        });
-            //}
+           
             public static IHostBuilder CreateApiHostBuilder(string[] args) =>
                   Host.CreateDefaultBuilder()
                      .ConfigureWebHostDefaults(webBuilder =>

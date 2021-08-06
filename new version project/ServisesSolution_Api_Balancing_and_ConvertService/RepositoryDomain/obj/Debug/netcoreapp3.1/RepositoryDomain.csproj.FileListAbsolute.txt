@@ -6,3 +6,4 @@ C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService
 C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService\RepositoryDomain\obj\Debug\netcoreapp3.1\RepositoryDomain.csproj.CoreCompileInputs.cache
 C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService\RepositoryDomain\obj\Debug\netcoreapp3.1\RepositoryDomain.dll
 C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService\RepositoryDomain\obj\Debug\netcoreapp3.1\RepositoryDomain.pdb
+C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService\RepositoryDomain\obj\Debug\netcoreapp3.1\RepositoryDomain.csproj.AssemblyReference.cache

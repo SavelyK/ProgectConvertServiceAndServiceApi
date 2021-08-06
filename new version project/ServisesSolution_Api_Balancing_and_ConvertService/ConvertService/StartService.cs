@@ -2,6 +2,7 @@
 using ConvertService.Models;
 using Microsoft.AspNetCore.Http;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
@@ -15,14 +16,19 @@ namespace ConvertService
     {
         HttpClient client = new HttpClient();
 
+       public ConcurrentQueue<DocxItemModel>[] docxModels = new ConcurrentQueue<DocxItemModel>[5];
         public async Task Run()
         {
+            for (int i = 0; i < 5; i++)
+            {
+                docxModels[i] = new ConcurrentQueue<DocxItemModel>();
+            }
 
-            Task t = Task.Run(() => CreateDocxModelAsync());
+            Task t = Task.Run(() => CreateDocxModelAsync(ConcurrentQueue<DocxItemModel>[] docxModels));
 
         }
 
-        public async Task CreateDocxModelAsync()
+        public async Task CreateDocxModelAsync(ConcurrentQueue<DocxItemModel>[] nameArray)
         {
             await Task.Run(async () =>
             {
@@ -35,6 +41,7 @@ namespace ConvertService
                         string json = await response.Content.ReadAsStringAsync();
                         var docxFile = JsonSerializer.Deserialize<DocxItemModel>(json);
                         Console.WriteLine(docxFile.FileLength);
+                        nameArray[docxFile.Priority].Enqueue(docxFile);
                     }
                     else
                     {

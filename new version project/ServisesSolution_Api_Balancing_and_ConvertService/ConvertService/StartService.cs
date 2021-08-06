@@ -19,30 +19,24 @@ namespace ConvertService
     {
         HttpClient client = new HttpClient();
 
-        ConcurrentQueue<DocxItemModel>[] docxModels = new ConcurrentQueue<DocxItemModel>[5];
+        ConcurrentQueue<DocxItemModel>[] docxModelsArray = new ConcurrentQueue<DocxItemModel>[5];
         public async Task Run()
         {
             for (int i = 0; i < 5; i++)
             {
-                docxModels[i] = new ConcurrentQueue<DocxItemModel>();
+                docxModelsArray[i] = new ConcurrentQueue<DocxItemModel>();
             }
 
             Task startConvert = new Task(() => 
             {
-                Task.Run(() => CreateDocxModelAsync(docxModels));
-                Task.Run(() => CreateConvertAsync(docxModels, 0));
-                Task.Run(() => CreateConvertAsync(docxModels, 1));
-                Task.Run(() => CreateConvertAsync(docxModels, 2));
-                Task.Run(() => CreateConvertAsync(docxModels, 3));
-                Task.Run(() => CreateConvertAsync(docxModels, 4));
+                Task.Run(() => CreateDocxModelAsync(docxModelsArray));
+                Task.Run(() => CreateConvertAsync(docxModelsArray, 0, 1));
+                Task.Run(() => CreateConvertAsync(docxModelsArray, 1, 2));
+                Task.Run(() => CreateConvertAsync(docxModelsArray, 2, 3));
+                Task.Run(() => CreateConvertAsync(docxModelsArray, 3, 4));
+                Task.Run(() => CreateConvertAsync(docxModelsArray, 4, 5));
             });
                 startConvert.Start();
-            //Task t = Task.Run(() => CreateDocxModelAsync(docxModels));
-            //Task y = Task.Run(() => CreateConvertAsync(docxModels, 0));
-            //Task x = Task.Run(() => CreateConvertAsync(docxModels, 1));
-            //Task v = Task.Run(() => CreateConvertAsync(docxModels, 2));
-            //Task u = Task.Run(() => CreateConvertAsync(docxModels, 3));
-            //Task r = Task.Run(() => CreateConvertAsync(docxModels, 4));
         }
 
         public async Task CreateDocxModelAsync(ConcurrentQueue<DocxItemModel>[] nameArray)
@@ -67,8 +61,9 @@ namespace ConvertService
                 }
             });
         }
-        public async Task CreateConvertAsync(ConcurrentQueue<DocxItemModel>[] nameArray, int priority)
+        public async Task CreateConvertAsync(ConcurrentQueue<DocxItemModel>[] nameArray, int priority, int maxCount)
         {
+            int count = 0;
             while (true)
             {
 
@@ -77,23 +72,19 @@ namespace ConvertService
                     await Task.Delay(1000);
                 }
                 DocxItemModel docxModel;
-                if (nameArray[priority].TryDequeue(out docxModel))
+                if (nameArray[priority].TryDequeue(out docxModel)|count <= maxCount)
                 {
-                    await Task.Run(async () =>
+                    await Task.Run(() =>
                     {
-
-                    Console.WriteLine($"задача на конвертацию файла номер: {Task.CurrentId} сработала в потоке: {Thread.CurrentThread.ManagedThreadId}.");
-                    var sw = new Stopwatch();
-                    sw.Start();
+                    count++;
                     string path = docxModel.Path;
                     byte[] fileBytes = File.ReadAllBytes(path);
-                    await using (MemoryStream docxStream = new MemoryStream(fileBytes))
+                      using (MemoryStream docxStream = new MemoryStream(fileBytes))
                     {
                         DocumentCore dc = DocumentCore.Load(docxStream, new DocxLoadOptions());
                         dc.Save(path.Replace(".docx", ".pdf"));
                     }
-                    sw.Stop();
-                    Console.WriteLine($"задача на конвертацию файла номер: {Task.CurrentId} закончила работу у потоке: {Thread.CurrentThread.ManagedThreadId} за время {sw.ElapsedMilliseconds} длина файла {docxModel.FileLength}");
+                    count--;
                     });
                 }
             }

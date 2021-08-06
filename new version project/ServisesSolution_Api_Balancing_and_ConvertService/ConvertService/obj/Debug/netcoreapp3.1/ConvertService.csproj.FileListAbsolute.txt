@@ -58,3 +58,4 @@ C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService
 C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService\ConvertService\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
 C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService\ConvertService\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService\ConvertService\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService\ConvertService\obj\Debug\netcoreapp3.1\ConvertService.csproj.AssemblyReference.cache

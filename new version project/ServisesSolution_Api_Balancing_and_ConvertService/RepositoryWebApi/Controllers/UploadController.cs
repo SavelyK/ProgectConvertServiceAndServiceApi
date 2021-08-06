@@ -45,7 +45,7 @@ namespace RepositoryWebApi.Controllers
                         string permittedExtensions = ".docx";
                         string name = objectFile.files.FileName;
                         Random rnd = new Random();
-                        int value = rnd.Next(0, 4);
+                        int value = rnd.Next(0, 5);
                         var ext = Path.GetExtension(name).ToLowerInvariant();
                         if (string.IsNullOrEmpty(ext) || !permittedExtensions.Contains(ext))
                         {

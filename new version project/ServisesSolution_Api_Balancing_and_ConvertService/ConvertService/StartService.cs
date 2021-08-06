@@ -53,7 +53,7 @@ namespace ConvertService
                     {
                         string json = await response.Content.ReadAsStringAsync();
                         var docxFile = JsonSerializer.Deserialize<DocxItemModel>(json);
-                        Console.WriteLine("file id: " + docxFile.Id);
+                        Console.WriteLine("file priority: " + docxFile.Priority);
                         nameArray[docxFile.Priority].Enqueue(docxFile);
                     }
                 }
@@ -72,7 +72,7 @@ namespace ConvertService
 
                 DocxItemModel docxModel;
 
-                if (nameArray[priority].TryDequeue(out docxModel) | count <= maxCount)
+                if (nameArray[priority].TryDequeue(out docxModel) | count < maxCount)
                 {
                     await Task.Run(async () =>
                     {

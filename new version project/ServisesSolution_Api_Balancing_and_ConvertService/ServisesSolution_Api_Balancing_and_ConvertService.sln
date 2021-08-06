@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryWebApi", "Reposit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvertService", "ConvertService\ConvertService.csproj", "{B3DEEC58-DAB4-4D80-A23E-C838E905782D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecondConvertService", "SecondConvertService\SecondConvertService.csproj", "{5DCBBC35-3683-482C-8DA6-E7E05B460891}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{B3DEEC58-DAB4-4D80-A23E-C838E905782D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3DEEC58-DAB4-4D80-A23E-C838E905782D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3DEEC58-DAB4-4D80-A23E-C838E905782D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DCBBC35-3683-482C-8DA6-E7E05B460891}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DCBBC35-3683-482C-8DA6-E7E05B460891}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DCBBC35-3683-482C-8DA6-E7E05B460891}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DCBBC35-3683-482C-8DA6-E7E05B460891}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +70,7 @@ Global
 		{650A6FD5-FF46-45ED-A80F-27FDBF374FD3} = {98336332-6F21-43D7-8EC8-04B934A00908}
 		{ABAC03BA-9D51-4A55-90E7-88E64CF41BD0} = {98336332-6F21-43D7-8EC8-04B934A00908}
 		{B3DEEC58-DAB4-4D80-A23E-C838E905782D} = {98336332-6F21-43D7-8EC8-04B934A00908}
+		{5DCBBC35-3683-482C-8DA6-E7E05B460891} = {98336332-6F21-43D7-8EC8-04B934A00908}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {58BF1F51-8FD5-45D5-8941-0F91DB6D154A}

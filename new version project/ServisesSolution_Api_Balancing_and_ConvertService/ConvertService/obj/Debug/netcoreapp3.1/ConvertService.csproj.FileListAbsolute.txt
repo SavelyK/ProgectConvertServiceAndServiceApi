@@ -51,3 +51,11 @@ C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService
 C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService\ConvertService\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService\ConvertService\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Abstractions.dll
 C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService\ConvertService\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
+C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService\ConvertService\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService\ConvertService\bin\Debug\netcoreapp3.1\SautinSoft.Document.dll
+C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService\ConvertService\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
+C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService\ConvertService\bin\Debug\netcoreapp3.1\System.IO.Packaging.dll
+C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService\ConvertService\bin\Debug\netcoreapp3.1\System.Xml.XPath.XmlDocument.dll
+C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService\ConvertService\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService\ConvertService\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService\ConvertService\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll

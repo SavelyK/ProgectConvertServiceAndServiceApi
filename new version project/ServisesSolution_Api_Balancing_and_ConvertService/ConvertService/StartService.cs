@@ -16,7 +16,7 @@ namespace ConvertService
     {
         HttpClient client = new HttpClient();
 
-       public ConcurrentQueue<DocxItemModel>[] docxModels = new ConcurrentQueue<DocxItemModel>[5];
+        ConcurrentQueue<DocxItemModel>[] docxModels = new ConcurrentQueue<DocxItemModel>[5];
         public async Task Run()
         {
             for (int i = 0; i < 5; i++)
@@ -24,7 +24,7 @@ namespace ConvertService
                 docxModels[i] = new ConcurrentQueue<DocxItemModel>();
             }
 
-            Task t = Task.Run(() => CreateDocxModelAsync(ConcurrentQueue<DocxItemModel>[] docxModels));
+            Task t = Task.Run(() => CreateDocxModelAsync(docxModels));
 
         }
 
@@ -47,10 +47,9 @@ namespace ConvertService
                     {
                         Console.WriteLine("Not Found");
                     }
-
                 }
             });
-
         }
+        public async Task 
     }
 }

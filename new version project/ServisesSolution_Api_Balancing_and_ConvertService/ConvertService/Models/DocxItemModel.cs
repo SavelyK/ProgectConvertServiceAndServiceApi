@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 
 namespace ConvertService.Models
 {
-    class DocxItemModel
+    public class DocxItemModel
     {
         [JsonPropertyName("id")]
         public Guid Id { get; set; }

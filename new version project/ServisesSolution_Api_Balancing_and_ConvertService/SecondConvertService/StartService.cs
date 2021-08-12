@@ -47,7 +47,7 @@ namespace ConvertService
                 while (true)
                 {
 
-                    await Task.Delay(100);
+                    await Task.Delay(1000);
                     var response = await client.PostAsync("https://localhost:44314/api/DownloadItem?port=2000", new StringContent(string.Empty));
                     if (response.IsSuccessStatusCode)
                     {
@@ -72,7 +72,7 @@ namespace ConvertService
 
                 DocxItemModel docxModel;
 
-                if (nameArray[priority].TryDequeue(out docxModel) | count <= maxCount)
+                if (nameArray[priority].TryDequeue(out docxModel) | count < maxCount)
                 {
                     await Task.Run(async () =>
                     {

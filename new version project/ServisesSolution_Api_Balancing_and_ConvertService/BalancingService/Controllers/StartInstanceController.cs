@@ -28,10 +28,12 @@ namespace BalancingService.Controllers
             do
             {
                 repository = await _context.Repositorys.FirstOrDefaultAsync(x => x.Port == port | x.Status == "InProgress");
-               if(repository != null)
+                if (repository != null)
+                {
+                repository.Port = 0;
                 repository.Status = "Wait";
                 _context.SaveChanges();
-
+                }
             }
             while (repository != null);
            

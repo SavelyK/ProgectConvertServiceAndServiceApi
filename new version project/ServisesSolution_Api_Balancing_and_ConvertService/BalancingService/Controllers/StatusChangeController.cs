@@ -5,6 +5,7 @@ using RepositoryPersistence;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace BalancingService.Controllers
@@ -18,10 +19,11 @@ namespace BalancingService.Controllers
         {
             _context = context;
         }
-        [HttpPost]
+        [HttpGet]
         [Route("{id}")]
-        public async Task<ActionResult> PostSaveStatus(Guid id)
+        public async Task<ActionResult> GetSaveStatus(Guid id)
         {
+            CancellationToken cancellationToken = new CancellationToken();
             var repository = await _context.Repositorys.FirstOrDefaultAsync(x => x.Id == id);
             if (repository == null)
             {
@@ -30,7 +32,7 @@ namespace BalancingService.Controllers
             else
             {
                 repository.Status = "Completed";
-                _context.SaveChanges();
+                await _context.SaveChangesAsync(cancellationToken);
                 return Ok();
             }
 

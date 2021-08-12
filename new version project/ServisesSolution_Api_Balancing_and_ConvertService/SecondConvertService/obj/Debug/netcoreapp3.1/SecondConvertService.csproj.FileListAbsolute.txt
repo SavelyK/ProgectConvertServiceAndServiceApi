@@ -58,3 +58,4 @@ C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService
 C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService\SecondConvertService\obj\Debug\netcoreapp3.1\SecondConvertService.dll
 C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService\SecondConvertService\obj\Debug\netcoreapp3.1\SecondConvertService.pdb
 C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService\SecondConvertService\obj\Debug\netcoreapp3.1\SecondConvertService.genruntimeconfig.cache
+C:\Service\new version project\ServisesSolution_Api_Balancing_and_ConvertService\SecondConvertService\obj\Debug\netcoreapp3.1\SecondConvertService.csproj.AssemblyReference.cache

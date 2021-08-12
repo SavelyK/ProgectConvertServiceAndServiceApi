@@ -19,7 +19,7 @@ namespace ConvertService
     {
         HttpClient client = new HttpClient();
 
-        ConcurrentQueue<DocxItemModel>[] docxModelsArray = new ConcurrentQueue<DocxItemModel>[5];
+         ConcurrentQueue<DocxItemModel>[] docxModelsArray = new ConcurrentQueue<DocxItemModel>[5];
         public async Task Run()
         {
             StartInstance();
@@ -47,7 +47,7 @@ namespace ConvertService
                 while (true)
                 {
 
-                    await Task.Delay(100);
+                    await Task.Delay(1000);
                     var response = await client.PostAsync("https://localhost:44314/api/DownloadItem?port=1000", new StringContent(string.Empty));
                     if (response.IsSuccessStatusCode)
                     {
@@ -86,7 +86,7 @@ namespace ConvertService
                             dc.Save(path.Replace(".docx", ".pdf"));
                         }
 
-                        var response = await client.PostAsync($"https://localhost:44314/api/StatusChange/{docxModel.Id}", new StringContent(string.Empty));
+                        var response = await client.GetAsync($"https://localhost:44314/api/StatusChange/{docxModel.Id}");
                         Console.WriteLine(response);
                         count--;
 

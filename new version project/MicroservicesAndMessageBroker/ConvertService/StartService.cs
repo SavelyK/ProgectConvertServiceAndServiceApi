@@ -21,11 +21,11 @@ public async Task Run()
             {
                 await Task.Delay(1000);
                 var factory = new ConnectionFactory() { HostName = "localhost" };
-                using (var connection = factory.CreateConnection())
-                using (var channel = connection.CreateModel())
-                {
+                var connection = factory.CreateConnection();
+                var channel = connection.CreateModel();
+              
 
-                    channel.QueueDeclare(queue: "init-queue",
+                    channel.QueueDeclare(queue: "init1-queue",
                         durable: false,
                         exclusive: false,
                         autoDelete: false,
@@ -39,12 +39,12 @@ public async Task Run()
                         Console.WriteLine(docxItem.Path);
 
                     };
-                    channel.BasicConsume(queue: "init-queue",
+                    channel.BasicConsume(queue: "init1-queue",
                         autoAck: true,
                         consumer: consumer);
 
 
-                }
+                
             } while (true);
         }
        

@@ -66,7 +66,7 @@ namespace RepositoryWebApi.Controllers
                                 using (var connection = factory.CreateConnection())
                                 using (var channel = connection.CreateModel())
                                 {
-                                    channel.QueueDeclare(queue: "init-queue",
+                                    channel.QueueDeclare(queue: "init1-queue",
                                                             durable: false,
                                                             exclusive: false,
                                                             autoDelete: false,
@@ -75,7 +75,7 @@ namespace RepositoryWebApi.Controllers
                                     string message = JsonSerializer.Serialize(docxItem);
                                     var body = Encoding.UTF32.GetBytes(message);
                                 channel.BasicPublish(exchange: "",
-                                                        routingKey: "init-queue",
+                                                        routingKey: "init1-queue",
                                                         basicProperties: null,
                                                         body: body);
                                 }

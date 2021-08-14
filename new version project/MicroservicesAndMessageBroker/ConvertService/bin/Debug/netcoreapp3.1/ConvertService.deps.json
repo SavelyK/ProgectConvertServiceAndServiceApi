@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v3.1": {
       "ConvertService/1.0.0": {
         "dependencies": {
+          "Calabonga.Configuration.Json": "1.0.1",
           "Microsoft.Extensions.Configuration": "5.0.0",
           "Microsoft.Extensions.DependencyInjection": "5.0.2",
           "Microsoft.Extensions.Hosting": "5.0.0",
@@ -17,6 +18,17 @@
         },
         "runtime": {
           "ConvertService.dll": {}
+        }
+      },
+      "Calabonga.Configuration.Json/1.0.1": {
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.3"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Calabonga.Configuration.Json.dll": {
+            "assemblyVersion": "1.0.1.0",
+            "fileVersion": "1.0.1.0"
+          }
         }
       },
       "Microsoft.Extensions.Configuration/5.0.0": {
@@ -394,6 +406,14 @@
           }
         }
       },
+      "Newtonsoft.Json/12.0.3": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.3.23909"
+          }
+        }
+      },
       "RabbitMQ.Client/6.2.2": {
         "dependencies": {
           "System.Memory": "4.5.4",
@@ -765,6 +785,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Calabonga.Configuration.Json/1.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xnRrni1Ic6ulStlLVCVSZhFwmQwacSC/iUGUuQAettzS4YnECNjljfgfvzY10awnV0IvIAxBDKguYtB1b+/g9Q==",
+      "path": "calabonga.configuration.json/1.0.1",
+      "hashPath": "calabonga.configuration.json.1.0.1.nupkg.sha512"
+    },
     "Microsoft.Extensions.Configuration/5.0.0": {
       "type": "package",
       "serviceable": true,
@@ -967,6 +994,13 @@
       "sha512": "sha512-mtVirZr++rq+XCDITMUdnETD59XoeMxSpLRIII7JRI6Yj0LEDiO1pPn0ktlnIj12Ix8bfvQqQDMMIF9wC98oCA==",
       "path": "microsoft.win32.systemevents/4.7.0",
       "hashPath": "microsoft.win32.systemevents.4.7.0.nupkg.sha512"
+    },
+    "Newtonsoft.Json/12.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
+      "path": "newtonsoft.json/12.0.3",
+      "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
     },
     "RabbitMQ.Client/6.2.2": {
       "type": "package",

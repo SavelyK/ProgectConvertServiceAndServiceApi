@@ -2,6 +2,18 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "Calabonga.Configuration.Json/1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.3"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Calabonga.Configuration.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Calabonga.Configuration.Json.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/5.0.0": {
         "type": "package",
         "dependencies": {
@@ -418,6 +430,15 @@
             "assetType": "runtime",
             "rid": "win"
           }
+        }
+      },
+      "Newtonsoft.Json/12.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
       "RabbitMQ.Client/6.2.2": {
@@ -923,6 +944,21 @@
     }
   },
   "libraries": {
+    "Calabonga.Configuration.Json/1.0.1": {
+      "sha512": "xnRrni1Ic6ulStlLVCVSZhFwmQwacSC/iUGUuQAettzS4YnECNjljfgfvzY10awnV0IvIAxBDKguYtB1b+/g9Q==",
+      "type": "package",
+      "path": "calabonga.configuration.json/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "calabonga.configuration.json.1.0.1.nupkg.sha512",
+        "calabonga.configuration.json.nuspec",
+        "lib/netcoreapp2.2/Calabonga.Configuration.Json.dll",
+        "lib/netcoreapp3.1/Calabonga.Configuration.Json.dll",
+        "lib/netstandard2.1/Calabonga.Configuration.Json.dll",
+        "logo.png"
+      ]
+    },
     "Microsoft.Extensions.Configuration/5.0.0": {
       "sha512": "LN322qEKHjuVEhhXueTUe7RNePooZmS8aGid5aK2woX3NPjSnONFyKUc6+JknOS6ce6h2tCLfKPTBXE3mN/6Ag==",
       "type": "package",
@@ -1549,6 +1585,37 @@
         "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.xml",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "Newtonsoft.Json/12.0.3": {
+      "sha512": "6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
+      "type": "package",
+      "path": "newtonsoft.json/12.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.12.0.3.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
       ]
     },
     "RabbitMQ.Client/6.2.2": {
@@ -3399,6 +3466,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "Calabonga.Configuration.Json >= 1.0.1",
       "Microsoft.Extensions.Configuration >= 5.0.0",
       "Microsoft.Extensions.DependencyInjection >= 5.0.2",
       "Microsoft.Extensions.Hosting >= 5.0.0",
@@ -3454,6 +3522,10 @@
       "netcoreapp3.1": {
         "targetAlias": "netcoreapp3.1",
         "dependencies": {
+          "Calabonga.Configuration.Json": {
+            "target": "Package",
+            "version": "[1.0.1, )"
+          },
           "Microsoft.Extensions.Configuration": {
             "target": "Package",
             "version": "[5.0.0, )"

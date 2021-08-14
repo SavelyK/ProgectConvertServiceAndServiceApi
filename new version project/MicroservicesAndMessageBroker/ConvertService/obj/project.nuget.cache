@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "etlQbFE3lejvSvZ6DS7ERrlHDYgtQeUaBNETkS0fm519EoAPVvroIjF7jE9xTQlY1fwrfn26hEQmHRZ1Dr03vQ==",
+  "dgSpecHash": "vH2Uutmi0VlVuenxY2hXzd8h+hscla3vjwJz3B4r9BxdaYGUHSATFNrAatAQjuJgsz8kjBh+7Sqz6UidZP3nYg==",
   "success": true,
   "projectFilePath": "C:\\Service\\new version project\\MicroservicesAndMessageBroker\\ConvertService\\ConvertService.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\zakal\\.nuget\\packages\\calabonga.configuration.json\\1.0.1\\calabonga.configuration.json.1.0.1.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\microsoft.extensions.configuration\\5.0.0\\microsoft.extensions.configuration.5.0.0.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\microsoft.extensions.configuration.binder\\5.0.0\\microsoft.extensions.configuration.binder.5.0.0.nupkg.sha512",
@@ -33,6 +34,7 @@
     "C:\\Users\\zakal\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\zakal\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\rabbitmq.client\\6.2.2\\rabbitmq.client.6.2.2.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\sautinsoft.document\\5.3.6.22\\sautinsoft.document.5.3.6.22.nupkg.sha512",
     "C:\\Users\\zakal\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",

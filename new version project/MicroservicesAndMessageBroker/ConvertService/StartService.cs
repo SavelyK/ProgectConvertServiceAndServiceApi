@@ -1,4 +1,5 @@
-﻿using ConvertService.Interfases;
+﻿using Calabonga.Configuration.Json;
+using ConvertService.Interfases;
 using ConvertService.Models;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
@@ -16,6 +17,9 @@ namespace ConvertService
 
 public async Task Run()
         {
+            var appConfiguration = new AppConfiguration(new JsonConfigurationSerializer());
+            var appConfigurationConfig = appConfiguration.Config;
+            Console.WriteLine(appConfigurationConfig.ConnectionString);
 
             do
             {

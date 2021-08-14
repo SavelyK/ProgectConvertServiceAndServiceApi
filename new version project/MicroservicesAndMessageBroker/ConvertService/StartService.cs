@@ -1,8 +1,12 @@
-﻿using Calabonga.Configuration.Json;
+﻿using AutoMapper;
+using Calabonga.Configuration.Json;
 using ConvertService.Interfases;
 using ConvertService.Models;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
+using Repository_Application.Repositorys.Commands.SaveDocxFile;
+using Repository_Application.Repositorys.Queries.GetTaskStatus;
+using RepositoryDomain;
 using System;
 using System.Text;
 using System.Text.Json;
@@ -12,14 +16,16 @@ namespace ConvertService
 {
     public class StartService : IStartService
     {
-      
-            
+        private readonly IMapper _mapper;
+        public StartService(IMapper mapper)
+        {
+            _mapper = mapper;
+        }
 
 public async Task Run()
         {
-            var appConfiguration = new AppConfiguration(new JsonConfigurationSerializer());
-            var appConfigurationConfig = appConfiguration.Config;
-            Console.WriteLine(appConfigurationConfig.ConnectionString);
+           
+            
 
             do
             {
@@ -41,6 +47,14 @@ public async Task Run()
                         var message = Encoding.UTF32.GetString(body.ToArray());
                         DocxItemModel docxItem = JsonSerializer.Deserialize<DocxItemModel>(message);
                         Console.WriteLine(docxItem.Path);
+                        SaveDocxModelDto saveDocxModelDto = new SaveDocxModelDto();
+                        saveDocxModelDto.Id = docxItem.Id;
+                        saveDocxModelDto.Path = docxItem.Path;
+                        saveDocxModelDto.Status = docxItem.Status;
+                        var command = _mapper.Map<SaveDocxRepositoryCommand>(saveDocxModelDto);
+                       
+
+
 
                     };
                     channel.BasicConsume(queue: "init1-queue",

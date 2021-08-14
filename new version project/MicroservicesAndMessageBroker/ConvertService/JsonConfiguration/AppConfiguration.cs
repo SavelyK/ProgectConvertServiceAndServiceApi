@@ -11,6 +11,7 @@ namespace ConvertService
         {
 
         }
-        public override string FileName => "appSettings.json";
+        public override string FileName => "appSettings.Json";
+
     }
 }

@@ -3,7 +3,6 @@ C:\Service\new version project\MicroservicesAndMessageBroker\ApiUpload\obj\Debug
 C:\Service\new version project\MicroservicesAndMessageBroker\ApiUpload\obj\Debug\netcoreapp3.1\ApiUpload.AssemblyInfo.cs
 C:\Service\new version project\MicroservicesAndMessageBroker\ApiUpload\obj\Debug\netcoreapp3.1\ApiUpload.csproj.CoreCompileInputs.cache
 C:\Service\new version project\MicroservicesAndMessageBroker\ApiUpload\obj\Debug\netcoreapp3.1\ApiUpload.MvcApplicationPartsAssemblyInfo.cache
-C:\Service\new version project\MicroservicesAndMessageBroker\ApiUpload\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Service\new version project\MicroservicesAndMessageBroker\ApiUpload\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Service\new version project\MicroservicesAndMessageBroker\ApiUpload\bin\Debug\netcoreapp3.1\ApiUpload.exe
 C:\Service\new version project\MicroservicesAndMessageBroker\ApiUpload\bin\Debug\netcoreapp3.1\ApiUpload.deps.json

@@ -14,14 +14,8 @@ namespace ConvertService
         {
             var appConfiguration = new AppConfiguration(new JsonConfigurationSerializer());
             var appConfigurationConfig = appConfiguration.Config;
-            var hostConvert = CreateConvertHostBuilder(args).Build(); //host convert service
-      
+            var hostConvert = CreateConvertHostBuilder(args).Build(); 
                 hostConvert.Run();
-
-                   
-
-            
-
              IHostBuilder CreateConvertHostBuilder(string[] args)
             {
                 
@@ -34,8 +28,6 @@ namespace ConvertService
                         services.AddSingleton<IStartService, StartService>();
                         services.AddSingleton<IMethods, Methods>();
                         services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(appConfigurationConfig.ConnectionString));
-
-
                     });
 
             }

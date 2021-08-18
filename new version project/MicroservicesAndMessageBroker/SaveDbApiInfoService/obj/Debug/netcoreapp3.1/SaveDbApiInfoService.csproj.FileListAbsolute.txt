@@ -1,0 +1,4 @@
+C:\Service\new version project\MicroservicesAndMessageBroker\SaveDbApiInfoService\obj\Debug\netcoreapp3.1\SaveDbApiInfoService.csproj.AssemblyReference.cache
+C:\Service\new version project\MicroservicesAndMessageBroker\SaveDbApiInfoService\obj\Debug\netcoreapp3.1\SaveDbApiInfoService.AssemblyInfoInputs.cache
+C:\Service\new version project\MicroservicesAndMessageBroker\SaveDbApiInfoService\obj\Debug\netcoreapp3.1\SaveDbApiInfoService.AssemblyInfo.cs
+C:\Service\new version project\MicroservicesAndMessageBroker\SaveDbApiInfoService\obj\Debug\netcoreapp3.1\SaveDbApiInfoService.csproj.CoreCompileInputs.cache

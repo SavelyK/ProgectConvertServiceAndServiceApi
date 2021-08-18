@@ -81,12 +81,28 @@ namespace ConvertService
                         dc.Save(path.Replace(".docx", ".pdf"));
                     }
                     DocxItemModel file = context.DocxItemModels
-                    .First(docxItemModel =>
-                    docxItemModel.Id == docxModel.Id);
+                    .First(dbModel =>
+                    dbModel.Id == docxModel.Id);
                         file.Status = "Complited";
 
                     context.SaveChanges();
                     count--;
+                    ConnectionFactory factory = new ConnectionFactory() { HostName = "localhost" };
+                    var connection = factory.CreateConnection();
+                    var channel = connection.CreateModel();
+                    
+                        channel.QueueDeclare(queue: "convertservice",
+                                                durable: false,
+                                                exclusive: false,
+                                                autoDelete: false,
+                                                arguments: null);
+                        
+                        string message = JsonSerializer.Serialize(file);
+                        var body = Encoding.UTF32.GetBytes(message);
+                        channel.BasicPublish(exchange: "",
+                                                routingKey: "convertservice",
+                                                basicProperties: null,
+                                                body: body);
                     
                 });
                  }

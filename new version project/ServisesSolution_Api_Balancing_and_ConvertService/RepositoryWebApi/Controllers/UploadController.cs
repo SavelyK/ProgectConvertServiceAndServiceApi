@@ -3,8 +3,6 @@ using RepositoryWebApi.Models;
 using System;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
-using System.Linq;
-using Microsoft.AspNetCore.Http;
 using AutoMapper;
 using System.Threading.Tasks;
 using Repository_Application.Repositorys.Commands.SaveDocxFile;

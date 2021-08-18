@@ -1,4 +1,5 @@
 ﻿
+using DbInformation;
 using SaveDbApiInfoService.Interfases;
 using System.Collections.Concurrent;
 using System.Threading;
@@ -8,27 +9,24 @@ namespace SaveDbApiInfoService
 {
     public class StartService : IStartService
     {
-       
-        //private readonly ApplicationContext _context;
-        //public StartService(ApplicationContext context)
-        //{
-        //    _context = context;
-        //}
 
- 
+        private readonly InformationDbContext _context;
+        public StartService(InformationDbContext context)
+        {
+            _context = context;
+        }
+
+
 
         public async Task Run()
         {
-            //var appConfiguration = new AppConfiguration(new JsonConfigurationSerializer());
-            //var appConfigurationConfig = appConfiguration.Config;
+            Methods start = new Methods();
+            Task saveDocx = Task.Run(async () =>
+            {
+                await start.SaveFileInformationAsync(_context);
 
-            
-            
-        
-           
-
+            });
 
         }
-       
     }
 }

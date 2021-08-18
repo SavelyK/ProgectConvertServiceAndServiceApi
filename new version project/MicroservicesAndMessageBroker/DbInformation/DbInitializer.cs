@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace DbInformation
 {
-    public class DbInitialize
+    public class DbInitializer
     {
-        
+        public static void Initialize(InformationDbContext context)
+        {
+            context.Database.EnsureCreated();
+        }
     }
 }

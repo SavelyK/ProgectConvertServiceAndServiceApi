@@ -27,14 +27,14 @@ namespace ConvertService
             var appConfigurationConfig = appConfiguration.Config;
 
             Methods start = new Methods();
-            Task t = Task.Run(async() => {
+            Task saveDocx = Task.Run(async() => {
             await start.SaveDocxModelAsync(_context, convertQueue);
             
-        });
-            Task v = Task.Run(async () => {
+            Task convertDocx = Task.Run(async () => {
                
                 await start.Convert(_context, convertQueue, appConfigurationConfig.MaxCount);
             });
+        });
 
 
         }

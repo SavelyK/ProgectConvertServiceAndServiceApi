@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ConvertService
+namespace SaveDbApiInfoService
 {
     public class AppConfiguration :Configuration<AppSettings>
     {

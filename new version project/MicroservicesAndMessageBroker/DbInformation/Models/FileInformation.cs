@@ -4,7 +4,11 @@ using System.Text;
 
 namespace DbInformation.Models
 {
-    class FileInformation
+   public class FileInformation
     {
+        public Guid Id { get; set; }
+
+        public string Path { get; set; }
+        public string Status { get; set; }
     }
 }

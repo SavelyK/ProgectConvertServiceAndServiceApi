@@ -10,12 +10,14 @@ namespace ApiDownload.Models
  
         public string Path { get; set; }
         public string Status { get; set; }
+        public string FileName { get; set; }
 
-        public DocxItemModel(Guid id, string path, string status)
+        public DocxItemModel(Guid id, string path, string status, string fileName)
         {
             Id = id;
             Path = path;
             Status = status;
+            FileName = fileName;
         }
     }
 }

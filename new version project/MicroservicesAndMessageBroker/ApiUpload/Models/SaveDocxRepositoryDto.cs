@@ -16,7 +16,9 @@ namespace RepositoryWebApi.Models
         {
             profile.CreateMap<SaveDocxRepositoryDto, SaveDocxRepositoryCommand>()
                  .ForMember(repositoryCommand => repositoryCommand.Path,
-                opt => opt.MapFrom(repositoryDto => repositoryDto.Path));
+                opt => opt.MapFrom(repositoryDto => repositoryDto.Path))
+                 .ForMember(repositoryCommand => repositoryCommand.FileName,
+                opt => opt.MapFrom(repositoryDto => repositoryDto.FileName));
         }
     }
 }

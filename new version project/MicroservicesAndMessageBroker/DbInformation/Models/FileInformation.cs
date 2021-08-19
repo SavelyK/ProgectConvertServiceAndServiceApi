@@ -10,5 +10,6 @@ namespace DbInformation.Models
 
         public string Path { get; set; }
         public string Status { get; set; }
+        public string FileName { get; set; }
     }
 }

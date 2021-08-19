@@ -29,7 +29,7 @@ namespace ApiInformation.Controllers
                    fileInformation.Id == id);
             if(file != null)
             {
-                return Ok($"{file.Status} {file.Path}");
+                return Ok($"{file.Status} {file.FileName}");
             }
             else
             { return NotFound(); }

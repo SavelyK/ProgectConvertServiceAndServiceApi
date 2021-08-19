@@ -21,6 +21,7 @@ namespace Repository_Application.Repositorys.Commands.SaveDocxFile
                 UserId = request.UserId,
                 Id = Guid.NewGuid(),
                 Path = request.Path,
+                FileName = request.FileName,
             };
             await _dbContext.Repositorys.AddAsync(repository, cancellationToken);
             await _dbContext.SaveChangesAsync(cancellationToken);

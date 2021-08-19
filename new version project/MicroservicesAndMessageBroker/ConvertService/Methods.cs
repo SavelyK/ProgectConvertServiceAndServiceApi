@@ -83,8 +83,9 @@ namespace ConvertService
                     DocxItemModel file = context.DocxItemModels
                     .First(dbModel =>
                     dbModel.Id == docxModel.Id);
-                        file.Status = "Complited";
-
+                    file.Status = "Complited";
+                    file.Path = path.Replace(".docx", ".pdf");
+                    file.FileName = docxModel.FileName.Replace(".docx", ".pdf");
                     context.SaveChanges();
                     count--;
                     ConnectionFactory factory = new ConnectionFactory() { HostName = "localhost" };

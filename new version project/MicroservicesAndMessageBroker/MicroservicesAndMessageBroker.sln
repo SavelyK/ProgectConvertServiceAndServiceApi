@@ -19,11 +19,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiUpload", "ApiUpload\ApiU
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConvertService", "ConvertService\ConvertService.csproj", "{9F49040F-4EB1-43C4-8404-4D9F506EB9D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaveDbApiInfoService", "SaveDbApiInfoService\SaveDbApiInfoService.csproj", "{A57E23B3-AAA8-46C0-A952-FE064B56AF6E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaveDbApiInfoService", "SaveDbApiInfoService\SaveDbApiInfoService.csproj", "{A57E23B3-AAA8-46C0-A952-FE064B56AF6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbInformation", "DbInformation\DbInformation.csproj", "{1D7179DB-3F99-47B7-9B52-46CB4AC5F117}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbInformation", "DbInformation\DbInformation.csproj", "{1D7179DB-3F99-47B7-9B52-46CB4AC5F117}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiInformation", "ApiInformation\ApiInformation.csproj", "{61166C76-CC3A-4D83-A6B1-7D39A0602B2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiInformation", "ApiInformation\ApiInformation.csproj", "{61166C76-CC3A-4D83-A6B1-7D39A0602B2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiDownload", "ApiDownload\ApiDownload.csproj", "{0FA479A3-1BB2-410F-B26E-E1C0EF9AB95E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{61166C76-CC3A-4D83-A6B1-7D39A0602B2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61166C76-CC3A-4D83-A6B1-7D39A0602B2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61166C76-CC3A-4D83-A6B1-7D39A0602B2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FA479A3-1BB2-410F-B26E-E1C0EF9AB95E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FA479A3-1BB2-410F-B26E-E1C0EF9AB95E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FA479A3-1BB2-410F-B26E-E1C0EF9AB95E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FA479A3-1BB2-410F-B26E-E1C0EF9AB95E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -76,6 +82,7 @@ Global
 		{A57E23B3-AAA8-46C0-A952-FE064B56AF6E} = {B948545D-D734-4B6D-ABC3-515A76B65168}
 		{1D7179DB-3F99-47B7-9B52-46CB4AC5F117} = {DBB162B3-7198-4785-A019-D9FB60A2DE3A}
 		{61166C76-CC3A-4D83-A6B1-7D39A0602B2E} = {B948545D-D734-4B6D-ABC3-515A76B65168}
+		{0FA479A3-1BB2-410F-B26E-E1C0EF9AB95E} = {B948545D-D734-4B6D-ABC3-515A76B65168}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {53D11856-A659-4150-8337-61740F055EE8}

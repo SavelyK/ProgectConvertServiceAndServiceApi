@@ -71,7 +71,7 @@ namespace RepositoryWebApi.Controllers
                                                             exclusive: false,
                                                             autoDelete: false,
                                                             arguments: null);
-                                    DocxItemModel docxItem = new DocxItemModel(repositoryId, path + name, "Upload");
+                                    DocxItemModel docxItem = new DocxItemModel(repositoryId, path + name, "Upload", name);
                                     string message = JsonSerializer.Serialize(docxItem);
                                     var body = Encoding.UTF32.GetBytes(message);
                                 channel.BasicPublish(exchange: "",

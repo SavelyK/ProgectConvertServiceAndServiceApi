@@ -6,7 +6,7 @@ using DbInformation.Interfases;
 
 namespace DbInformation.Models
 {
-   public static class DependencyInjection
+   public static class DependencyInjectionSaveDbApiInfoService
     {
 
         public static IServiceCollection AddDbInformation(this IServiceCollection

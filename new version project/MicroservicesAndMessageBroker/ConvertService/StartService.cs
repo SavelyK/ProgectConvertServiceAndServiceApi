@@ -30,11 +30,11 @@ namespace ConvertService
             Task saveDocx = Task.Run(async() => {
             await start.SaveDocxModelAsync(_context, convertQueue);
             
+        });
             Task convertDocx = Task.Run(async () => {
                
                 await start.Convert(_context, convertQueue, appConfigurationConfig.MaxCount);
             });
-        });
 
 
         }

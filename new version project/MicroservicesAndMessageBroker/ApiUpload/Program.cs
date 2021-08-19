@@ -31,7 +31,7 @@ namespace RepositoryWebApi
         }
 
         public static IHostBuilder CreateApiHostBuilder(string[] args) =>
-              Host.CreateDefaultBuilder()
+              Host.CreateDefaultBuilder(args)
                  .ConfigureWebHostDefaults(webBuilder =>
                  {
                      webBuilder.UseStartup<Startup>();

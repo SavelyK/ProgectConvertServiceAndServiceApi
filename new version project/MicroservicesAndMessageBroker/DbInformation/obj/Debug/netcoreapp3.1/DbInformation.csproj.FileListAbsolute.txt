@@ -1,7 +1,6 @@
 C:\Service\new version project\MicroservicesAndMessageBroker\DbInformation\bin\Debug\netcoreapp3.1\DbInformation.deps.json
 C:\Service\new version project\MicroservicesAndMessageBroker\DbInformation\bin\Debug\netcoreapp3.1\DbInformation.dll
 C:\Service\new version project\MicroservicesAndMessageBroker\DbInformation\bin\Debug\netcoreapp3.1\DbInformation.pdb
-C:\Service\new version project\MicroservicesAndMessageBroker\DbInformation\obj\Debug\netcoreapp3.1\DbInformation.csproj.AssemblyReference.cache
 C:\Service\new version project\MicroservicesAndMessageBroker\DbInformation\obj\Debug\netcoreapp3.1\DbInformation.AssemblyInfoInputs.cache
 C:\Service\new version project\MicroservicesAndMessageBroker\DbInformation\obj\Debug\netcoreapp3.1\DbInformation.AssemblyInfo.cs
 C:\Service\new version project\MicroservicesAndMessageBroker\DbInformation\obj\Debug\netcoreapp3.1\DbInformation.csproj.CoreCompileInputs.cache

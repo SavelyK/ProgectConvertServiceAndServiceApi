@@ -1,0 +1,4 @@
+C:\Service\new version project\BuildingServicesUsingRabbitmq\LibraryForDbConnection\obj\Debug\netcoreapp3.1\LibraryForDbConnection.csproj.AssemblyReference.cache
+C:\Service\new version project\BuildingServicesUsingRabbitmq\LibraryForDbConnection\obj\Debug\netcoreapp3.1\LibraryForDbConnection.AssemblyInfoInputs.cache
+C:\Service\new version project\BuildingServicesUsingRabbitmq\LibraryForDbConnection\obj\Debug\netcoreapp3.1\LibraryForDbConnection.AssemblyInfo.cs
+C:\Service\new version project\BuildingServicesUsingRabbitmq\LibraryForDbConnection\obj\Debug\netcoreapp3.1\LibraryForDbConnection.csproj.CoreCompileInputs.cache

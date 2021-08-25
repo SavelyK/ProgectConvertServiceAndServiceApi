@@ -9,7 +9,7 @@ namespace ApiUpload.Models
     {
 
         public Guid Id { get; set; }
-
+        public int Index { get; set; }
         public string Path { get; set; }
         public string Status { get; set; }
         public string FileName { get; set; }
@@ -20,6 +20,7 @@ namespace ApiUpload.Models
             Path = path;
             Status = status;
             FileName = fileName;
+            Index = 0;
         }
     }
 }

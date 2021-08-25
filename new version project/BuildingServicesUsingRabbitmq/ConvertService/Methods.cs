@@ -20,9 +20,8 @@ namespace ConvertService
     {
 
 
-        public async Task SaveDocxModelAsync(InformationDbContext context, ConcurrentQueue<DocxItemModel> nameQueue)
+        public async Task SaveDocxModelAsync(InformationDbContext context)
         {
-
             await Task.Run(async () =>
             {
                 do
@@ -31,8 +30,6 @@ namespace ConvertService
                     var factory = new ConnectionFactory() { HostName = "localhost" };
                     var connection = factory.CreateConnection();
                     var channel = connection.CreateModel();
-
-
                     channel.QueueDeclare(queue: "init1-queue",
                         durable: false,
                         exclusive: false,
@@ -43,18 +40,15 @@ namespace ConvertService
                     {
                         var body = @event.Body;
                         string message = Encoding.UTF32.GetString(body.ToArray());
-                        DocxItemModel docxItem = JsonSerializer.Deserialize<DocxItemModel>(message);
-                        Console.WriteLine(docxItem.Path);
-                        FileInformation file = new FileInformation();
-                        file.Id = docxItem.Id;
-                        file.Path = docxItem.Path;
-                        file.FileName = docxItem.FileName;
-                        file.Status = docxItem.Status;
+                        FileInformation file = JsonSerializer.Deserialize<FileInformation>(message);
+                        if (file != null)
+                        {
+                            StartService.countIndex++;
 
-
-                        context.FileInformations.Add(file);
-                        nameQueue.Enqueue(docxItem);
-                        context.SaveChanges();
+                            file.Index = StartService.countIndex;
+                            context.FileInformations.Add(file);
+                            context.SaveChanges();
+                        }
 
                     };
                     channel.BasicConsume(queue: "init1-queue",
@@ -63,8 +57,33 @@ namespace ConvertService
                 } while (true);
             });
         }
+        public async Task EnqueConvert(InformationDbContext context, ConcurrentQueue<DocxItemModel> nameQueue)
+        {
+            await Task.Run(() =>
+            {
+                while (true)
+                {
+                    var file = context.FileInformations.FirstOrDefault(p => p.Status == "Upload");
+                    if (file != null)
+                    {
+                        file.Status = "InProgress";
+                        DocxItemModel docx = new DocxItemModel();
+                        docx.Id = file.Id;
+                        docx.Path = file.Path;
+                        docx.Status = file.Status;
+                        docx.FileName = file.FileName;
+                        nameQueue.Enqueue(docx);
+                        context.SaveChanges();
+                    }
+                    else
+                    {
+                        new ManualResetEvent(false).WaitOne(1000);
+                    }
+                }
+            });
+        }
 
-        public Task Convert(InformationDbContext context, ConcurrentQueue<DocxItemModel> nameQueue, int maxCount)
+        public  Task Convert(InformationDbContext context, ConcurrentQueue<DocxItemModel> nameQueue, int maxCount)
         {
 
             while (true)
@@ -81,18 +100,19 @@ namespace ConvertService
                     {
 
                         StartService.count++;
-
-
-                        Task.Run(() =>
+                       
+                         Task.Run(() =>
                        {
 
                            Console.WriteLine(docxModel.Status);
                            string path = docxModel.Path;
 
-                           DocumentCore dc = DocumentCore.Load(path);
-                           dc.Save(path.Replace(".docx", ".pdf"));
+                          
+                               DocumentCore dc = DocumentCore.Load(path);
+                               dc.Save(path.Replace(".docx", ".pdf"));
+                           
                            FileInformation file = context.FileInformations
-                           .First(dbModel =>
+                           .FirstOrDefault(dbModel =>
                            dbModel.Id == docxModel.Id);
                            file.Status = "Complited";
                            file.Path = path.Replace(".docx", ".pdf");
@@ -116,16 +136,31 @@ namespace ConvertService
                                                 body: body);
 
                            StartService.count--;
-                           Console.WriteLine(StartService.count);
                        });
                     }
-
                 }
-
             }
         }
 
 
 
+        public void ServiceStart(InformationDbContext context, ConcurrentQueue<DocxItemModel> nameQueue)
+        {
+            var files = context.FileInformations.Where(p => p.Status == "InProgress")
+                .OrderBy(p => p.Index);
+            if (files != null)
+            {
+                foreach (var file in files)
+                {
+                    DocxItemModel docx = new DocxItemModel();
+                    docx.Id = file.Id;
+                    docx.Path = file.Path;
+                    docx.Status = file.Status;
+                    docx.FileName = file.FileName;
+                    nameQueue.Enqueue(docx);
+                    //context.SaveChanges(); 
+                }
+            }
+        }
     }
 }

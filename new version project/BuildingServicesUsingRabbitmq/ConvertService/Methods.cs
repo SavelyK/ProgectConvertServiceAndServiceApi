@@ -36,20 +36,20 @@ namespace ConvertService
                         autoDelete: false,
                         arguments: null);
                     var consumer = new EventingBasicConsumer(channel);
-                    consumer.Received += (sender, @event) =>
+                    consumer.Received += async (sender, @event) =>
                     {
                         var body = @event.Body;
                         string message = Encoding.UTF32.GetString(body.ToArray());
                         FileInformation file = JsonSerializer.Deserialize<FileInformation>(message);
+
                         if (file != null)
                         {
                             StartService.countIndex++;
 
                             file.Index = StartService.countIndex;
                             context.FileInformations.Add(file);
-                            context.SaveChanges();
+                            await context.SaveChangesAsync();
                         }
-
                     };
                     channel.BasicConsume(queue: "init1-queue",
                         autoAck: true,
@@ -59,7 +59,7 @@ namespace ConvertService
         }
         public async Task EnqueConvert(InformationDbContext context, ConcurrentQueue<DocxItemModel> nameQueue)
         {
-            await Task.Run(() =>
+            await Task.Run(async() =>
             {
                 while (true)
                 {
@@ -73,7 +73,7 @@ namespace ConvertService
                         docx.Status = file.Status;
                         docx.FileName = file.FileName;
                         nameQueue.Enqueue(docx);
-                        context.SaveChanges();
+                        await context.SaveChangesAsync();
                     }
                     else
                     {
@@ -101,7 +101,7 @@ namespace ConvertService
 
                         StartService.count++;
                        
-                         Task.Run(() =>
+                         Task.Run(async () =>
                        {
 
                            Console.WriteLine(docxModel.Status);
@@ -117,7 +117,7 @@ namespace ConvertService
                            file.Status = "Complited";
                            file.Path = path.Replace(".docx", ".pdf");
                            file.FileName = docxModel.FileName.Replace(".docx", ".pdf");
-                           context.SaveChanges();
+                           await context.SaveChangesAsync();
                            ConnectionFactory factory = new ConnectionFactory() { HostName = "localhost" };
                            var connection = factory.CreateConnection();
                            var channel = connection.CreateModel();
@@ -158,7 +158,7 @@ namespace ConvertService
                     docx.Status = file.Status;
                     docx.FileName = file.FileName;
                     nameQueue.Enqueue(docx);
-                    //context.SaveChanges(); 
+                   
                 }
             }
         }

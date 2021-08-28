@@ -17,6 +17,7 @@ namespace ConvertService
         }
 
         ConcurrentQueue<DocxItemModel> convertQueue = new ConcurrentQueue<DocxItemModel>();
+        ConcurrentQueue<DocxItemModel> complitedQueue = new ConcurrentQueue<DocxItemModel>();
         public static int count = 0;
         public static int countIndex = 0;
 
@@ -31,19 +32,19 @@ namespace ConvertService
             start.ServiceStart(_context, convertQueue);
             Task saveDocx = Task.Run(async () =>
             {
-                await start.SaveDocxModelAsync(_context);
+                await start.SaveDocxModelAsync(_context, convertQueue, complitedQueue);
 
             });
             Task convertDocx = Task.Run(async () =>
             {
 
-                await start.Convert(_context, convertQueue, appConfigurationConfig.MaxCount);
+                await start.Convert(convertQueue, appConfigurationConfig.MaxCount, complitedQueue);
             });
-            Task EnqueDocx = Task.Run(async () =>
-            {
+            //Task EnqueDocx = Task.Run(async () =>
+            //{
 
-                await start.EnqueConvert(_context, convertQueue);
-            });
+            //    await start.EnqueConvert(_context, convertQueue);
+            //});
 
         }
 

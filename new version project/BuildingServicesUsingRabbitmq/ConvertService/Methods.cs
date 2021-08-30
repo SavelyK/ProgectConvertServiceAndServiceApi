@@ -18,6 +18,46 @@ namespace ConvertService
 {
     public class Methods : IMethods
     {
+        public async Task SaveFileDbAsync(InformationDbContext context)
+        {
+            await Task.Run(async () =>
+            {
+                    var factory = new ConnectionFactory() { HostName = "localhost" };
+                do
+                {
+                    var connection = factory.CreateConnection();
+                    var channel = connection.CreateModel();
+
+
+                    channel.QueueDeclare(queue: "init1-queue",
+                        durable: false,
+                        exclusive: false,
+                        autoDelete: false,
+                        arguments: null);
+                    var consumer = new EventingBasicConsumer(channel);
+                    consumer.Received += async (sender, @event) =>
+                    {
+                        var body = @event.Body;                      
+                        string message = Encoding.UTF32.GetString(body.ToArray());
+                        FileInformation fileLoad = JsonSerializer.Deserialize<FileInformation>(message);
+                        if (fileLoad.FileName != null)
+                        {
+                            StartService.countIndex++;
+
+                            fileLoad.Index = StartService.countIndex;
+                            await Task.Delay(1000);
+                            context.FileInformations.Add(fileLoad);
+                            context.SaveChanges();
+                            Console.WriteLine("файл сохранен в базу данных");
+                        }
+
+                    };
+                    channel.BasicConsume(queue: "init1-queue",
+                        autoAck: true,
+                        consumer: consumer);
+                } while (true);
+            });
+        }
 
 
         public async Task SaveDocxModelAsync(InformationDbContext context, ConcurrentQueue<DocxItemModel> nameQueue, ConcurrentQueue<DocxItemModel> complitedQueue)
@@ -107,7 +147,7 @@ namespace ConvertService
             });
         }
 
-        public  Task Convert(ConcurrentQueue<DocxItemModel> nameQueue, int maxCount, ConcurrentQueue<DocxItemModel> complitedQueue)
+        public  Task Convert(InformationDbContext context, ConcurrentQueue<DocxItemModel> nameQueue, int maxCount, ConcurrentQueue<DocxItemModel> complitedQueue)
         {
 
             while (true)
@@ -134,13 +174,13 @@ namespace ConvertService
                       docxModel.Status = "Complited";
                       complitedQueue.Enqueue(docxModel);
 
-                          //FileInformation file = context.FileInformations
-                          //.FirstOrDefault(dbModel =>
-                          //dbModel.Id == docxModel.Id);
-                          //file.Status = "Complited";
-                          //file.Path = path.Replace(".docx", ".pdf");
-                          //file.FileName = docxModel.FileName.Replace(".docx", ".pdf");
-                          //context.SaveChanges();
+                          FileInformation file = context.FileInformations
+                          .FirstOrDefault(dbModel =>
+                          dbModel.Id == docxModel.Id);
+                          file.Status = "Complited";
+                          file.Path = docxModel.Path.Replace(".docx", ".pdf");
+                          file.FileName = docxModel.FileName.Replace(".docx", ".pdf");
+                          context.SaveChanges();
                           ConnectionFactory factory = new ConnectionFactory() { HostName = "localhost" };
                            var connection = factory.CreateConnection();
                            var channel = connection.CreateModel();

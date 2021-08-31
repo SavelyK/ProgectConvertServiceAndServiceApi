@@ -11,13 +11,11 @@ namespace ConvertService
     public class StartService : IStartService
     {
         private readonly InformationDbContext _context;
-        private readonly InformationDbContext _context2;
-        private readonly InformationDbContext _context3;
-        public StartService(InformationDbContext context, InformationDbContext context2, InformationDbContext context3)
+        
+        public StartService(InformationDbContext context)
         {
             _context = context;
-            _context2 = context2;
-            _context3 = context3;
+
         }
         
 
@@ -34,7 +32,7 @@ namespace ConvertService
             var appConfigurationConfig = appConfiguration.Config;
 
             Methods start = new Methods();
-           // start.ServiceStart(_context, convertQueue);
+            start.ServiceStart(_context, convertQueue);
 
             Task saveDocx = Task.Run(async () =>
             {
@@ -43,17 +41,17 @@ namespace ConvertService
             Task EnqueDocx = Task.Run(async () =>
             {
 
-                await start.EnqueConvert(_context2, convertQueue);
+                await start.EnqueConvert(_context, convertQueue);
             });
-            //Task saveDocx = Task.Run(async () =>
-            //{
-            //    await start.SaveDocxModelAsync(_context, convertQueue, complitedQueue);
+            Task saveComplited = Task.Run(async () =>
+            {
+                await start.SaveComplitedAsync(complitedQueue, _context);
 
-            //});
+            });
             Task convertDocx = Task.Run(async () =>
             {
 
-                await start.Convert(_context3, convertQueue, appConfigurationConfig.MaxCount, complitedQueue);
+                await start.Convert(_context, convertQueue, appConfigurationConfig.MaxCount, complitedQueue);
             });
 
         }
